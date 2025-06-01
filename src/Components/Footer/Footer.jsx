@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       <footer
-        className="bg-cover h-[559px] w-full bg-center bg-no-repeat text-white p-8"
+        className="bg-cover h-[559px] w-full bg-center bg-no-repeat   text-white p-8"
         style={{ backgroundImage: `url(${footerBg})` }}
       >
         <p className="text-center">© 2025 El Zafer. All rights reserved.</p>

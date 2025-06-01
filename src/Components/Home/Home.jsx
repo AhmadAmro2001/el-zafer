@@ -19,7 +19,7 @@ export default function Home() {
   useEffect(() => {}, []);
   return (
     <>
-      <div className="w-full overflow-hidden">
+      <div className="w-100  ms-28  overflow-hidden">
       <Slider {...settings}>
         <div>
           <img src={img1} alt="" className="w-full h-[610px] object-cover" />
@@ -32,9 +32,10 @@ export default function Home() {
         </div>
       </Slider>
       </div>
-      <div className="right-0 absolute h-[600px]" >
+      <div className="right-0  h-[600px]" >
         <img src={img4} alt="" className="w-full h-full object-cover" />
       </div>
+      
     </>
   );
 }

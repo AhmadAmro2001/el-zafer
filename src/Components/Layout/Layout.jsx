@@ -12,7 +12,7 @@ export default function Layout() {
       <div className="container mx-auto text-center">
         <div >
           <Sidebar/>
-          <div className='ms-28'>
+          <div >
             <Outlet/>
           </div>
         </div>
