@@ -1,0 +1,7 @@
+:root{
+    --main-gradient: linear-gradient(to top,#7B1114 ,#E11F25);
+}
+
+.main-gradient{
+    background: var(--main-gradient);
+}
