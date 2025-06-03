@@ -1,7 +1,9 @@
 :root{
     --main-gradient: linear-gradient(to top,#7B1114 ,#E11F25);
 }
-
+.row{
+    @apply flex flex-wrap ;
+}
 .main-gradient{
     background: var(--main-gradient);
 }
