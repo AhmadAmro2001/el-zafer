@@ -9,7 +9,7 @@ export default function HomeAboutUs() {
         
     }, [])
   return <>
-      <div className='container  mx-auto px-4 md:px-32 my-24'>
+      <div className='container  mx-auto px-4 md:px-32 my-5 md:my-24'>
         <div className='row  '>
             <div className='  w-full md:w-[55%] text-left pe-0 my-16 md:pe-12 '>
               <p className='text-red-700 pb-2'>About us</p>
