@@ -66,7 +66,7 @@ export default function Sidebar() {
       
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-0 md:top-1/2 md:-translate-y-1/2 z-50 bg-white text-red-700 font-semibold px-3 py-2 rounded-r shadow-lg transition-all duration-300 ${
+        className={`fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-white text-red-700 font-semibold px-3 py-2 rounded-r shadow-lg transition-all duration-300 ${
           isOpen ? "left-28" : "left-0"
         }`}
       >
