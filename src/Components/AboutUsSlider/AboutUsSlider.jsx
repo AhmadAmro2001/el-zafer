@@ -36,13 +36,13 @@ export default function AboutUsSlider() {
       <div className="w-full py-20 overflow-x-hidden">
       <Slider {...settings}>
         <div className='md:px-12 px-5'>
-          <img src={img1} className='w-full md:max-h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
+          <img src={img1} className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
         </div>
         <div className='md:px-12 px-5'>
-          <img src={img2} className='w-full md:max-h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
+          <img src={img2} className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
         </div>
         <div className='md:px-12 px-5'>
-          <img src={img3} className='w-full md:max-h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
+          <img src={img3} className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
         </div>
       </Slider>
     </div>
