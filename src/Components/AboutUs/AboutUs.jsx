@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from './AboutUs.module.css'
 import vector from '../../assets/arrow.png'
-import AboutUsSlider from '../../components/AboutUsSlider/AboutUsSlider';
+import AboutUsSlider from '../components/AboutUsSlider/AboutUsSlider'
 
 export default function AboutUs() {
     useEffect(() => {
