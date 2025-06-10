@@ -8,8 +8,7 @@ import Slider from "react-slick";
 import HomeAboutUs from "../HomeAboutUs/HomeAboutUs";
 import HomeOnlineServices from "../HomeOnlineServices/HomeOnlineServices";
 import HomeOurPartners from "../HomeOurPartners/HomeOurPartners";
-import NavBar from "../NavBar/NavBar";
-import Sidebar from "../Sidebar/Sidebar";
+
 
 export default function Home() {
   var settings = {
