@@ -4,12 +4,13 @@ import img1 from "../../assets/home1.jpg";
 import img2 from "../../assets/home2.jpg";
 import img3 from "../../assets/home3.png";
 import img4 from "../../assets/homeSec.jpg"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import HomeAboutUs from "../HomeAboutUs/HomeAboutUs";
 import HomeOnlineServices from "../HomeOnlineServices/HomeOnlineServices";
 import HomeOurPartners from "../HomeOurPartners/HomeOurPartners";
+import NavBar from "../NavBar/NavBar";
+import Sidebar from "../Sidebar/Sidebar";
+
 export default function Home() {
   var settings = {
     dots: true,
@@ -18,7 +19,7 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,              
-    autoplaySpeed: 3000,  
+    autoplaySpeed: 2000,  
   };
   const [data, setData] = useState();
   useEffect(() => {}, []);

@@ -3,6 +3,7 @@ import style from './HomeAboutUs.module.css'
 import img1 from '../../assets/homeAbout1.png'
 import img2 from '../../assets/homeAbout2.png'
 import img3 from '../../assets/homeAbout3.png'
+import { Link } from 'react-router-dom'
 export default function HomeAboutUs() {
     const [data, setData] = useState()
     useEffect(() => {
@@ -15,6 +16,7 @@ export default function HomeAboutUs() {
               <p className='text-red-700 pb-2'>About us</p>
               <h1 className='text-2xl max-w-[90%] md:max-w-full'>Al Zafer Wings Cargo Services Co. is an international freight forwarding outfit headquartered in Jeddah,</h1>
               <p className='max-w-[90%] md:max-w-full'>Which has represented excellence in the shipping, forwarding and logistics industry for almost four decades. We offer years of professional experience within the freight forwarding, logistics and commercial storage sectors.</p>
+              <Link to='about' className='text-red-700 font-bold mt-5'>Read More...</Link>
             </div>
             <div className='w-full h-[360px] relative  mx-5 md:w-[40%]'>
               <div className='w-[340px] h-[211px] absolute z-30 top-0 left-0 border rounded-md overflow-hidden '>
