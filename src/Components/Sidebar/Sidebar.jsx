@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./Sidebar.module.css";
 import { Link } from "react-router-dom";
-import mapLogo from "../../assets/google-map-icon.png";
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {}, []);

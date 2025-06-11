@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import style from "./Footer.module.css";
-import footerBg from "../../assets/footer-img.png";
 import { Link } from "react-router-dom";
 export default function Footer() {
   const [data, setData] = useState();

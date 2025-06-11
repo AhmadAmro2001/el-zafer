@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import style from "./NavBar.module.css";
-import zaferLogo from "../../assets/el-zafer-logo.png";
 import { Link, NavLink } from "react-router-dom";
 
 export default function NavBar() {
