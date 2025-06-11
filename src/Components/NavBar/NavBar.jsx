@@ -13,7 +13,7 @@ export default function NavBar() {
           {/* Logo */}
           <Link to="/" className="flex ">
             <img
-              src={zaferLogo}
+              src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622979/el-zafer-logo_l6b5ly.png"
               alt="El Zafer Logo"
               className="h-12   md:h-24"
             />

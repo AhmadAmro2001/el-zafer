@@ -9,7 +9,7 @@
       "customTemplates": {
         "component": "Template/TemplateName.jsx"
       },
-      "path": "src/components",
+      "path": "src/Components",
       "withStyle": true,
       "withTest": false,
       "withStory": false,

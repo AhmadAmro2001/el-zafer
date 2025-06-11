@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./Footer.module.css";
 import footerBg from "../../assets/footer-img.png";
-import img2 from "../../assets/ourPartners1.png";
 import { Link } from "react-router-dom";
 export default function Footer() {
   const [data, setData] = useState();
@@ -10,7 +9,7 @@ export default function Footer() {
     <>
       <footer
         className="w-full text-[#063A60] p-2 md:p-8 bg-center bg-no-repeat bg-cover h-[160px]  md:h-[559px]"
-        style={{ backgroundImage: `url(${footerBg})` }}
+        style={{ backgroundImage: `url(https://res.cloudinary.com/djvzbznry/image/upload/v1749623047/footer-img_hozwhx.png)` }}
       >
         <div className="container mx-auto">
           <div className="text-right text-[5px] md:text-[16px] ">

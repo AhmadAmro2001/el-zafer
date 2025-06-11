@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import style from './AboutUs.module.css'
-import vector from '../../assets/arrow.png'
 import AboutUsSlider from "../AboutUsSlider/AboutUsSlider";
 
 export default function AboutUs() {
@@ -31,7 +30,7 @@ export default function AboutUs() {
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[40px] w-[20px] md:h-[40px] h-[20px]  opacity-25  bg-white rounded-full '>
         </div>
         <div className='w-[20px] h-[10px] md:w-[66px] md:h-[33px] absolute md:bottom-32 bottom-6'>
-          <img src={vector} alt="" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622969/arrow_ivw54b.png" alt="" />
         </div>
       </div>
       <AboutUsSlider/>

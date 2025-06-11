@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import style from "./Home.module.css";
-import img1 from "../../assets/home1.jpg";
-import img2 from "../../assets/home2.jpg";
-import img3 from "../../assets/home3.png";
-import img4 from "../../assets/homeSec.jpg"
 import Slider from "react-slick";
 import HomeAboutUs from "../HomeAboutUs/HomeAboutUs";
 import HomeOnlineServices from "../HomeOnlineServices/HomeOnlineServices";
@@ -27,18 +23,18 @@ export default function Home() {
       <div className="w-full overflow-hidden">
       <Slider {...settings}>
         <div>
-          <img src={img1} alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622977/home1_jnnqzk.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         <div>
-          <img src={img2} alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623005/home2_xiqeiv.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         <div>
-          <img src={img3} alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623075/home3_qnlblh.png" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
       </Slider>
       </div>
       <div className="right-0  h-[200px] md:h-[600px]" >
-        <img src={img4} alt="" className="w-full h-full object-cover" />
+        <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623009/homeSec_xnllij.jpg" alt="" className="w-full h-full object-cover" />
       </div>
       <HomeAboutUs/>
       <HomeOnlineServices/>

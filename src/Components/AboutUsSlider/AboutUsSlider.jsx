@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './AboutUsSlider.module.css'
 import Slider from "react-slick";
-import img1 from '../../assets/homeAbout1.png'
-import img2 from '../../assets/homeAbout2.png'
-import img3 from '../../assets/aboutUsSlider3.jpg'
 export default function AboutUsSlider() {
   const settings = {
     centerMode: true,
@@ -36,13 +33,13 @@ export default function AboutUsSlider() {
       <div className="w-full py-20 overflow-x-hidden">
       <Slider {...settings}>
         <div className='md:px-12 px-5'>
-          <img src={img1} className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623008/homeAbout1_mxigqh.png" className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
         </div>
         <div className='md:px-12 px-5'>
-          <img src={img2} className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622992/homeAbout2_hwk3er.png" className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
         </div>
         <div className='md:px-12 px-5'>
-          <img src={img3} className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749621901/aboutUsSlider3_hxeuuz.jpg" className='w-full md:h-[450px] h-[200px] object-cover  rounded-xl mx-auto' alt="" />
         </div>
       </Slider>
     </div>

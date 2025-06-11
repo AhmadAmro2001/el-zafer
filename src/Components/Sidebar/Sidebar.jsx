@@ -48,7 +48,7 @@ export default function Sidebar() {
         {/* Blog */}
         <Link to="#" className="flex flex-col items-center my-2">
           <div className="w-12 h-12 bg-white flex items-center justify-center">
-            <img src={mapLogo} className="w-full" alt="Blog" />
+            <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622971/google-map-icon_quche9.png" className="w-full" alt="Blog" />
           </div>
           <p className="text-sm text-slate-600">Blog</p>
         </Link>

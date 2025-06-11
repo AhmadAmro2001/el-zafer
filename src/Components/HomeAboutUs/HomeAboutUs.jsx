@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import style from './HomeAboutUs.module.css'
-import img1 from '../../assets/homeAbout1.png'
-import img2 from '../../assets/homeAbout2.png'
-import img3 from '../../assets/homeAbout3.png'
 import { Link } from 'react-router-dom'
 export default function HomeAboutUs() {
     const [data, setData] = useState()
@@ -20,13 +17,13 @@ export default function HomeAboutUs() {
             </div>
             <div className='w-full h-[360px] relative  mx-5 md:w-[40%]'>
               <div className='w-[340px] h-[211px] absolute z-30 top-0 left-0 border rounded-md overflow-hidden '>
-              <img src={img1} alt="" className='w-full h-full'/>
+              <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623008/homeAbout1_mxigqh.png" alt="" className='w-full h-full'/>
               </div>
               <div className='w-[279px] h-[174px] absolute z-10 bottom-0 right-0 border rounded-md overflow-hidden'>
-              <img src={img2} alt="" className='w-full h-full'/>
+              <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622992/homeAbout2_hwk3er.png" alt="" className='w-full h-full'/>
               </div>
               <div className='w-[113.17px] h-[135px] absolute z-20 bottom-0 left-0  '>
-              <img src={img3} alt="" className='w-full h-full'/>
+              <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623001/homeAbout3_s80awa.png" alt="" className='w-full h-full'/>
               </div>
             </div>
 
