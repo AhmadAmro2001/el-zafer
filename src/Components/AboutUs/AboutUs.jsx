@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import style from './AboutUs.module.css'
 import AboutUsSlider from "../AboutUsSlider/AboutUsSlider";
+import AboutUsCaption from '../AboutUsCaption/AboutUsCaption';
+import AboutUsPartners from '../AboutUsPartners/AboutUsPartners';
+import AboutUsMission from '../AboutUsMission/AboutUsMission';
+import AboutUsWhy from '../AboutUsWhy/AboutUsWhy';
 
 export default function AboutUs() {
     useEffect(() => {
@@ -34,6 +38,9 @@ export default function AboutUs() {
         </div>
       </div>
       <AboutUsSlider/>
-      
+      <AboutUsCaption/>
+      <AboutUsPartners/>
+      <AboutUsMission/>
+      <AboutUsWhy/>
     </>
 }
