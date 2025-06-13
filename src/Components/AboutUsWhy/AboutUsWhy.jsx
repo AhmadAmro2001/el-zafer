@@ -43,7 +43,7 @@ export default function AboutUsWhy() {
           <div className='md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-ee-full bg-[#0C71B9]'>
           </div>
           <div className='absolute md:top-0 right-20 rounded-3xl overflow-hidden md:right-10 md:w-[243px] md:h-[145px] w-[100px] h-[60px]'>
-            <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749697342/c4eb0b8de943f53e58b2c6740c31f68bf0981807_rpudzo.png" className='w-full h-full' alt="" />
+            <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749697342/c4eb0b8de943f53e58b2c6740c31f68bf0981807_rpudzo.png" className='w-full h-full ' alt="" />
           </div>
           <div className='absolute bottom-0 rounded-3xl overflow-hidden left-14 md:left-0 md:w-[319px] md:h-[179px] w-[120px] h-[70px]'>
             <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749697342/573da5926931f64278bf806f2e03365606af2c72_wxiilc.png" className='w-full h-full' alt="" />
