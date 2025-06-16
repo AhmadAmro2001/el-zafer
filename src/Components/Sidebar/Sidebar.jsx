@@ -21,7 +21,7 @@ export default function Sidebar() {
         </Link>
 
         {/* Services */}
-        <Link to="#" className="flex flex-col items-center my-2">
+        <Link to="/services" className="flex flex-col items-center my-2">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-folder-open" />
           </div>
