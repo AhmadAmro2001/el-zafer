@@ -36,7 +36,7 @@ export default function Services() {
       <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-44 top-12 md:left-72 md:top-16'>
       </div>
 
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-40'>
+      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full' alt="" />
       </div>
       <div className='text-left md:w-1/2 w-full md:my-auto mt-4 '>
@@ -58,7 +58,7 @@ export default function Services() {
       <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white right-52 top-12 md:right-72 md:top-16'>
       </div>
 
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-40 block md:hidden'>
+      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10 block md:hidden'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services2_sviq4f.png" className='w-full h-full' alt="" />
       </div>
       <div className='text-left md:w-1/2 w-full md:my-auto mt-4 '>
@@ -72,7 +72,7 @@ export default function Services() {
             Read more <i className="fa-solid fa-arrow-right"></i>
         </Link>
       </div>
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:mr-16 mr-0 z-40 hidden md:block'>
+      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:mr-16 mr-0 z-10 hidden md:block'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services2_sviq4f.png" className='w-full h-full' alt="" />
       </div>
       </div>
@@ -83,7 +83,7 @@ export default function Services() {
       <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-44 top-12 md:left-72 md:top-16'>
       </div>
 
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-40'>
+      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045791/services3_yu0iqa.jpg" className='w-full h-full object-cover' alt="" />
       </div>
       <div className='text-left md:w-1/2 w-full md:my-auto mt-4 '>
@@ -105,7 +105,7 @@ export default function Services() {
       <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white right-52 top-12 md:right-72 md:top-16'>
       </div>
 
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-40 block md:hidden'>
+      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10 block md:hidden'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services4_xmblnl.png" className='w-full h-full' alt="" />
       </div>
       <div className='text-left md:w-1/2 w-full md:my-auto mt-4 '>
@@ -119,7 +119,7 @@ export default function Services() {
             Read more <i className="fa-solid fa-arrow-right"></i>
         </Link>
       </div>
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:mr-16 mr-0 z-40 hidden md:block'>
+      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:mr-16 mr-0 z-10 hidden md:block'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services4_xmblnl.png" className='w-full h-full' alt="" />
       </div>
       </div>
@@ -130,7 +130,7 @@ export default function Services() {
       <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-44 top-12 md:left-72 md:top-16'>
       </div>
 
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-40'>
+      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045803/services5_dsriar.png" className='w-full h-full object-cover' alt="" />
       </div>
       <div className='text-left md:w-1/2 w-full md:my-auto mt-4 '>
