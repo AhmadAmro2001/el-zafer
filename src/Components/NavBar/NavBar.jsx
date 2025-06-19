@@ -90,16 +90,16 @@ export default function NavBar() {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="https://x.com"
+              <Link
+                to="/activities"
                 className="block p-0"
-                target="_blank"
+                // target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className="flex justify-center w-10 h-10 items-center my-2 md:my-0 border border-red-700 main-gradient text-white rounded-full">
                   <i className="fa-brands fa-x-twitter"></i>
                 </div>
-              </NavLink>
+              </Link>
             </li>
             <li>
               <NavLink

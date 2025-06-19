@@ -9,6 +9,8 @@ import Home from './Components/Home/Home'
 import AboutUs from './Components/AboutUs/AboutUs'
 import Services from './Components/Services/Services';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
+import Activities from './Components/Activities/Activities';
+import ActivitiesDetails from './Components/ActivitiesDetails/ActivitiesDetails';
 
 
 function App() {
@@ -18,6 +20,8 @@ let routes = createBrowserRouter([
     {path:'about',element:<AboutUs/>},
     {path:'services',element:<Services/>},
     {path:'services/serviceDetails',element:<ServiceDetails/>},
+    {path:'activities',element:<Activities/>},
+    {path:'activities/activityDetails',element:<ActivitiesDetails/>},
     {path:'*',element:<NotFound/>}
   ]}
 ])

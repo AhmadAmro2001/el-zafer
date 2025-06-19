@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import style from "./ServiceDetails.module.css";
+import { useLocation } from "react-router-dom";
 export default function ServiceDetails() {
   const [data, setData] = useState();
   useEffect(() => {}, []);
+
+  const { state } = useLocation();
+  const { photo, title} = state || {};
+
 
   const process = [
     {
@@ -40,14 +45,14 @@ export default function ServiceDetails() {
 
         <div className="md:w-[1030px] md:h-[437px] w-[250px] h-[150px] rounded-3xl overflow-hidden mx-auto mt-14 md:my-12 z-10">
           <img
-            src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png"
+            src={`${photo}`}
             className="w-full h-full"
             alt=""
           />
         </div>
         <div className="text-left  w-full md:my-auto mt-4 ">
           <h1 className="md:text-4xl text-[12px] font-bold mb-5">
-            LCL IMPORT /EXPORT CONSOLIDATION & DECONSOLIDATION
+            {title}
           </h1>
           <p className="text-[#999999] mb-2 md:mb-5 md:text-[20px] text-[8px]">
             LCL (LESS-THAN-CONTAINER LOAD) IS A SHIPPING TERM WHICH ALLOWS
@@ -89,7 +94,7 @@ export default function ServiceDetails() {
       </div>
       {/* process part */}
       <div className="container mx-auto px-10 md:px-32 py-16 bg-[#0C71B9]">
-        <h2 className="text-white md:text-3xl text-[12px] font-semibold mb-5 text-center">
+        <h2 className="text-white md:text-3xl text-[16px] font-semibold md:mb-5 mb-2 text-center">
           LCL PROCESS
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
@@ -126,7 +131,7 @@ export default function ServiceDetails() {
               <li> SPEEDY SERVICE WITH COMPETITIVE CHARGE</li>
             </ul>
           </div>
-          <div className="md:w-[256px] md:h-[256px] w-[150px] h-[150px] mt-10 md:mt-0 rounded-full overflow-hidden mx-auto">
+          <div className="md:w-[256px] md:h-[256px] w-[150px] h-[150px] mt-8 md:mt-0 rounded-full overflow-hidden mx-auto">
             <img
               src="https://res.cloudinary.com/djvzbznry/image/upload/v1750245132/serviceDetailsPieChart_pckggi.jpg"
               className="w-full h-full object-cover "
@@ -144,7 +149,7 @@ export default function ServiceDetails() {
             <h1 className="md:text-2xl text-[12px] font-bold mb-5 text-left">
                RIYADH DRY PORT OPERATIONS
             </h1>
-            <ul className="text-[#999999] md:text-[20px] text-[8px] list-disc ms-6">
+            <ul className="text-[#999999] md:text-[20px] text-[8px] mb-4 list-disc ms-6">
               <li> IMPORT LCL CONSOLES HANDLED BY PORT & CUSTOMS AUTHORITY</li>
               <li> ATTRACTIVE INCENTIVES FOR CONSOLIDATION PARTNERS & CUSTOMERS</li>
             </ul>

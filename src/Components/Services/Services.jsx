@@ -45,6 +45,10 @@ export default function Services() {
         <p className='text-[#999999]  md:text-[20px] md:mb-5 text-[8px]'>Sea logistics has been our nucleus area of operations. Al Zafer offers time definitive FCL & LCL ocean freight services to anywhere in the world enabling our clients to achieve their objectives in supply chain management ...</p>
         <Link
           to="serviceDetails"
+          state={{
+            title: "LCL IMPORT /EXPORT CONSOLIDATION & DECONSOLIDATION",
+            photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png",
+          }}
           className='text-[#0C71B9] font-semibold text-[10px]  md:text-[20px]'
           >
             Read more <i className="fa-solid fa-arrow-right"></i>
@@ -67,6 +71,10 @@ export default function Services() {
         <p className='text-[#999999]  md:text-[20px] md:mb-5 text-[8px]'>We provide complete aviation services including Charter Flights to all over the world, Leasing of all kinds of aircrafts, Organizing Hajj & Umrah flights, Ground Handling Services, V.I.P. Charter Flights, Chartering of cargo flights, etc ...</p>
         <Link
           to="serviceDetails"
+          state={{
+            title: "Aviation",
+            photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services2_sviq4f.png",
+          }}
           className='text-[#0C71B9] font-semibold text-[10px]  md:text-[20px]'
           >
             Read more <i className="fa-solid fa-arrow-right"></i>
@@ -92,6 +100,10 @@ export default function Services() {
         <p className='text-[#999999]  md:text-[20px] md:mb-5 text-[8px]'>Sea logistics has been our nucleus area of operations. Al Zafer offers time definitive FCL & LCL ocean freight services to anywhere in the world enabling our clients to achieve their objectives in supply chain management ...</p>
         <Link
           to="serviceDetails"
+          state={{
+            title: "Services air cargo",
+            photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750045791/services3_yu0iqa.jpg",
+          }}
           className='text-[#0C71B9] font-semibold text-[10px]  md:text-[20px]'
           >
             Read more <i className="fa-solid fa-arrow-right"></i>
@@ -114,6 +126,10 @@ export default function Services() {
         <p className='text-[#999999]  md:text-[20px] md:mb-5 text-[8px]'>We provide complete aviation services including Charter Flights to all over the world, Leasing of all kinds of aircrafts, Organizing Hajj & Umrah flights, Ground Handling Services, V.I.P. Charter Flights, Chartering of cargo flights, etc ...</p>
         <Link
           to="serviceDetails"
+          state={{
+            title: "Transportation",
+            photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services4_xmblnl.png",
+          }}
           className='text-[#0C71B9] font-semibold text-[10px]  md:text-[20px]'
           >
             Read more <i className="fa-solid fa-arrow-right"></i>
@@ -139,6 +155,10 @@ export default function Services() {
         <p className='text-[#999999]  md:text-[20px] md:mb-5 text-[8px]'>Sea logistics has been our nucleus area of operations. Al Zafer offers time definitive FCL & LCL ocean freight services to anywhere in the world enabling our clients to achieve their objectives in supply chain management ...</p>
         <Link
           to="serviceDetails"
+          state={{
+            title: "Shipping",
+            photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750045803/services5_dsriar.png",
+          }}
           className='text-[#0C71B9] font-semibold text-[10px]  md:text-[20px]'
           >
             Read more <i className="fa-solid fa-arrow-right"></i>
