@@ -46,7 +46,7 @@ export default function ServiceDetails() {
         <div className="md:w-[1030px] md:h-[437px] w-[250px] h-[150px] rounded-3xl overflow-hidden mx-auto mt-14 md:my-12 z-10">
           <img
             src={`${photo}`}
-            className="w-full h-full"
+            className="w-full h-full object-cover"
             alt=""
           />
         </div>

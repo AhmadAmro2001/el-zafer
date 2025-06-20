@@ -37,7 +37,7 @@ export default function Services() {
       </div>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
-        <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full' alt="" />
+        <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full object-cover' alt="" />
       </div>
       <div className='text-left md:w-1/2 w-full md:my-auto mt-4 '>
         <h1 className='md:text-4xl text-[12px] font-bold mb-5'>LCL IMPORT /EXPORT CONSOLIDATION & DECONSOLIDATION</h1>

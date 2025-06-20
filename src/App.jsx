@@ -11,7 +11,8 @@ import Services from './Components/Services/Services';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Activities from './Components/Activities/Activities';
 import ActivitiesDetails from './Components/ActivitiesDetails/ActivitiesDetails';
-
+import UsefulInfo from './Components/UsefulInfo/UsefulInfo';
+import UsefulInfoDetails from './Components/UsefulInfoDetails/UsefulInfoDetails';
 
 function App() {
 let routes = createBrowserRouter([
@@ -22,6 +23,8 @@ let routes = createBrowserRouter([
     {path:'services/serviceDetails',element:<ServiceDetails/>},
     {path:'activities',element:<Activities/>},
     {path:'activities/activityDetails',element:<ActivitiesDetails/>},
+    {path:'usefulInfo',element:<UsefulInfo/>},
+    {path:'usefulInfo/usefulInfoDetails',element:<UsefulInfoDetails/>},
     {path:'*',element:<NotFound/>}
   ]}
 ])
