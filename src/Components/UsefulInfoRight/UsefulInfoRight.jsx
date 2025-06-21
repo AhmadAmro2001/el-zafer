@@ -13,7 +13,8 @@ export default function UsefulInfoRight({data}) {
           to="usefulInfoDetails"
           state={{
             title: data.title,
-            photo: data.photo
+            photo: data.photo,
+            detail: data.detail
           }}
           className='text-[#0C71B9] mb-3 md:mb-0'>
             Read More <i className="fa-solid fa-arrow-right"></i>

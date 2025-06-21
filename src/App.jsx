@@ -13,6 +13,7 @@ import Activities from './Components/Activities/Activities';
 import ActivitiesDetails from './Components/ActivitiesDetails/ActivitiesDetails';
 import UsefulInfo from './Components/UsefulInfo/UsefulInfo';
 import UsefulInfoDetails from './Components/UsefulInfoDetails/UsefulInfoDetails';
+import Contact from './Components/Contact/Contact';
 
 function App() {
 let routes = createBrowserRouter([
@@ -25,6 +26,7 @@ let routes = createBrowserRouter([
     {path:'activities/activityDetails',element:<ActivitiesDetails/>},
     {path:'usefulInfo',element:<UsefulInfo/>},
     {path:'usefulInfo/usefulInfoDetails',element:<UsefulInfoDetails/>},
+    {path:'contact',element:<Contact/>},
     {path:'*',element:<NotFound/>}
   ]}
 ])
