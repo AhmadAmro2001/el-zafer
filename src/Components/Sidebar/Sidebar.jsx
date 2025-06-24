@@ -37,7 +37,7 @@ export default function Sidebar() {
         </Link>
 
         {/* Get a Quote */}
-        <Link to="#" className="flex flex-col items-center my-2">
+        <Link to="/tracking" className="flex flex-col items-center my-2">
           <div className="w-12 h-12 border border-red-700 main-gradient text-white rounded-full flex items-center justify-center">
             <p className="text-[8px] text-center">GET A QUOTE</p>
           </div>

@@ -23,6 +23,7 @@ export default function Footer() {
               <h4 className="font-bold ps-1">DOOR DELIVERY</h4>
             </div>
           </div>
+          
           <div className="w-[50%] mt-8 md:mt-28  ">
             <div className="flex justify-between text-[3px] md:text-[16px] ">
               <h3 className="font-bold">For bussiness inquires :</h3>
@@ -51,6 +52,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
+          
           <div className="text-[4px] md:text-[16px] mt-4 ">
             <div className="flex">
               <h4 className="font-bold border-r border-red-700 pe-1 md:pe-2">
@@ -74,7 +76,11 @@ export default function Footer() {
               <h4 className="font-bold px-1 md:px-2">CONTAINER LINE</h4>
             </div>
           </div>
-          <div className="flex justify-end items-end mt-8 md:mt-28  text-[3px] md:text-[16px]">
+          <div className=" flex flex-col mt-1 text-[3px] md:mt-10 md:text-[16px] font-semibold">
+              <Link to="/terms">Terms and Conditions</Link>
+              <Link to="/privacy">Privacy Policy</Link>
+          </div>
+          <div className="flex justify-end items-end mt-5 md:mt-18  text-[3px] md:text-[16px]">
             <div
               className="flex bg-red-500 pe-6 md:pe-20 ps-2 md:ps-4 md:py-2 py-1 rounded-l-full text-white gap-2"
               style={{
@@ -110,51 +116,6 @@ export default function Footer() {
             </div>
           </div>
           
-          {/*
-         
-          
-          <div className="absolute top-[480px] right-0 flex">
-            <Link to="">
-              <div className="flex justify-center mx-2 w-10 h-10 items-center border border-red-700 main-gradient text-white rounded-full">
-                <i className="fa-solid fa-location-dot"></i>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="flex justify-center mx-2 w-10 h-10 items-center border border-red-700 main-gradient text-white rounded-full">
-                <i className="fa-brands fa-facebook-f"></i>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="flex justify-center mx-2 w-10 h-10 items-center border border-red-700 main-gradient text-white rounded-full">
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="flex justify-center mx-2 w-10 h-10 items-center border border-red-700 main-gradient text-white rounded-full">
-                <i className="fa-brands fa-instagram"></i>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="flex justify-center mx-2 w-10 h-10 items-center border border-red-700 main-gradient text-white rounded-full">
-                <i className="fa-brands fa-x-twitter"></i>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="flex justify-center mx-2 w-10 h-10 items-center border border-red-700 main-gradient text-white rounded-full">
-                <i className="fa-brands fa-youtube"></i>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="flex justify-center mx-2 w-10 h-10 items-center border border-red-700 main-gradient text-white rounded-full">
-                <i className="fa-brands fa-tiktok"></i>
-              </div>
-            </Link>
-          </div>
-          <div className="absolute top-[430px] right-0 w-[30%] ">
-            <div className=" rounded-lg overflow-hidden">
-              <img src={img2} alt="" className="w-full " />
-            </div>
-          </div> */}
         </div>
       </footer>
 

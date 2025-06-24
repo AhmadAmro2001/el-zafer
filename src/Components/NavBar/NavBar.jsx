@@ -91,7 +91,7 @@ export default function NavBar() {
             </li>
             <li>
               <NavLink
-                to="/activities"
+                to=""
                 className="block p-0"
                 // target="_blank"
                 rel="noopener noreferrer"
@@ -103,7 +103,7 @@ export default function NavBar() {
             </li>
             <li>
               <NavLink
-                to="/usefulInfo"
+                to=""
                 className="block p-0"
                 // target="_blank"
                 rel="noopener noreferrer"

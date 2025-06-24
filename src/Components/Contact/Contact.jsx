@@ -66,7 +66,7 @@ export default function Contact() {
       <div className="container mx-auto px-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
           {offices.map((office, index) => (
-            <div className="group">
+            <div key={index} className="group">
               <div className="text-left px-3 py-5 bg-[#0C71B9] rounded-2xl">
                 <h1 className="text-white mb-4 text-2xl font-semibold">
                   {office.title}
@@ -106,9 +106,9 @@ export default function Contact() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.6808550213113!2d39.161539074988355!3d21.520217170718094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cf8dfcf9cb37%3A0x63b832c960678f4c!2sAl-Zafer%20Wings%20Cargo%20Services%20Co.!5e0!3m2!1sen!2seg!4v1750468938552!5m2!1sen!2seg"
               className="w-full md:w-[600px] md:h-[741px] h-[400px]"
               style={{ border: "0", borderRadius: "20px" }}
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
           <div className="group bg-[#F2F2F2] rounded-2xl p-10">
