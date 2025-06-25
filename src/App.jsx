@@ -17,11 +17,13 @@ import Contact from './Components/Contact/Contact';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
 import PrivacyAndPolicy from './Components/PrivacyAndPolicy/PrivacyAndPolicy';
 import TrackingAndQoutaions from './Components/TrackingAndQoutaions/TrackingAndQoutaions';
+import HomeDetails from './Components/HomeDetails/HomeDetails';
 
 function App() {
 let routes = createBrowserRouter([
   {path:'',element:<Layout/>,children:[
     {index:true,element:<Home/>},
+    {path:'details',element:<HomeDetails/>},
     {path:'about',element:<AboutUs/>},
     {path:'services',element:<Services/>},
     {path:'services/serviceDetails',element:<ServiceDetails/>},

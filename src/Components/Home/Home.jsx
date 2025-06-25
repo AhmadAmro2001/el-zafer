@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import HomeAboutUs from "../HomeAboutUs/HomeAboutUs";
 import HomeOnlineServices from "../HomeOnlineServices/HomeOnlineServices";
 import HomeOurPartners from "../HomeOurPartners/HomeOurPartners";
+import HomeHyperLinks from "../HomeHyperLinks/HomeHyperLinks";
 
 
 export default function Home() {
@@ -33,9 +34,7 @@ export default function Home() {
         </div>
       </Slider>
       </div>
-      <div className="right-0  h-[200px] md:h-[600px]" >
-        <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623009/homeSec_xnllij.jpg" alt="" className="w-full h-full object-cover" />
-      </div>
+      <HomeHyperLinks/>
       <HomeAboutUs/>
       <HomeOnlineServices/>
       <HomeOurPartners/>

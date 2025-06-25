@@ -7,14 +7,14 @@ export default function NavBar() {
   useEffect(() => {}, []);
   return (
     <>
-      <nav className="bg-white shadow-md">
+      <nav className="bg-white  fixed top-0 z-50 left-0 right-0">
         <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex ">
             <img
               src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622979/el-zafer-logo_l6b5ly.png"
               alt="El Zafer Logo"
-              className="h-12   md:h-24"
+              className="h-20   md:h-32"
             />
           </Link>
 

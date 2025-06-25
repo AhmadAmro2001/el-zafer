@@ -3,8 +3,8 @@ import './AboutUsSlider.module.css'
 import Slider from "react-slick";
 export default function AboutUsSlider() {
   const settings = {
-    centerMode: true,
-    centerPadding: "10%",
+    // centerMode: true,
+    // centerPadding: "10%",
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -32,14 +32,14 @@ export default function AboutUsSlider() {
   return <>
       <div className="w-full py-20 overflow-x-hidden">
       <Slider {...settings}>
-        <div className='md:px-24 px-5'>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623008/homeAbout1_mxigqh.png" className='w-full md:h-[500px] h-[200px] object-cover rounded-xl mx-auto' alt="" />
+        <div className=' px-5'>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623008/homeAbout1_mxigqh.png" className='w-full md:h-[600px] h-[200px]  rounded-xl mx-auto' alt="" />
         </div>
-        <div className='md:px-24 px-5'>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622992/homeAbout2_hwk3er.png" className='w-full md:h-[500px] h-[200px] object-cover rounded-xl mx-auto' alt="" />
+        <div className=' px-5'>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622992/homeAbout2_hwk3er.png" className='w-full md:h-[600px] h-[200px]  rounded-xl mx-auto' alt="" />
         </div>
-        <div className='md:px-24 px-5 '>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749817388/aboutUsSlider3_tkxogs_zpmqqn.jpg" className='w-full md:h-[500px] h-[200px] object-cover rounded-xl mx-auto' alt="" />
+        <div className=' px-5 '>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749817388/aboutUsSlider3_tkxogs_zpmqqn.jpg" className='w-full md:h-[600px] h-[200px]  rounded-xl mx-auto' alt="" />
         </div>
       </Slider>
     </div>

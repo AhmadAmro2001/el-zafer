@@ -10,10 +10,10 @@ export default function HomeAboutUs() {
       <div className='container  mx-auto px-4 md:px-32 my-5 md:my-24'>
         <div className='row  '>
             <div className='  w-full md:w-[55%] text-left pe-0 my-16 md:pe-12 '>
-              <p className='text-red-700 pb-2'>About us</p>
-              <h1 className='text-2xl max-w-[90%] md:max-w-full'>Al Zafer Wings Cargo Services Co. is an international freight forwarding outfit headquartered in Jeddah,</h1>
-              <p className='max-w-[90%] md:max-w-full'>Which has represented excellence in the shipping, forwarding and logistics industry for almost four decades. We offer years of professional experience within the freight forwarding, logistics and commercial storage sectors.</p>
-              <Link to='/about' className='text-red-600 font-bold mt-5'>Read More...</Link>
+              <h1 className='text-red-700 text-3xl font-bold pb-2'>About us</h1>
+              <h1 className='max-w-[90%] md:max-w-full text-gray-800'>Al Zafer Wings Cargo Services Co. is an international freight forwarding outfit headquartered in Jeddah,</h1>
+              <p className='max-w-[90%] md:max-w-full mb-5 text-gray-800'>Which has represented excellence in the shipping, forwarding and logistics industry for almost four decades. We offer years of professional experience within the freight forwarding, logistics and commercial storage sectors.</p>
+              <Link to='/about' className='text-red-600 font-bold '>Read More <i className="fa-solid fa-arrow-right"></i></Link>
             </div>
             <div className='w-full h-[360px] relative  mx-5 md:w-[40%]'>
               <div className='w-[340px] h-[211px] absolute z-30 top-0 left-0 border rounded-md overflow-hidden '>

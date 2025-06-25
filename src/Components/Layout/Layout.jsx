@@ -9,7 +9,7 @@ export default function Layout() {
     <>
       
       <NavBar/>
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto mt-32 text-center">
         <div >
           <Sidebar/>
           <div >

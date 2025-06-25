@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       <footer
-        className="w-full text-[#063A60] p-2 md:p-8 bg-center bg-no-repeat bg-cover h-[160px]  md:h-[559px]"
+        className="w-full text-[#022b47] p-2 md:p-8 bg-center bg-no-repeat bg-cover h-[160px]  md:h-[559px]"
         style={{ backgroundImage: `url(https://res.cloudinary.com/djvzbznry/image/upload/v1749623047/footer-img_hozwhx.png)` }}
       >
         <div className="container mx-auto">

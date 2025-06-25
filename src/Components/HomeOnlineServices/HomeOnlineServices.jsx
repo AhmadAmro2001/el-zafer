@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import style from "./HomeOnlineServices.module.css";
 import { Link } from "react-router-dom";
 export default function HomeOnlineServices() {
-  const [data, setData] = useState();
-  useEffect(() => {}, []);
+  
   return (
     <>
       <div className="container  mx-auto px-4 md:px-32 my-24">
         <div className="text-left ">
-          <p className="text-red-700 pb-2">Online services</p>
-          <h1 className="text-2xl max-w-[90%] md:max-w-full">
+          <h1 className="text-red-700 text-3xl font-bold pb-2">Online services</h1>
+          <h1 className="max-w-[90%] md:max-w-full text-gray-800">
             You can conveniently manage all aspects of your shipping needs
             online
           </h1>
