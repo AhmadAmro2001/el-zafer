@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       <footer
-        className="w-full text-[#022b47] p-2 md:p-8 bg-center bg-no-repeat bg-cover h-[160px]  md:h-[559px]"
+        className="w-full text-[#022b47] p-2 md:p-10 bg-center bg-no-repeat bg-cover "
         style={{ backgroundImage: `url(https://res.cloudinary.com/djvzbznry/image/upload/v1749623047/footer-img_hozwhx.png)` }}
       >
         <div className="container mx-auto">
@@ -24,12 +24,12 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="w-[50%] mt-8 md:mt-28  ">
+          <div className="w-[50%] mt-8 md:mt-28 ">
             <div className="flex justify-between text-[3px] md:text-[16px] ">
               <h3 className="font-bold">For bussiness inquires :</h3>
-              <h3 className="font-bold me-1 md:me-28">Management</h3>
+              <h3 className="font-bold me-1 md:me-12">Management :</h3>
             </div>
-            <div className="flex  text-[3px] md:text-[12px]">
+            <div className="flex  text-[3px] md:text-[12px] text-left">
               <div className=" border-r pe-2  border-red-700">
                 <p>marketing3@alzafercargo.com</p>
                 <p>+966 55 086 9965</p>
@@ -76,7 +76,7 @@ export default function Footer() {
               <h4 className="font-bold px-1 md:px-2">CONTAINER LINE</h4>
             </div>
           </div>
-          <div className=" flex flex-col mt-1 text-[3px] md:mt-10 md:text-[16px] font-semibold">
+          <div className=" flex flex-col mt-1 text-[3px] md:mt-7 md:text-[16px] text-white text-left font-semibold">
               <Link to="/terms">Terms and Conditions</Link>
               <Link to="/privacy">Privacy Policy</Link>
           </div>

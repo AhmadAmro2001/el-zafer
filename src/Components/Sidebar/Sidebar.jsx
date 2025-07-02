@@ -8,12 +8,12 @@ export default function Sidebar() {
     <>
       {/* Sidebar */}
       <div
-        className={`fixed h-[100vh] md:h-screen top-0 transition-all duration-300 bg-white w-28 z-40 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed h-screen top-0 transition-all duration-300 bg-white md:w-[8%] w-[25%]  md:z-50 z-40 ${
+          isOpen ? "translate-x-0 " : "-translate-x-full md:translate-x-0 "
         } flex flex-col justify-center`}
       >
         {/* Home */}
-        <Link to="/" className="flex flex-col items-center my-2">
+        <Link to="/" className="flex flex-col items-center my-2 xl:my-[2px]">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-house" />
           </div>
@@ -21,7 +21,7 @@ export default function Sidebar() {
         </Link>
 
         {/* Services */}
-        <Link to="/services" className="flex flex-col items-center my-2">
+        <Link to="/services" className="flex flex-col items-center my-2 xl:my-[2px]">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-folder-open" />
           </div>
@@ -29,7 +29,7 @@ export default function Sidebar() {
         </Link>
 
         {/* Contact Us */}
-        <Link to="/contact" className="flex flex-col items-center my-2">
+        <Link to="/contact" className="flex flex-col items-center my-2 xl:my-[2px]">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-headphones" />
           </div>
@@ -37,15 +37,15 @@ export default function Sidebar() {
         </Link>
 
         {/* Get a Quote */}
-        <Link to="/tracking" className="flex flex-col items-center my-2">
+        <Link to="/tracking" className="flex flex-col items-center my-2 xl:my-[2px]">
           <div className="w-12 h-12 border border-red-700 main-gradient text-white rounded-full flex items-center justify-center">
-            <p className="text-[8px] text-center">GET A QUOTE</p>
+          <i className="fa-solid fa-dollar-sign"></i>
           </div>
           <p className="text-sm text-slate-600">Get a quote</p>
         </Link>
 
         {/* Blog */}
-        <Link to="#" className="flex flex-col items-center my-2">
+        <Link to="/tracking" className="flex flex-col items-center my-2 xl:my-[2px]">
           <div className="w-12 h-12 bg-white flex items-center justify-center">
             <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622971/google-map-icon_quche9.png" className="w-full" alt="Blog" />
           </div>
@@ -53,11 +53,12 @@ export default function Sidebar() {
         </Link>
       </div>
 
+
       
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-white text-red-700 font-semibold px-3 py-2 rounded-r shadow-lg transition-all duration-300 ${
-          isOpen ? "left-28" : "left-0"
+        className={`fixed left-0 top-1/2 -translate-y-1/2 z-50 bg-white md:hidden text-red-700 font-semibold px-3 py-2 rounded-r shadow-lg transition-all duration-300 ${
+          isOpen ? "left-[25%] " : "left-0"
         }`}
       >
         <i

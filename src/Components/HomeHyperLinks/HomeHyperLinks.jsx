@@ -16,7 +16,7 @@ export default function HomeHyperLinks() {
               to="details"
               state={{
                 title: "Sea Freight",
-                photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866670/sea_freight_er5wdg.png",
+                photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183629/Sea_Freight_vhhety.jpg",
                 desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
               }}
               className="md:w-[100px] w-[30px] mx-[2px] mt-10 md:mt-32"
@@ -31,7 +31,7 @@ export default function HomeHyperLinks() {
               to="details"
               state={{
                 title:"Air Frieght",
-                photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866667/air_freight_gdv88t.png",
+                photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183627/Air_Freight_e1su2q.jpg",
                 desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
               }}
               className="md:w-[100px] w-[30px] mx-[2px] md:mb-6"
@@ -43,55 +43,10 @@ export default function HomeHyperLinks() {
               />
             </Link>
             <Link
-             to="details"
-             state={{
-              title:"FCL & LCL",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/FCL_LCL_pywofn.png",
-              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
-
-             }}
-             className="md:w-[100px] w-[30px] mx-[2px] mt-10 md:mt-28">
-              <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/FCL_LCL_pywofn.png"
-                className="w-full h-full object-contain"
-                alt=""
-              />
-            </Link>
-            <Link
-            to="details"
-            state={{
-              title:"Marine Surveyor",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Marine_Surveyor_vlbjss.png",
-              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
-
-             }}
-            className="md:w-[100px] w-[30px] mx-[2px] mt-10 md:mt-32">
-              <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Marine_Surveyor_vlbjss.png"
-                className="w-full h-full object-contain"
-                alt=""
-              />
-            </Link>
-            <Link
-            to="details"
-            state={{
-              title:"Cargo Storage",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/Cargo_Storage_b0h33a.png",
-              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
-
-             }}
-            className="md:w-[100px] w-[30px] mx-[2px] ">
-              <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/Cargo_Storage_b0h33a.png"
-                className="w-full h-full object-contain"
-                alt=""
-              />
-            </Link>
-            <Link
             to="details"
             state={{
               title:"Land Transport",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/Land_Transport_karrsa.png",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183633/Land_Transport_mduddr.jpg",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
@@ -118,10 +73,40 @@ export default function HomeHyperLinks() {
               />
             </Link>
             <Link
+             to="details"
+             state={{
+              title:"FCL & LCL",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183634/LCL_FCL_mmboat.png",
+              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
+
+             }}
+             className="md:w-[100px] w-[30px] mx-[2px] mt-10 md:mt-28">
+              <img
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/FCL_LCL_pywofn.png"
+                className="w-full h-full object-contain"
+                alt=""
+              />
+            </Link>
+            <Link
+            to="details"
+            state={{
+              title:"Cargo Storage",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183633/Cargo_Storage_afuao9.jpg",
+              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
+
+             }}
+            className="md:w-[100px] w-[30px] mx-[2px] ">
+              <img
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/Cargo_Storage_b0h33a.png"
+                className="w-full h-full object-contain"
+                alt=""
+              />
+            </Link>
+            <Link
             to="details"
             state={{
               title:"NVOCC",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/nvocc_r074yc.png",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183633/NVOCC_joe7bk.jpg",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
@@ -143,6 +128,21 @@ export default function HomeHyperLinks() {
             className="md:w-[100px] w-[30px] mx-[2px] mt-10 md:mt-28 ">
               <img
                 src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866670/Project_cargo_qlp7bp.png"
+                className="w-full h-full object-contain"
+                alt=""
+              />
+            </Link>
+            <Link
+            to="details"
+            state={{
+              title:"Marine Surveyor",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Marine_Surveyor_vlbjss.png",
+              desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
+
+             }}
+            className="md:w-[100px] w-[30px] mx-[2px] mt-10 md:mt-32">
+              <img
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Marine_Surveyor_vlbjss.png"
                 className="w-full h-full object-contain"
                 alt=""
               />

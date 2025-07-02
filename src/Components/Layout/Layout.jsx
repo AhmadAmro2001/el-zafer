@@ -9,15 +9,16 @@ export default function Layout() {
     <>
       
       <NavBar/>
-      <div className="container mx-auto mt-32 text-center">
+      <div className="mt-32 text-center">
         <div >
           <Sidebar/>
-          <div >
+          <div className='md:w-[92%] w-full ml-auto'>
             <Outlet/>
+            <Footer/>
           </div>
         </div>
       </div>
-      <Footer/>
+      
     </>
   )
 }
