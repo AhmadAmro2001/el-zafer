@@ -3,8 +3,8 @@ import './AboutUsSlider.module.css'
 import Slider from "react-slick";
 export default function AboutUsSlider() {
   const settings = {
-    // centerMode: true,
-    // centerPadding: "10%",
+    centerMode: true,
+    centerPadding: "30%",
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -32,15 +32,22 @@ export default function AboutUsSlider() {
   return <>
       <div className="w-full py-20 overflow-x-hidden">
       <Slider {...settings}>
-        <div className=' px-5'>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623008/homeAbout1_mxigqh.png" className='w-full md:h-[600px] h-[200px]  rounded-xl mx-auto' alt="" />
+        <div className=' w-[200px] h-[350px] px-2'>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801515/Qatamesh_official_Photo_1.25x_irksx9.jpg" className=' w-full h-full rounded-xl mx-auto' alt="" />
         </div>
-        <div className=' px-5'>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622992/homeAbout2_hwk3er.png" className='w-full md:h-[600px] h-[200px]  rounded-xl mx-auto' alt="" />
+        <div className=' w-[200px] h-[350px] px-2'>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801507/Mohammad_Zafer_vfaxop.jpg" className=' w-full h-full rounded-xl mx-auto' alt="" />
         </div>
-        <div className=' px-5 '>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749817388/aboutUsSlider3_tkxogs_zpmqqn.jpg" className='w-full md:h-[600px] h-[200px]  rounded-xl mx-auto' alt="" />
+        <div className=' w-[200px] h-[350px] px-2'>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801507/IMG-20231003-WA0053_mrtdj4.jpg" className=' w-full h-full rounded-xl mx-auto' alt="" />
         </div>
+        <div className=' w-[200px] h-[350px] px-2'>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801506/Mishal_Photo_copy_rg4kjf.jpg" className=' w-full h-full rounded-xl mx-auto' alt="" />
+        </div>
+        <div className=' w-[200px] h-[350px] px-2'>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751800598/IMG-20231003-WA0071_oiub7v.jpg" className=' w-full h-full rounded-xl mx-auto' alt="" />
+        </div>
+        
       </Slider>
     </div>
     </>

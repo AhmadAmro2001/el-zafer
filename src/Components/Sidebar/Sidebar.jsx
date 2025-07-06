@@ -13,7 +13,7 @@ export default function Sidebar() {
         } flex flex-col justify-center`}
       >
         {/* Home */}
-        <Link to="/" className="flex flex-col items-center my-2 xl:my-[2px]">
+        <Link to="/" className="flex flex-col items-center my-2 ">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-house" />
           </div>
@@ -21,7 +21,7 @@ export default function Sidebar() {
         </Link>
 
         {/* Services */}
-        <Link to="/services" className="flex flex-col items-center my-2 xl:my-[2px]">
+        <Link to="/services" className="flex flex-col items-center my-2 ">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-folder-open" />
           </div>
@@ -29,7 +29,7 @@ export default function Sidebar() {
         </Link>
 
         {/* Contact Us */}
-        <Link to="/contact" className="flex flex-col items-center my-2 xl:my-[2px]">
+        <Link to="/contact" className="flex flex-col items-center my-2 ">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-headphones" />
           </div>
@@ -37,7 +37,7 @@ export default function Sidebar() {
         </Link>
 
         {/* Get a Quote */}
-        <Link to="/tracking" className="flex flex-col items-center my-2 xl:my-[2px]">
+        <Link to="/tracking" className="flex flex-col items-center my-2 ">
           <div className="w-12 h-12 border border-red-700 main-gradient text-white rounded-full flex items-center justify-center">
           <i className="fa-solid fa-dollar-sign"></i>
           </div>
@@ -45,11 +45,11 @@ export default function Sidebar() {
         </Link>
 
         {/* Blog */}
-        <Link to="/tracking" className="flex flex-col items-center my-2 xl:my-[2px]">
+        <Link to="/tracking" className="flex flex-col items-center my-2 ">
           <div className="w-12 h-12 bg-white flex items-center justify-center">
             <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622971/google-map-icon_quche9.png" className="w-full" alt="Blog" />
           </div>
-          <p className="text-sm text-slate-600">Blog</p>
+          <p className="text-sm text-slate-600">Track your shipment</p>
         </Link>
       </div>
 

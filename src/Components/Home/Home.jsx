@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {}, []);
   return (
     <>
-      <div className="w-full overflow-hidden">
+      <div className="w-full overflow-hidden md:mt-32 mt-24">
       <Slider {...settings}>
         <div>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622977/home1_jnnqzk.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />

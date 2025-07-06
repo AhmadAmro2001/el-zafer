@@ -7,11 +7,11 @@ export default function Footer() {
   return (
     <>
       <footer
-        className="w-full text-[#022b47] p-2 md:p-10 bg-center bg-no-repeat bg-cover "
+        className="w-full bg-center bg-no-repeat bg-cover p-2   h-[160px] md:h-[550px]"
         style={{ backgroundImage: `url(https://res.cloudinary.com/djvzbznry/image/upload/v1749623047/footer-img_hozwhx.png)` }}
       >
-        <div className="container mx-auto">
-          <div className="text-right text-[5px] md:text-[16px] ">
+        <div className="container mx-auto md:px-10 ">
+          <div className="text-right text-[5px] mb-2 md:text-[16px] md:pt-5">
             <h3 className="font-bold md:me-14 ">INTERNATIONAL FREIGHT FORWARDING</h3>
             <div className="flex justify-end ">
               <h4 className="font-bold border-r border-red-700 px-1">SEA</h4>
@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="w-[50%] mt-8 md:mt-28 ">
             <div className="flex justify-between text-[3px] md:text-[16px] ">
               <h3 className="font-bold">For bussiness inquires :</h3>
-              <h3 className="font-bold me-1 md:me-12">Management :</h3>
+              <h3 className="font-bold me-1 md:me-9">Management :</h3>
             </div>
             <div className="flex  text-[3px] md:text-[12px] text-left">
               <div className=" border-r pe-2  border-red-700">

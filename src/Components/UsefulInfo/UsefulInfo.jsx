@@ -66,11 +66,11 @@ export default function UsefulInfo() {
       }
     ]
   return <>
-      <div className='container mx-auto relative px-4 md:px-36 bg-[#095890]'>
-        <div className='flex flex-col justify-center items-center h-[200px] md:h-[682px]  text-white'>
-            <p className='md:mb-5 md:text-2xl text-[8px]'>Useful info.</p>
-            <h3 className='md:text-3xl text-[12px] md:mb-2'>We pride ourselves on our exceptional customer service, reliable delivery times, and competitive pricing, making us the go-to choice for all your shipping needs</h3>
-            <p className='md:mt-5 md:text-xl text-[8px]'> Whether you are shipping domestically or internationally.</p>
+      <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
+        <div className='flex flex-col justify-center items-center  md:h-screen h-[250px] '>
+            <h1 className='md:mb-5 md:text-6xl text-[24px] mb-3 font-bold'>Useful info.</h1>
+            <h3 className='md:text-xl text-[10px] md:mb-2 '> We pride ourselves on our exceptional customer service, reliable delivery times, and competitive pricing, making us the go-to choice for all your shipping needs</h3>
+            <p className='md:mt-5 md:text-lg text-[8px] text-center '>Whether you are shipping domestically or internationally.</p>
         </div>
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[495px] w-[200px] md:h-[495px] h-[200px] opacity-15 border rounded-full '>
         </div>
@@ -86,9 +86,7 @@ export default function UsefulInfo() {
         </div>
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[40px] w-[20px] md:h-[40px] h-[20px]  opacity-25  bg-white rounded-full '>
         </div>
-        <div className='w-[20px] h-[10px] md:w-[66px] md:h-[33px] absolute md:bottom-32 bottom-6'>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622969/arrow_ivw54b.png" alt="" />
-        </div>
+        
       </div>
 
       <UsefulInfoleft data={data[0]}/>

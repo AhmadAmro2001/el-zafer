@@ -5,11 +5,11 @@ export default function Services() {
     const [data, setData] = useState()
     useEffect(() => {}, [])
   return <>
-      <div className='container mx-auto relative px-4 md:px-36 bg-[#095890]'>
-        <div className='flex flex-col justify-center items-center h-[200px] md:h-[682px]  text-white'>
-            <p className='md:mb-5 md:text-2xl text-[8px]'>Services</p>
-            <h3 className='md:text-3xl text-[12px] md:mb-2'>We are committed to providing top-notch services that exceed our customers' expectations</h3>
-            <p className='md:mt-5 md:text-xl text-[8px]'> Ensuring that their packages are handled with the utmost care and delivered in a timely manner to their desired destination.</p>
+      <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
+        <div className='flex flex-col justify-center items-center  md:h-screen h-[250px] '>
+            <h1 className='md:mb-5 md:text-6xl text-[24px] mb-3 font-bold'>Services</h1>
+            <h3 className='md:text-xl text-[10px] md:mb-2 '>We are committed to providing top-notch services that exceed our customers' expectations</h3>
+            <p className='md:mt-5 md:text-lg text-[8px] text-center '> Ensuring that their packages are handled with the utmost care and delivered in a timely manner to their desired destination.</p>
         </div>
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[495px] w-[200px] md:h-[495px] h-[200px] opacity-15 border rounded-full '>
         </div>
@@ -25,9 +25,7 @@ export default function Services() {
         </div>
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[40px] w-[20px] md:h-[40px] h-[20px]  opacity-25  bg-white rounded-full '>
         </div>
-        <div className='w-[20px] h-[10px] md:w-[66px] md:h-[33px] absolute md:bottom-32 bottom-6'>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622969/arrow_ivw54b.png" alt="" />
-        </div>
+        
       </div>
       {/* left */}
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:pt-14'>

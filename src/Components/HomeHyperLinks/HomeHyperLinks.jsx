@@ -37,7 +37,7 @@ export default function HomeHyperLinks() {
               className="md:w-[100px] w-[30px] mx-[2px] md:mb-6"
             >
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866667/air_freight_gdv88t.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1751684572/air_freight_2_a5iqjx.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -61,7 +61,7 @@ export default function HomeHyperLinks() {
             to="details"
             state={{
               title:"Customs Clearance",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866667/Customs_Clearance_xvxj9u.png",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751685023/custom_clearance_pj4q0y.jpg",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
@@ -121,7 +121,7 @@ export default function HomeHyperLinks() {
             to="details"
             state={{
               title:"Project Cargo",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866670/Project_cargo_qlp7bp.png",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751685073/project_cargo_pwj186.jpg",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
@@ -136,7 +136,7 @@ export default function HomeHyperLinks() {
             to="details"
             state={{
               title:"Marine Surveyor",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Marine_Surveyor_vlbjss.png",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751685073/marine_surveyor_sihzn7.jpg",
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
