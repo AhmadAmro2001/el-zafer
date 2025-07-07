@@ -12,7 +12,7 @@ return <>
           <h1 className='md:text-4xl text-[12px] mb-5 font-bold'>{title}</h1>
           <p className='md:text-[16px] text-[8px] max-w-[700px] text-gray-800'>{desc}</p>
         </div>
-        <div className='md:w-[500px] h-[400px] w-[80px]  mt-8 md:mt-0  mx-auto rounded-lg overflow-hidden'>
+        <div className='md:w-[500px] md:h-[400px] h-[250px] w-[250px]  mt-8 md:mt-0  mx-auto rounded-lg overflow-hidden'>
             <img
               src={photo}
               className="w-full  h-full"

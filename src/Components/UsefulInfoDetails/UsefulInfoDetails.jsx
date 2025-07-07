@@ -7,7 +7,7 @@ export default function UsefulInfoDetails() {
 
   return (
     <>
-      <div className="relative mx-auto my-10 md:my-24">
+      <div className="relative mx-auto mt-24 mb-10 md:mt-44">
         <div className="md:w-[1053px] md:h-[329px] w-[250px] h-[150px] rounded-xl overflow-hidden z-10 relative mx-auto">
           <img src={`${photo}`} alt="" className="w-full h-full object-cover" />
         </div>
