@@ -37,11 +37,11 @@ export default function Sidebar() {
         </Link>
 
         {/* Get a Quote */}
-        <Link to="/tracking" className="flex flex-col items-center my-2 ">
+        <Link to="/qoutation" className="flex flex-col items-center my-2 ">
           <div className="w-12 h-12 border border-red-700 main-gradient text-white rounded-full flex items-center justify-center">
           <i className="fa-solid fa-dollar-sign"></i>
           </div>
-          <p className="text-sm text-slate-600">Get a quote</p>
+          <p className="text-sm text-slate-600">Get a Quote</p>
         </Link>
 
         {/* Blog */}
@@ -49,7 +49,7 @@ export default function Sidebar() {
           <div className="w-12 h-12 bg-white flex items-center justify-center">
             <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622971/google-map-icon_quche9.png" className="w-full" alt="Blog" />
           </div>
-          <p className="text-sm text-slate-600">Track your shipment</p>
+          <p className="text-sm text-slate-600 max-w-[100px]">Shipment Tracking</p>
         </Link>
       </div>
 

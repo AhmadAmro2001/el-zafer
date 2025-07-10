@@ -2,12 +2,24 @@ import React, { useEffect, useState } from "react";
 import style from "./Footer.module.css";
 import { Link } from "react-router-dom";
 export default function Footer() {
-  const [data, setData] = useState();
-  useEffect(() => {}, []);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  useEffect(() => {
+    const checkZoom = ()=>{
+      const zoom = window.outerWidth / window.innerWidth;
+      setZoomLevel(zoom);
+    }
+    checkZoom();
+    window.addEventListener("resize", checkZoom);
+    return () => {
+      window.removeEventListener("resize", checkZoom);
+    };
+  }, []);
+  console.log(zoomLevel);
+  
   return (
     <>
       <footer
-        className="w-full bg-center bg-no-repeat bg-cover p-2   h-[160px] md:h-[550px]"
+        className="w-full bg-center bg-no-repeat bg-cover p-2   h-[160px] md:h-[580px]"
         style={{ backgroundImage: `url(https://res.cloudinary.com/djvzbznry/image/upload/v1749623047/footer-img_hozwhx.png)` }}
       >
         <div className="container mx-auto md:px-10 ">
@@ -27,7 +39,9 @@ export default function Footer() {
           <div className="w-[50%] mt-8 md:mt-28 ">
             <div className="flex justify-between text-[3px] md:text-[16px] ">
               <h3 className="font-bold">For bussiness inquires :</h3>
-              <h3 className="font-bold me-1 md:me-9">Management :</h3>
+              <h3 className="font-bold me-1 md:me-12 "
+              
+              >Management :</h3>
             </div>
             <div className="flex  text-[3px] md:text-[12px] text-left">
               <div className=" border-r pe-2  border-red-700">

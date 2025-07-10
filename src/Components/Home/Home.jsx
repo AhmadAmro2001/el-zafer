@@ -9,19 +9,20 @@ import HomeHyperLinks from "../HomeHyperLinks/HomeHyperLinks";
 
 export default function Home() {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,              
-    autoplaySpeed: 2000,  
+    autoplaySpeed: 2000,
+    pauseOnHover: false,     
   };
   const [data, setData] = useState();
   useEffect(() => {}, []);
   return (
     <>
-      <div className="w-full overflow-hidden md:mt-32 mt-24">
+      <div className=" md:me-14 overflow-hidden md:mt-32 mt-24 ">
       <Slider {...settings}>
         <div>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622977/home1_jnnqzk.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
@@ -29,9 +30,7 @@ export default function Home() {
         <div>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623005/home2_xiqeiv.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
-        <div>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623075/home3_qnlblh.png" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
-        </div>
+        
       </Slider>
       </div>
       <HomeHyperLinks/>

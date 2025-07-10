@@ -61,7 +61,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
           {offices.map((office, index) => (
             <div key={index} className="group">
-              <div className="text-left px-3 py-5 bg-[#0C71B9] rounded-2xl">
+              <div className="text-left px-8 py-8 bg-[#0C71B9] rounded-2xl">
                 <h1 className="text-white mb-4 text-2xl font-semibold">
                   {office.title}
                 </h1>
@@ -107,7 +107,7 @@ export default function Contact() {
           </div>
           <div className="group bg-[#F2F2F2] rounded-2xl p-10">
             <p className=" font-semibold text-[#E11F25] mb-2">Contact Us</p>
-            <h1 className="text-2xl font-semibold mb-3">Request A Quote</h1>
+            <h1 className="text-2xl font-semibold mb-3">Send Us Message</h1>
 
             <form action="">
               <div className="flex flex-col gap-2 ">

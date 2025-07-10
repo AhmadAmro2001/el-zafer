@@ -31,7 +31,7 @@ export default function TrackingAndQoutaions() {
       </div>
       <div className='container mx-auto px-4 my-5 md:my-10 md:px-24'>
       <Tracking/>
-      <Qoutations/>
+      
     </div>
     </>
 }

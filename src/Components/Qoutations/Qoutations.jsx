@@ -24,15 +24,37 @@ export default function Qoutations() {
   }
   return (
     <>
+    <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
+        <div className='flex flex-col justify-center items-center  md:h-screen h-[250px] '>
+            <h1 className='md:mb-5 md:text-6xl text-[24px] mb-3 font-bold'>Request a Qoutation</h1>
+            <h3 className='md:text-xl text-[10px] md:mb-2 '>Send us a quote and we will response as soon as possible</h3>
+        </div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[495px] w-[200px] md:h-[495px] h-[200px] opacity-15 border rounded-full '>
+        </div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[425px] w-[160px] md:h-[425px] h-[160px]  opacity-15  border rounded-full '>
+        </div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[319px] w-[120px] md:h-[319px] h-[120px]  opacity-15  border rounded-full '>
+        </div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[225px] w-[80px] md:h-[225px] h-[80px]  opacity-15  border rounded-full '>
+        </div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[120px] w-[50px] md:h-[120px] h-[50px]  opacity-15  bg-white rounded-full '>
+        </div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[75px] w-[35px] md:h-[75px] h-[35px]  opacity-20  bg-white rounded-full '>
+        </div>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[40px] w-[20px] md:h-[40px] h-[20px]  opacity-25  bg-white rounded-full '>
+        </div>
+        
+      </div>
+      <div className="container mx-auto px-4 my-5 md:my-10 md:px-24">
       <h1 className="text-3xl font-bold text-left md:my-12 my-6">
         Request a Qoutation
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+      <div className="grid grid-cols-1  gap-6 text-white">
         {qoutationsArray.map((item, index) => (
           <div
             key={index}
             onClick={() => openModal(item)}
-            className="flex justify-between items-center p-8 rounded-xl bg-[#0C71B9] "
+            className="flex justify-between items-center w-full md:w-1/2  p-8 rounded-xl bg-[#0C71B9] "
           >
             <div>
               <p>{item.title}</p>
@@ -297,6 +319,8 @@ export default function Qoutations() {
                   </div>
                 </div>
               )}
+      </div>
+      
     </>
   );
 }

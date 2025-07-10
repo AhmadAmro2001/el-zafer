@@ -18,7 +18,7 @@ import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditio
 import PrivacyAndPolicy from './Components/PrivacyAndPolicy/PrivacyAndPolicy';
 import TrackingAndQoutaions from './Components/TrackingAndQoutaions/TrackingAndQoutaions';
 import HomeDetails from './Components/HomeDetails/HomeDetails';
-
+import Qoutations from './Components/Qoutations/Qoutations';
 function App() {
 let routes = createBrowserRouter([
   {path:'',element:<Layout/>,children:[
@@ -35,6 +35,7 @@ let routes = createBrowserRouter([
     {path:'privacy',element:<PrivacyAndPolicy/>},
     {path:'terms',element:<TermsAndConditions/>},
     {path:'tracking',element:<TrackingAndQoutaions/>},
+    {path:'qoutation',element:<Qoutations/>},
     {path:'*',element:<NotFound/>}
   ]}
 ])
