@@ -31,8 +31,8 @@ export default function AboutUsWhy() {
           <div className='absolute bottom-0 rounded-3xl overflow-hidden left-14 md:left-0 md:w-[319px] md:h-[179px] w-[120px] h-[70px]'>
             <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751800598/IMG-20231003-WA0071_oiub7v.jpg" className='w-full h-full' alt="" />
           </div>
-          <div className='absolute md:w-[57px] md:h-[57px] w-[10px] h-[10px] rounded-full bg-black md:top-16 top-6 md:left-10 left-24'>
-          </div>
+          {/* <div className='absolute md:w-[57px] md:h-[57px] w-[10px] h-[10px] rounded-full bg-black md:top-16 top-6 md:left-10 left-24'>
+          </div> */}
         </div>
         </div>
       </div>

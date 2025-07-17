@@ -25,10 +25,22 @@ export default function Home() {
       <div className=" md:me-14 overflow-hidden md:mt-32 mt-24 ">
       <Slider {...settings}>
         <div>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622977/home1_jnnqzk.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752680806/WhatsApp_Image_2025-07-16_at_18.26.46_fb975301_c5mb9m.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         <div>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623005/home2_xiqeiv.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679583/container-2921882_ease8m.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679557/Container_ship_2048_1152_rdax_65_vir4rd.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679556/WhatsApp_Image_2025-07-16_at_13.39.44_fbdf5fa4_mp1drq.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679556/AntonovAN225worldslargestaircraftbeingloadedonasunnyday_qt2awg.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         
       </Slider>

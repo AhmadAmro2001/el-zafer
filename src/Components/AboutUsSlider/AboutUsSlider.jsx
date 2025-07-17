@@ -57,7 +57,7 @@ export default function AboutUsSlider() {
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752136969/Qatamesh_official_Photo_1.25x_-_Copy_vsgwh5.jpg" className=' w-full h-full rounded-xl object-contain mx-auto' alt="" />
         </div>
         <div className=' h-[300px] px-5'>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801507/Mohammad_Zafer_vfaxop.jpg" className=' w-full h-full rounded-xl object-contain mx-auto' alt="" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679562/Layer_0_rszzrm.png" className=' w-full h-full rounded-xl object-cover mx-auto' alt="" />
         </div>
         <div className=' h-[300px] px-5'>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801507/IMG-20231003-WA0053_mrtdj4.jpg" className=' w-full h-full rounded-xl  mx-auto' alt="" />

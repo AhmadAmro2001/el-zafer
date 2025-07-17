@@ -82,7 +82,7 @@ export default function HomeHyperLinks() {
              }}
              className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-28">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1752136967/FCL_LCL_2_fa3ryw.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679555/FCL_LCL_vshlx2.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
