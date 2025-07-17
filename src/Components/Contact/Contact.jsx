@@ -8,27 +8,27 @@ export default function Contact() {
       title: "Jeddah Office",
       location:
         "Al Maghreb Al Arabi Street, Al Hamra District Unit No. 1, Building No. 3202 Jeddah 23212 – 7539, Saudi Arabia",
-      tel: "00966 12 664 6888",
+      tel: "+966 12 664 6888",
       tollFree: "toll free: 800 12 8888 1",
-      fax: "00966 12 661 1043",
+      fax: "+966 12 661 1043",
       contactPerson: "Mahmoud S. Qatamesh",
     },
     {
       title: "Dammam",
       location:
         "Al Zafer Cargo Services P.O. Box 3971, Dammam – 31481, Saudi Arabia.",
-      tel: "00966 13 827 9081 / 827 9085 / 827 9102",
+      tel: "+966 13 827 9081 / 827 9085",
       tollFree: "E-Mail:Alzafer@gmail.com",
-      fax: "00966 13 827 8295",
+      fax: "+966 13 8278295",
       contactPerson: "Mr. Saukath / Mr. Rasheed",
     },
     {
       title: "Riyadh",
       location:
         "Al Zafer Cargo Services P.O. Box 6048 , Riyadh 1142, Saudi Arabia.",
-      tel: "00966 11 347 88849",
+      tel: "+966 11 478 8849",
       tollFree: "E-Mail: Alzafer@gmail.com",
-      fax: "00966 11 478 11881",
+      fax: "+966 11 478 1188",
       contactPerson: "Mr. Nishat Khan / Mr. Saeed A. Hashimi",
     },
   ];
@@ -61,7 +61,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
           {offices.map((office, index) => (
             <div key={index} className="group">
-              <div className="text-left px-8 py-8 bg-[#0C71B9] rounded-2xl">
+              <div className="text-left px-8 py-10 bg-[#0C71B9] rounded-2xl">
                 <h1 className="text-white mb-4 text-2xl font-semibold">
                   {office.title}
                 </h1>
