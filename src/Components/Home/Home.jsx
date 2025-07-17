@@ -37,9 +37,6 @@ export default function Home() {
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679557/Container_ship_2048_1152_rdax_65_vir4rd.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         <div>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679556/WhatsApp_Image_2025-07-16_at_13.39.44_fbdf5fa4_mp1drq.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
-        </div>
-        <div>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679556/AntonovAN225worldslargestaircraftbeingloadedonasunnyday_qt2awg.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         
