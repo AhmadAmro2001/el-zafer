@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./Contact.module.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import axios from "axios";
 export default function Contact() {
   const offices = [
     {
@@ -32,6 +33,40 @@ export default function Contact() {
       contactPerson: "Mr. Nishat Khan / Mr. Saeed A. Hashimi",
     },
   ];
+  const [formData, setFormData] = useState({
+    name:'',
+    email:'',
+    phoneNumber:'',
+    message:'',
+  });
+  const handleChange = (e)=>{
+    setFormData(prev =>({
+      ...prev,
+      [e.target.name]:e.target.value
+    }))
+  }
+  const handlePhoneChange = (value) => {
+    setFormData(prev => ({
+      ...prev,
+      phoneNumber: value
+    }));
+  };
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+    console.log(formData);
+    
+    try {
+      await axios.post('https://el-zafer-backend.onrender.com/quotes/send-quote',formData);
+      setFormData({
+        name:'',
+        email:'',
+        phoneNumber:'',
+        message:'',
+      });
+    } catch (error) {
+      console.log("error sending message",error);
+    }
+  }
   return (
     <>
       <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
@@ -109,23 +144,29 @@ export default function Contact() {
             <p className=" font-semibold text-[#E11F25] mb-2">Contact Us</p>
             <h1 className="text-2xl font-semibold mb-3">Send Us Message</h1>
 
-            <form action="">
+            <form onSubmit={handleSubmit} action="">
               <div className="flex flex-col gap-2 ">
                 <label className="text-left font-semibold" htmlFor="name">
                   Name
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Name"
                   className="border border-gray-300 rounded-md p-2"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
                 <label className="text-left font-semibold" htmlFor="email">
                   Email
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
                   className="border border-gray-300 rounded-md p-2"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
                 <label className="text-left font-semibold" htmlFor="phone">
                   Phone number
@@ -140,17 +181,21 @@ export default function Contact() {
                   containerStyle={{ width: "100%" }}
                   inputStyle={{ width: "100%" }}
                   buttonStyle={{ width: "45px" }}
+                  value={formData.phoneNumber}
+                  onChange={handlePhoneChange}
                 />
                 <label className="text-left font-semibold" htmlFor="message">
                   Message
                 </label>
                 <textarea
-                  name=""
+                  name="message"
                   id=""
                   cols="30"
                   rows="10"
                   placeholder="write your message here"
                   className="border border-gray-300 rounded-md p-2"
+                  value={formData.message}
+                  onChange={handleChange}
                 ></textarea>
                 <button
                   type="submit"

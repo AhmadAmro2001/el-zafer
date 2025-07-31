@@ -39,9 +39,9 @@ export default function ServiceDetails() {
 
   return (
     <>
-      <div className="flex flex-col  justify-between container mx-auto px-14 relative py-2 md:mt-40 mt-24 md:py-4 md:pt-14">
-        <div className="md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute  md:left-24 md:top-6 rounded-se-[150px] bg-[#0C71B9]"></div>
-        <div className="absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-40 top-10 md:left-96 md:top-14"></div>
+      <div className="flex flex-col  justify-between container mx-auto px-14 relative py-2 md:mt-32 mt-24 md:py-4 md:pt-14">
+        {/* <div className="md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute  md:left-24 md:top-6 rounded-se-[150px] bg-[#0C71B9]"></div>
+        <div className="absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-40 top-10 md:left-96 md:top-14"></div> */}
 
         <div className="md:w-[1030px] md:h-[437px] w-[250px] h-[150px] rounded-3xl overflow-hidden mx-auto mt-14 md:my-12 z-10">
           <img
