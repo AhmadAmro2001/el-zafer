@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 export default function AdminLogin() {
-  const [data, setData] = useState();
+  
   let [apiError,setApiError] = useState(null);
   let [isLoading, setIsLoading] = useState(null)
   let navigate = useNavigate()
@@ -84,7 +84,11 @@ export default function AdminLogin() {
                 </div> : null}
               </div>
           <button type="submit" className="text-2xl font-bold main-gradient w-[50%] mx-auto text-white rounded-full p-5 mt-5">
-            Submit
+          {isLoading ? (
+              <i className="fa fa-spinner fa-spin mx-3 text-white text-2xl"></i>
+            ) : (
+              "Submit"
+            )}
           </button>
         </form>
       </div>
