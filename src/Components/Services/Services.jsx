@@ -29,10 +29,6 @@ export default function Services() {
       </div>
       {/* left */}
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:pt-14'>
-      <div className='md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute left-20 md:left-12 rounded-se-[150px] bg-[#0C71B9]'>
-      </div>
-      <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-44 top-12 md:left-72 md:top-16'>
-      </div>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full object-cover' alt="" />
@@ -55,10 +51,7 @@ export default function Services() {
       </div>
       {/* right */}
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:py-8'>
-      <div className='md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute right-28 md:right-12 rounded-ss-[150px] bg-[#0C71B9]'>
-      </div>
-      <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white right-52 top-12 md:right-72 md:top-16'>
-      </div>
+      
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10 block md:hidden'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services2_sviq4f.png" className='w-full h-full' alt="" />
@@ -84,10 +77,6 @@ export default function Services() {
       </div>
       {/* left 2 */}
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:py-8'>
-      <div className='md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute left-20 md:left-12 rounded-se-[150px] bg-[#0C71B9]'>
-      </div>
-      <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-44 top-12 md:left-72 md:top-16'>
-      </div>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045791/services3_yu0iqa.jpg" className='w-full h-full object-cover' alt="" />
@@ -110,10 +99,6 @@ export default function Services() {
       </div>
       {/* right 2*/}
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:py-8'>
-      <div className='md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute right-28 md:right-12 rounded-ss-[150px] bg-[#0C71B9]'>
-      </div>
-      <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white right-52 top-12 md:right-72 md:top-16'>
-      </div>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10 block md:hidden'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services4_xmblnl.png" className='w-full h-full' alt="" />
@@ -139,10 +124,6 @@ export default function Services() {
       </div>
       {/* left 3 */}
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative pb-8 pt-4 md:pb-12'>
-      <div className='md:w-[240px] md:h-[240px] w-[100px] h-[100px]  absolute left-20 md:left-12 rounded-se-[150px] bg-[#0C71B9]'>
-      </div>
-      <div className='absolute w-[15px] h-[15px] md:w-[34px] md:h-[34px] rounded-full border border-black bg-white left-44 top-12 md:left-72 md:top-16'>
-      </div>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045803/services5_dsriar.png" className='w-full h-full object-cover' alt="" />

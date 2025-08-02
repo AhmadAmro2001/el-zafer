@@ -15,11 +15,10 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,              
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     pauseOnHover: false,     
   };
-  const [data, setData] = useState();
-  useEffect(() => {}, []);
+  
   return (
     <>
       <div className=" md:me-14 overflow-hidden md:mt-32 mt-24 ">

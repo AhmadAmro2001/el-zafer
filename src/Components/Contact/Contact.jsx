@@ -4,15 +4,15 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import axios from "axios";
 export default function Contact() {
+  const [isloading, setIsLoading] = useState(false);
   const offices = [
     {
       title: "Jeddah Office",
       location:
-        "Al Maghreb Al Arabi Street, Al Hamra District Unit No. 1, Building No. 3202 Jeddah 23212 – 7539, Saudi Arabia",
+        "Al Maghreb Al Arabi Street, Al Hamra District Unit No. 1, Building No. 3202 Jeddah 23212–7539, Saudi Arabia",
       tel: "+966 12 664 6888",
       tollFree: "toll free: 800 12 8888 1",
-      fax: "+966 12 661 1043",
-      contactPerson: "Mahmoud S. Qatamesh",
+      fax: "+966 12 661 1043"
     },
     {
       title: "Dammam",
@@ -20,8 +20,7 @@ export default function Contact() {
         "Al Zafer Cargo Services P.O. Box 3971, Dammam – 31481, Saudi Arabia.",
       tel: "+966 13 827 9081 / 827 9085",
       tollFree: "E-Mail:Alzafer@gmail.com",
-      fax: "+966 13 8278295",
-      contactPerson: "Mr. Saukath / Mr. Rasheed",
+      fax: "+966 13 8278295"
     },
     {
       title: "Riyadh",
@@ -29,8 +28,7 @@ export default function Contact() {
         "Al Zafer Cargo Services P.O. Box 6048 , Riyadh 1142, Saudi Arabia.",
       tel: "+966 11 478 8849",
       tollFree: "E-Mail: Alzafer@gmail.com",
-      fax: "+966 11 478 1188",
-      contactPerson: "Mr. Nishat Khan / Mr. Saeed A. Hashimi",
+      fax: "+966 11 478 1188"
     },
   ];
   const [formData, setFormData] = useState({
@@ -56,6 +54,7 @@ export default function Contact() {
     console.log(formData);
     
     try {
+      setIsLoading(true);
       await axios.post('https://el-zafer-backend.onrender.com/quotes/send-quote',formData);
       setFormData({
         name:'',
@@ -63,8 +62,10 @@ export default function Contact() {
         phoneNumber:'',
         message:'',
       });
+      setIsLoading(false);
     } catch (error) {
       console.log("error sending message",error);
+      setIsLoading(false);
     }
   }
   return (
@@ -116,12 +117,7 @@ export default function Contact() {
                   <i className="fa-solid fa-print text-white text-2xl"></i>
                   <p className="text-white text-sm">Fax:{office.fax}</p>
                 </div>
-                <div className="flex items-center gap-4 mx-5 my-5">
-                  <i className="fa-solid fa-user text-white text-2xl"></i>
-                  <p className="text-white text-sm">
-                    Contact Person: {office.contactPerson}
-                  </p>
-                </div>
+                
               </div>
             </div>
           ))}
@@ -201,7 +197,7 @@ export default function Contact() {
                   type="submit"
                   className="bg-[#0C71B9] mt-5 text-white py-2 px-4 w-48 mx-auto rounded-md"
                 >
-                  Send
+                  {isloading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Send"}
                 </button>
               </div>
             </form>

@@ -11,7 +11,7 @@ export default function ServiceDetails() {
 
   const process = [
     {
-      title: "Booking",
+      title: "BOOKING",
       description:
         "THE SHIPPER BOOKS THE  LCL SERVICE WITH THE  FREIGHT FORWARDER,  PROVIDING DETAILS  ABOUT THE CARGO,  DESTINATION, AND  REQUIRED DELIVERY",
     },
