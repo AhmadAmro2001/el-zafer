@@ -323,7 +323,7 @@ export default function Qoutations() {
                         Required Services:
                       </label>
                       <div className="flex md:flex-row flex-col gap-2 items-center">
-                        {["Clearness", "Transportation", "Freight"].map(
+                        {["Clearance", "Transportation", "Freight"].map(
                           (service) => (
                             <label
                               className="inline-flex items-center"
