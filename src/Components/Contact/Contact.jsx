@@ -7,7 +7,7 @@ export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
   const offices = [
     {
-      title: "Jeddah Office",
+      title: "Jeddah Head Office",
       location:
         "Al Maghreb Al Arabi Street, Al Hamra District Unit No. 1, Building No. 3202 Jeddah 23212–7539, Saudi Arabia",
       tel: "+966 12 664 6888",
@@ -19,16 +19,16 @@ export default function Contact() {
       location:
         "Al Zafer Cargo Services P.O. Box 3971, Dammam – 31481, Saudi Arabia.",
       tel: "+966 13 827 9081 / 827 9085",
-      tollFree: "E-Mail:Alzafer@gmail.com",
+      tollFree: "E-Mail:qatamesh@alzafercargo.com",
       fax: "+966 13 8278295"
     },
     {
       title: "Riyadh",
       location:
         "Al Zafer Cargo Services P.O. Box 6048 , Riyadh 1142, Saudi Arabia.",
-      tel: "+966 11 478 8849",
-      tollFree: "E-Mail: Alzafer@gmail.com",
-      fax: "+966 11 478 1188"
+      tel: "+966 14 78 8849",
+      tollFree: "E-Mail:qatamesh@alzafercargo.com",
+      fax: "+966 14 78 1188"
     },
   ];
   const [formData, setFormData] = useState({

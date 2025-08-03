@@ -27,6 +27,9 @@ export default function Home() {
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752680806/WhatsApp_Image_2025-07-16_at_18.26.46_fb975301_c5mb9m.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         <div>
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1754240921/Logistic-Business-scaled_cm4rcb.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+        </div>
+        <div>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623005/home2_xiqeiv.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         <div>

@@ -22,7 +22,7 @@ export default function HomeHyperLinks() {
               className="md:w-[100px] w-[30px] mx-[2px] hover:scale-110 transition-all duration-300 overflow-hidden mt-10 md:mt-32"
             >
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866670/sea_freight_er5wdg.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239913/sea_freight_qewyvy.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -34,10 +34,10 @@ export default function HomeHyperLinks() {
                 photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183627/Air_Freight_e1su2q.jpg",
                 desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
               }}
-              className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] md:mb-6"
+              className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-32"
             >
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1751684572/air_freight_2_a5iqjx.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239912/air_freight_cgjhlk.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -50,9 +50,9 @@ export default function HomeHyperLinks() {
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
-            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-28">
+            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-32">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/Land_Transport_karrsa.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239913/Land_Transport_cbtalq.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -65,9 +65,9 @@ export default function HomeHyperLinks() {
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
-            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-28">
+            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-32">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866667/Customs_Clearance_xvxj9u.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239913/Customs_Clearance_tgosrq.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -80,9 +80,9 @@ export default function HomeHyperLinks() {
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
-             className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-28">
+             className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-32">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679555/FCL_LCL_vshlx2.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239913/FCL_LCL_wkn9ub.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -95,9 +95,9 @@ export default function HomeHyperLinks() {
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
-            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] ">
+            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-32">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866668/Cargo_Storage_b0h33a.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239913/Cargo_Storage_c7ccsv.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -110,9 +110,9 @@ export default function HomeHyperLinks() {
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
-            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] ">
+            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-32">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/nvocc_r074yc.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239913/nvocc_oxywhf.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -125,9 +125,9 @@ export default function HomeHyperLinks() {
               desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
 
              }}
-            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-28 ">
+            className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden mx-[2px] mt-10 md:mt-32">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866670/Project_cargo_qlp7bp.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239912/Project_cargo_ryz3cc.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
@@ -142,7 +142,7 @@ export default function HomeHyperLinks() {
              }}
             className="md:w-[100px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden   mx-[2px] mt-10 md:mt-32">
               <img
-                src="https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Marine_Surveyor_vlbjss.png"
+                src="https://res.cloudinary.com/djvzbznry/image/upload/v1754239914/Marine_Surveyor_hbntkg.png"
                 className="w-full h-full object-contain"
                 alt=""
               />
