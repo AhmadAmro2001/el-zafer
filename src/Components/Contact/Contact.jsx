@@ -7,28 +7,27 @@ export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
   const offices = [
     {
-      title: "Jeddah Head Office",
+      title: "Jeddah Branch",
       location:
-        "Al Maghreb Al Arabi Street, Al Hamra District Unit No. 1, Building No. 3202 Jeddah 23212–7539, Saudi Arabia",
-      tel: "+966 12 664 6888",
-      tollFree: "toll free: 800 12 8888 1",
-      fax: "+966 12 661 1043",
+        "Jeddah - head Office Building Np. 3202, Al Fayum Street, Al Hamra District, Unit No.1, Jeddah 23212 - 7539, Short Address JCHB3202, Kingdom of saudi Arabia",
+      tel: "+9966-12-6646888",
+      fax: "+966-12-6611043",
+      tollFree: "Toll free: 800-12-8888-1",
       email:["qatamesh@alzafercargo.com","logistics@alzafercargo.com","shipping3@alzafercargo.com","marketing3@alzafercargo.com"]
     },
     {
-      title: "Dammam",
+      title: "Dammam Branch",
       location:
-        "Al Zafer Cargo Services P.O. Box 3971, Dammam – 31481, Saudi Arabia.",
-      tel: "+966 13 827 9081 / 827 9085",
-      fax: "+966 13 8278295",
+        "AL ZAFER WINGS CARGO SERVICES CO. MOUSA BIN AL NASEER STRRT, TUBBAYSHI DIST. Opp: ARRAWDAW HOSPITAL. P.O. BOX 3971, DAMMAM 31481 KINGDOM OD SAUDI ARABIA",
+      tel: "+966138279085/ 138279081",
       email:["marketing-dam@alzafercargo.com","operations-dam@alzafercargo.com","shipping3@alzafercargo.com","qatamesh@alzafercargo.com"]
     },
     {
-      title: "Riyadh",
+      title: "Riyadh Branch",
       location:
-        "Al Zafer Cargo Services P.O. Box 6048 , Riyadh 1142, Saudi Arabia.",
-      tel: "+966 14 78 8849",
-      fax: "+966 14 78 1188",
+        "AL ZAFER WINGS CARGO SERVICES CO. RIYADH P.O BOX NO: 6048 SAUDI ARABIA",
+      tel: "96614788849",
+      fax: "96614781188",
       email:["nagm@alzafergroup.com","qatamesh@alzafercargo.com"]
     },
   ];
@@ -116,10 +115,12 @@ export default function Contact() {
                     <p className="text-white text-sm">{office.tollFree}</p>
                   </div>
                 )}
-                <div className="flex items-center gap-4 mx-4 my-5">
-                  <i className="fa-solid fa-print text-white text-2xl"></i>
-                  <p className="text-white text-sm">Fax:{office.fax}</p>
-                </div>
+                {office.fax && (
+                  <div className="flex items-center gap-4 mx-5 my-3">
+                    <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
+                    <p className="text-white text-sm">Fax: {office.fax}</p>
+                  </div>
+                )}
                 {office.email.map((email, index) => (
                   <div key={index} className="flex items-center gap-4 mx-5 my-3">
                     <i className="fa-solid fa-envelope text-white text-2xl"></i>
