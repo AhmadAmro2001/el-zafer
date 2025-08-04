@@ -56,8 +56,8 @@ export default function Footer() {
               </div>
               <div className=" border-r px-2  border-red-700">
                 <p>logistics@alzafercargo.com</p>
-                <p>+966 555 149 065</p>
-                <p>+966 555 149 065</p>
+                <p>+966 138 279 081</p>
+                <p>+966 138 279 081</p>
               </div>
               <div className="px-2 ">
                 <p>qatamesh@alzafercargo.com</p>
