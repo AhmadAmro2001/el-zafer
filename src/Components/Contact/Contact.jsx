@@ -10,7 +10,7 @@ export default function Contact() {
       title: "Jeddah Branch",
       location:
         "Jeddah - head Office Building Np. 3202, Al Fayum Street, Al Hamra District, Unit No.1, Jeddah 23212 - 7539, Short Address JCHB3202, Kingdom of saudi Arabia",
-      tel: "+996-12-6646888",
+      tel: "+966-12-6646888",
       fax: "+966-12-6611043",
       tollFree: "Toll free: 800-12-8888-1",
       email:["qatamesh@alzafercargo.com","logistics@alzafercargo.com","shipping3@alzafercargo.com","marketing3@alzafercargo.com"]
