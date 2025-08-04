@@ -112,14 +112,14 @@ export default function Footer() {
             </div>
             <div className="flex gap-2 md:ms-7">
               <div className="border-r border-blue-700 px-1">
-                <h4 className="text-yellow-300">Head Office: Jeddah</h4>
+                <h4 className="text-yellow-300">Jeddah Head Office</h4>
                 <p className="text-white">Tel. :+966 12 664 6888</p>
                 <p className="text-white">Fax :+966 12 661 1043</p>
               </div>
               <div className="border-r border-blue-700 px-1">
                 <h4 className="text-yellow-300">Riyadh:</h4>
                 <p className="text-white">Tel.: +966 11 478 8849</p>
-                <p className="text-white">tax: +966 11 478 1188</p>
+                <p className="text-white">Fax: +966 11 478 1188</p>
               </div>
               <div className=" px-1">
                 <h4 className="text-yellow-300">Dammam:</h4>
