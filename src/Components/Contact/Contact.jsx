@@ -98,7 +98,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
           {offices.map((office, index) => (
             <div key={index} className="group">
-              <div className="text-left px-8 h-[420px] py-5 bg-[#0C71B9] rounded-2xl">
+              <div className="text-left px-8 h-[450px] py-6 bg-[#0C71B9] rounded-2xl">
                 <h1 className="text-white mb-4 text-2xl font-semibold">
                   {office.title}
                 </h1>
