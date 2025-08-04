@@ -12,23 +12,24 @@ export default function Contact() {
         "Al Maghreb Al Arabi Street, Al Hamra District Unit No. 1, Building No. 3202 Jeddah 23212–7539, Saudi Arabia",
       tel: "+966 12 664 6888",
       tollFree: "toll free: 800 12 8888 1",
-      fax: "+966 12 661 1043"
+      fax: "+966 12 661 1043",
+      email:["qatamesh@alzafercargo.com","logistics@alzafercargo.com","shipping3@alzafercargo.com","marketing3@alzafercargo.com"]
     },
     {
       title: "Dammam",
       location:
         "Al Zafer Cargo Services P.O. Box 3971, Dammam – 31481, Saudi Arabia.",
       tel: "+966 13 827 9081 / 827 9085",
-      tollFree: "E-Mail:qatamesh@alzafercargo.com",
-      fax: "+966 13 8278295"
+      fax: "+966 13 8278295",
+      email:["marketing-dam@alzafercargo.com","operations-dam@alzafercargo.com","shipping3@alzafercargo.com","qatamesh@alzafercargo.com"]
     },
     {
       title: "Riyadh",
       location:
         "Al Zafer Cargo Services P.O. Box 6048 , Riyadh 1142, Saudi Arabia.",
       tel: "+966 14 78 8849",
-      tollFree: "E-Mail:qatamesh@alzafercargo.com",
-      fax: "+966 14 78 1188"
+      fax: "+966 14 78 1188",
+      email:["nagm@alzafergroup.com","qatamesh@alzafercargo.com"]
     },
   ];
   const [formData, setFormData] = useState({
@@ -97,7 +98,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
           {offices.map((office, index) => (
             <div key={index} className="group">
-              <div className="text-left px-8 py-10 bg-[#0C71B9] rounded-2xl">
+              <div className="text-left px-8 h-[420px] py-5 bg-[#0C71B9] rounded-2xl">
                 <h1 className="text-white mb-4 text-2xl font-semibold">
                   {office.title}
                 </h1>
@@ -109,14 +110,22 @@ export default function Contact() {
                   <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
                   <p className="text-white text-sm">Tel: {office.tel}</p>
                 </div>
-                <div className="flex items-center gap-4 mx-5 my-5">
-                  <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
-                  <p className="text-white text-sm">{office.tollFree}</p>
-                </div>
+                {office.tollFree && (
+                  <div className="flex items-center gap-4 mx-5 my-3">
+                    <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
+                    <p className="text-white text-sm">{office.tollFree}</p>
+                  </div>
+                )}
                 <div className="flex items-center gap-4 mx-4 my-5">
                   <i className="fa-solid fa-print text-white text-2xl"></i>
                   <p className="text-white text-sm">Fax:{office.fax}</p>
                 </div>
+                {office.email.map((email, index) => (
+                  <div key={index} className="flex items-center gap-4 mx-5 my-3">
+                    <i className="fa-solid fa-envelope text-white text-2xl"></i>
+                    <p className="text-white text-sm">{email}</p>
+                  </div>
+                ))}
                 
               </div>
             </div>
