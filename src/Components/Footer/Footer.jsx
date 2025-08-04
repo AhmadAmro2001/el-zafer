@@ -56,7 +56,7 @@ export default function Footer() {
               </div>
               <div className=" border-r px-2  border-red-700">
                 <p>logistics@alzafercargo.com</p>
-                <p>+966 138 279 081</p>
+                <p>+966 555 149 065</p>
                 <p>+966 138 279 081</p>
               </div>
               <div className="px-2 ">
@@ -112,19 +112,19 @@ export default function Footer() {
             </div>
             <div className="flex gap-2 md:ms-7">
               <div className="border-r border-blue-700 px-1">
-                <h4 className="text-yellow-300">Jeddah Head Office</h4>
+                <h4 className="text-yellow-300">Jeddah Head Office:</h4>
                 <p className="text-white">Tel. :+966 12 664 6888</p>
                 <p className="text-white">Fax :+966 12 661 1043</p>
               </div>
               <div className="border-r border-blue-700 px-1">
                 <h4 className="text-yellow-300">Riyadh:</h4>
-                <p className="text-white">Tel.: +966 11 478 8849</p>
-                <p className="text-white">Fax: +966 11 478 1188</p>
+                <p className="text-white">Tel. : +966 11 478 8849</p>
+                <p className="text-white">Fax : +966 11 478 1188</p>
               </div>
               <div className=" px-1">
                 <h4 className="text-yellow-300">Dammam:</h4>
-                <p className="text-white">Tel.: +966 13 827 9081 / 827 9085</p>
-                <p className="text-white">Fax: +966 13 8278295</p>
+                <p className="text-white">Tel. : +966 13 827 9081 / 827 9085</p>
+                <p className="text-white">Fax : +966 13 827 8295</p>
               </div>
 
             </div>
