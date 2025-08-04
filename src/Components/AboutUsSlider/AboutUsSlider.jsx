@@ -49,19 +49,19 @@ export default function AboutUsSlider() {
       <Slider {...settings}>
         
         
-        <div className=' h-[500px] px-2 '>
+        <div className=' md:h-[500px] h-[300px] px-2 '>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801506/Mishal_Photo_copy_rg4kjf.jpg" className=' w-full h-full rounded-xl object-cover mx-auto' alt="" />
         </div>
-        <div className=' h-[500px] px-2 '>
+        <div className=' md:h-[500px] h-[300px] px-2 '>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752136969/Qatamesh_official_Photo_1.25x_-_Copy_vsgwh5.jpg" className=' w-full h-full rounded-xl object-cover mx-auto' alt="" />
         </div>
-        <div className=' h-[500px] px-2 '>
+        <div className=' md:h-[500px] h-[300px] px-2 '>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751800598/IMG-20231003-WA0071_oiub7v.jpg" className=' w-full h-full rounded-xl  mx-auto' alt="" />
         </div>
-        <div className=' h-[500px] px-2 '>
+        <div className=' md:h-[500px] h-[300px] px-2 '>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801507/IMG-20231003-WA0053_mrtdj4.jpg" className=' w-full h-full rounded-xl  mx-auto' alt="" />
         </div>
-        <div className=' h-[500px] px-2 '>
+        <div className=' md:h-[500px] h-[300px] px-2 '>
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679562/Layer_0_rszzrm.png" className=' w-full h-full rounded-xl object-cover mx-auto' alt="" />
         </div>
         
