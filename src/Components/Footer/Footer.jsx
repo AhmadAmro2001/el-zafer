@@ -91,7 +91,7 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="flex justify-end items-end mt-5 md:mt-18  text-[3px] md:text-[16px]">
+          <div className="flex justify-end items-end mt-5 md:mt-20  text-[3px] md:text-[16px]">
             <div
               className="flex bg-red-500 pe-6 md:pe-20 ps-2 md:ps-4 md:py-2 py-1 rounded-l-full text-white gap-2"
               style={{
@@ -107,7 +107,7 @@ export default function Footer() {
                 <p>www.alzafercargo.com</p>
               </div>
             </div>
-            <div className="flex gap-2 md:ms-7">
+            <div className="flex gap-2  md:ms-7">
               <div className="border-r border-blue-700 px-1">
                 <h4 className="text-yellow-300">Jeddah Head Office:</h4>
                 <p className="text-white">Tel. :+966 12 664 6888</p>
