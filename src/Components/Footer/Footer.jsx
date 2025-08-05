@@ -90,10 +90,7 @@ export default function Footer() {
               <h4 className="font-bold px-1 md:px-2">CONTAINER LINE</h4>
             </div>
           </div>
-          <div className=" flex flex-col mt-1 text-[3px] md:mt-7 md:text-[16px] text-white text-left font-semibold">
-              <Link to="/terms">Terms and Conditions</Link>
-              <Link to="/privacy">Privacy Policy</Link>
-          </div>
+          
           <div className="flex justify-end items-end mt-5 md:mt-18  text-[3px] md:text-[16px]">
             <div
               className="flex bg-red-500 pe-6 md:pe-20 ps-2 md:ps-4 md:py-2 py-1 rounded-l-full text-white gap-2"
