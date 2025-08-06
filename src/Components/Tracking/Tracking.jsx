@@ -619,7 +619,7 @@ export default function Tracking() {
       )}
       {result && selectedTracking?.title === "Clearance and Trucking" && selectedClearanceContainerStatus && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-    <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-md relative shadow-lg">
+    <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
       {/* Close button */}
       <button
         onClick={() => {setResult(null); setSelectedClearanceContainerStatus(false)}}
@@ -652,7 +652,7 @@ export default function Tracking() {
             </p>
           </div>
           {/* dooted line */}
-          <div className="absolute top-4 left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
+          <div className="absolute top-4 left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
           {/* Right Step - Delivery */}
           <div className="flex flex-col items-center">
           <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
@@ -680,7 +680,7 @@ export default function Tracking() {
       )}
       {result && selectedTracking?.title === "Clearance and Trucking" && selectedClearanceBlNoStatus && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-    <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-md relative shadow-lg">
+    <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
       {/* Close button */}
       <button
         onClick={() => {setResult(null); setSelectedClearanceBlNoStatus(false)}}
@@ -713,7 +713,7 @@ export default function Tracking() {
             </p>
           </div>
           {/* dooted line */}
-          <div className="absolute top-4 left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
+          <div className="absolute top-4 left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
           {/* Right Step - Delivery */}
           <div className="flex flex-col items-center">
           <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
