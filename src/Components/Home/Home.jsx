@@ -44,8 +44,8 @@ export default function Home() {
         
       </Slider>
       </div>
-      <HomeHyperLinks/>
       <HomeAboutUs/>
+      <HomeHyperLinks/>
       <HomeOnlineServices/>
       <HomeOurPartners/>
     </>

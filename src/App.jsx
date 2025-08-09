@@ -7,7 +7,6 @@ import Layout from './Components/Layout/Layout'
 import NotFound from './Components/NotFound/NotFound'
 import Home from './Components/Home/Home'
 import AboutUs from './Components/AboutUs/AboutUs'
-import Services from './Components/Services/Services';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import Activities from './Components/Activities/Activities';
 import ActivitiesDetails from './Components/ActivitiesDetails/ActivitiesDetails';
@@ -24,6 +23,7 @@ import UserTokenContextProvider from './Context/UserTokenContext';
 import AdminLogin from './Components/AdminLogin/AdminLogin';
 import AdminSignUp from './Components/AdminSignUp/AdminSignUp';
 import AdminPlatform from './Components/AdminPlatform/AdminPlatform';
+import Services from './Components/Services/Services';
 function App() {
 let routes = createBrowserRouter([
   {path:'',element:<Layout/>,children:[

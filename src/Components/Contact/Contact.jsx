@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./Contact.module.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { FaAndroid } from "react-icons/fa";
 import axios from "axios";
 export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
@@ -13,14 +14,24 @@ export default function Contact() {
       tel: "+966-12-6646888",
       fax: "+966-12-6611043",
       tollFree: "Toll free: 800-12-8888-1",
-      email:["qatamesh@alzafercargo.com","logistics@alzafercargo.com","shipping3@alzafercargo.com","marketing3@alzafercargo.com"]
+      email: [
+        "qatamesh@alzafercargo.com",
+        "logistics@alzafercargo.com",
+        "shipping3@alzafercargo.com",
+        "marketing3@alzafercargo.com",
+      ],
     },
     {
       title: "Dammam Branch",
       location:
         "AL ZAFER WINGS CARGO SERVICES CO. MOUSA BIN AL NASEER STRRT, TUBBAYSHI DIST. Opp: ARRAWDAW HOSPITAL. P.O. BOX 3971, DAMMAM 31481 KINGDOM OD SAUDI ARABIA",
       tel: "+966138279085/ 138279081",
-      email:["marketing-dam@alzafercargo.com","operations-dam@alzafercargo.com","shipping3@alzafercargo.com","qatamesh@alzafercargo.com"]
+      email: [
+        "marketing-dam@alzafercargo.com",
+        "operations-dam@alzafercargo.com",
+        "shipping3@alzafercargo.com",
+        "qatamesh@alzafercargo.com",
+      ],
     },
     {
       title: "Riyadh Branch",
@@ -28,49 +39,52 @@ export default function Contact() {
         "AL ZAFER WINGS CARGO SERVICES CO. RIYADH P.O BOX NO: 6048 SAUDI ARABIA",
       tel: "96614788849",
       fax: "96614781188",
-      email:["nagm@alzafergroup.com","qatamesh@alzafercargo.com"]
+      email: ["nagm@alzafergroup.com", "qatamesh@alzafercargo.com"],
     },
   ];
   const [formData, setFormData] = useState({
-    name:'',
-    email:'',
-    phoneNumber:'',
-    message:'',
+    name: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
   });
-  const handleChange = (e)=>{
-    setFormData(prev =>({
+  const handleChange = (e) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]:e.target.value
-    }))
-  }
-  const handlePhoneChange = (value) => {
-    setFormData(prev => ({
-      ...prev,
-      phoneNumber: value
+      [e.target.name]: e.target.value,
     }));
   };
-  const handleSubmit = async (e)=>{
+  const handlePhoneChange = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      phoneNumber: value,
+    }));
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    
+
     try {
       setIsLoading(true);
-      await axios.post('https://el-zafer-backend.onrender.com/quotes/send-quote',formData);
+      await axios.post(
+        "https://el-zafer-backend.onrender.com/quotes/send-quote",
+        formData
+      );
       setFormData({
-        name:'',
-        email:'',
-        phoneNumber:'',
-        message:'',
+        name: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
       });
       setIsLoading(false);
     } catch (error) {
-      console.log("error sending message",error);
+      console.log("error sending message", error);
       setIsLoading(false);
     }
-  }
+  };
   return (
     <>
-      <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
+      {/* <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
         <div className='flex flex-col justify-center items-center  md:h-screen h-[250px] '>
             <h1 className='md:mb-5 md:text-6xl text-[24px] mb-3 font-bold'>Contact</h1>
             <h3 className='md:text-xl text-[10px] md:mb-2 '>At our company, we strive to provide our customers with reliable and efficient shipping services that meet their needs and exceed their expectations</h3>
@@ -91,9 +105,9 @@ export default function Contact() {
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[40px] w-[20px] md:h-[40px] h-[20px]  opacity-25  bg-white rounded-full '>
         </div>
         
-      </div>
+      </div> */}
       {/* offices */}
-      <div className="container mx-auto px-16">
+      <div className="container mx-auto px-16 md:mt-60 mt-28">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
           {offices.map((office, index) => (
             <div key={index} className="group">
@@ -122,12 +136,14 @@ export default function Contact() {
                   </div>
                 )}
                 {office.email.map((email, index) => (
-                  <div key={index} className="flex items-center gap-4 mx-5 my-3">
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 mx-5 my-3"
+                  >
                     <i className="fa-solid fa-envelope text-white text-2xl"></i>
                     <p className="text-white text-sm">{email}</p>
                   </div>
                 ))}
-                
               </div>
             </div>
           ))}
@@ -207,12 +223,29 @@ export default function Contact() {
                   type="submit"
                   className="bg-[#0C71B9] mt-5 text-white py-2 px-4 w-48 mx-auto rounded-md"
                 >
-                  {isloading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Send"}
+                  {isloading ? (
+                    <i className="fa-solid fa-spinner animate-spin"></i>
+                  ) : (
+                    "Send"
+                  )}
                 </button>
               </div>
             </form>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto text-left px-4 md:px-36 md:mt-20 mt-24">
+        <h1 className="text-2xl font-semibold ">Get our app for faster access</h1>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.ist.alzaferwingscargosystems" // Replace with your app link
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-3 bg-[#0C71B9] my-10 text-white font-medium rounded-lg shadow-lg transition-all duration-200"
+        >
+          <FaAndroid className="text-2xl" />
+          <span>Get it on Google Play</span>
+        </a>
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./Sidebar.module.css";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {}, []);
@@ -21,12 +22,12 @@ export default function Sidebar() {
         </Link>
 
         {/* Services */}
-        <Link to="/services" className="flex flex-col items-center my-2 ">
+        <HashLink smooth to="/#services" className="flex flex-col items-center my-2 ">
           <div className="w-12 h-12 border border-red-700 bg-white text-red-700 rounded-full flex items-center justify-center">
             <i className="fa-solid fa-folder-open" />
           </div>
           <p className="text-sm text-slate-600">Services</p>
-        </Link>
+        </HashLink>
 
         {/* Contact Us */}
         <Link to="/contact" className="flex flex-col items-center my-2 ">

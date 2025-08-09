@@ -5,30 +5,9 @@ export default function Services() {
     const [data, setData] = useState()
     useEffect(() => {}, [])
   return <>
-      <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
-        <div className='flex flex-col justify-center items-center  md:h-screen h-[250px] '>
-            <h1 className='md:mb-5 md:text-6xl text-[24px] mb-3 font-bold'>Services</h1>
-            <h3 className='md:text-xl text-[10px] md:mb-2 '>We are committed to providing top-notch services that exceed our customers' expectations</h3>
-            <p className='md:mt-5 md:text-lg text-[8px] text-center '> Ensuring that their packages are handled with the utmost care and delivered in a timely manner to their desired destination.</p>
-        </div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[495px] w-[200px] md:h-[495px] h-[200px] opacity-15 border rounded-full '>
-        </div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[425px] w-[160px] md:h-[425px] h-[160px]  opacity-15  border rounded-full '>
-        </div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[319px] w-[120px] md:h-[319px] h-[120px]  opacity-15  border rounded-full '>
-        </div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[225px] w-[80px] md:h-[225px] h-[80px]  opacity-15  border rounded-full '>
-        </div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[120px] w-[50px] md:h-[120px] h-[50px]  opacity-15  bg-white rounded-full '>
-        </div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[75px] w-[35px] md:h-[75px] h-[35px]  opacity-20  bg-white rounded-full '>
-        </div>
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[40px] w-[20px] md:h-[40px] h-[20px]  opacity-25  bg-white rounded-full '>
-        </div>
-        
-      </div>
+      
       {/* left */}
-      <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:pt-14'>
+      <div className='flex flex-col md:flex-row justify-between my-16 container mx-auto px-10 relative py-4 md:pt-14'>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full object-cover' alt="" />
@@ -49,8 +28,8 @@ export default function Services() {
         </Link>
       </div>
       </div>
-      {/* right */}
-      <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:py-8'>
+      
+      {/* <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:py-8'>
       
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10 block md:hidden'>
@@ -75,7 +54,7 @@ export default function Services() {
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services2_sviq4f.png" className='w-full h-full' alt="" />
       </div>
       </div>
-      {/* left 2 */}
+      
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:py-8'>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
@@ -97,7 +76,7 @@ export default function Services() {
         </Link>
       </div>
       </div>
-      {/* right 2*/}
+      
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative py-4 md:py-8'>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10 block md:hidden'>
@@ -122,7 +101,7 @@ export default function Services() {
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1750045811/services4_xmblnl.png" className='w-full h-full' alt="" />
       </div>
       </div>
-      {/* left 3 */}
+      
       <div className='flex flex-col md:flex-row justify-between container mx-auto px-10 relative pb-8 pt-4 md:pb-12'>
 
       <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
@@ -143,7 +122,7 @@ export default function Services() {
             Read more <i className="fa-solid fa-arrow-right"></i>
         </Link>
       </div>
-      </div>
+      </div> */}
     </>
     
 }

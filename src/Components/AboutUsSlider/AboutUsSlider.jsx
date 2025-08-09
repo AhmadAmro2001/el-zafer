@@ -45,7 +45,7 @@ export default function AboutUsSlider() {
     useEffect(() => {
     }, [])
   return <>
-      <div className="w-full py-20 overflow-x-hidden">
+      <div className="w-full py-20 overflow-x-hidden md:mt-40 mt-16">
       <Slider {...settings}>
         
         
