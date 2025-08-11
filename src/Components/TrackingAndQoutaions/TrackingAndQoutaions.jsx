@@ -8,7 +8,7 @@ export default function TrackingAndQoutaions() {
         
     }, [])
   return <>
-    <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
+    {/* <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
         <div className='flex flex-col justify-center items-center  md:h-screen h-[250px] '>
             <h1 className='md:mb-5 md:text-6xl text-[24px] mb-3 font-bold'>Track Your   Shipment</h1>
             <h3 className='md:text-xl text-[10px] md:mb-2 '>Track your shipment through its journey from loading to discharge</h3>
@@ -28,8 +28,8 @@ export default function TrackingAndQoutaions() {
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[40px] w-[20px] md:h-[40px] h-[20px]  opacity-25  bg-white rounded-full '>
         </div>
         
-      </div>
-      <div className='container mx-auto px-4 my-5 md:my-10 md:px-24'>
+      </div> */}
+      <div className='container mx-auto px-4 my-10 md:my-44 md:px-24'>
       <Tracking/>
       
     </div>

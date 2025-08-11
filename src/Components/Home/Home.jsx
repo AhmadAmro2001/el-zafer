@@ -39,13 +39,15 @@ export default function Home() {
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752679556/AntonovAN225worldslargestaircraftbeingloadedonasunnyday_qt2awg.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         <div>
-          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1754240921/Logistic-Business-scaled_cm4rcb.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
+          <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1754947191/WhatsApp_Image_2025-08-11_at_13.59.03_734890e2_l12jel.jpg" alt="" className="w-full h-[200px] md:h-[610px] object-cover" />
         </div>
         
       </Slider>
       </div>
       <HomeAboutUs/>
+      <div id="services" className="scroll-mt-[120px]">
       <HomeHyperLinks/>
+      </div>
       <HomeOnlineServices/>
       <HomeOurPartners/>
     </>

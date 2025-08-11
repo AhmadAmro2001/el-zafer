@@ -209,7 +209,7 @@ export default function Tracking() {
                 <>
                   {renderInput("AWBNo", "AWB NO:", "AWB NO")}
                   {renderInput("Destination", "Destination:", "Destination")}
-                  {renderInput("NoOfPcs", "No of Pcs:", "No of Pcs")}
+                  {renderInput("NOOfPcs", "No of Pcs:", "No of Pcs")}
                   {renderInput("TotalWeight", "Total Weight:", "Total Weight")}
                 </>
               )}

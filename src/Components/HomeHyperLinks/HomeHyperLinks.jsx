@@ -5,7 +5,6 @@ export default function HomeHyperLinks() {
   return (
     <>
       <div
-        id="services"
         className=" relative h-[200px] bg-contain md:h-[600px]"
         style={{
           backgroundImage: `url(https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Back_tllth4.png)`,
@@ -33,7 +32,7 @@ export default function HomeHyperLinks() {
               to="details"
               state={{
                 title:"Air Frieght",
-                photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183627/Air_Freight_e1su2q.jpg",
+                photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750045791/services3_yu0iqa.jpg",
                 desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus nulla esse voluptas asperiores, sit, rem reprehenderit cum nihil nemo necessitatibus? Eius fuga itaque ab accusantium dignissimos architecto ipsa ratione sed, exercitationem neque facere impedit sapiente blanditiis voluptate? Tempore eos inventore temporibus dolorum accusantium impedit incidunt fugiat voluptatibus aliquid voluptatum, iure nobis odio corporis non magnam vel quibusdam? Laudantium soluta quia quas consequuntur consectetur voluptatibus quasi est ab sequi saepe, illo itaque mollitia quibusdam molestias hic aliquid, architecto, in omnis dolorem eaque? Iusto nihil voluptas reprehenderit sit. Iusto debitis quas ex dolorem reprehenderit nihil asperiores quia cupiditate. Adipisci, enim rerum.",
               }}
               className="md:w-[130px] w-[30px] hover:scale-110 transition-all duration-300 overflow-hidden md:mx-[4px] mx-[2px] mt-10 md:mt-32"
