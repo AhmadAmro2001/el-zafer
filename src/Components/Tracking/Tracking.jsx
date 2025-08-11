@@ -368,7 +368,7 @@ export default function Tracking() {
       )}
 
 
-      
+      {/* error message */}
       {error && errorModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
           <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
@@ -382,6 +382,7 @@ export default function Tracking() {
           </div>
         </div>
       )}
+      {/* success message */}
       {result && selectedTracking?.title === "Tracking full container" && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
     <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
@@ -601,7 +602,7 @@ export default function Tracking() {
             
             <p className=" text-sm font-medium">Clearance:</p>
             <p className="text-xs text-gray-500 ms-2">
-              {result.data[0][0].Clearance || "not available"}
+              {result.result[0].Clearance || "not available"}
             </p>
           </div>
           {/* Right Step - Delivery */}
@@ -609,7 +610,7 @@ export default function Tracking() {
             
             <p className=" text-sm font-medium">DO Release:</p>
             <p className="text-xs text-gray-500 ms-2">
-              {result.data[0][0].DORelease || "not available"}
+              {result.result[0].DORelease || "not available"}
             </p>
           </div>
         </div>
