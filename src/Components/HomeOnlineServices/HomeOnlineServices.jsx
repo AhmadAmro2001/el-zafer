@@ -36,7 +36,7 @@ export default function HomeOnlineServices() {
                     file.
                   </p>
                   <div className="right-[50%] translate-x-1/2 absolute pt-5 text-red-700 group-hover:text-white group-hover:right-16 transition-all duration-300">
-                    <a href="https://drive.google.com/file/d/1JebFi5Wjh44QUtVIGo6bDna-1TZ7F8FZ/view?usp=sharing" target="_blank">
+                    <a href="https://drive.google.com/drive/folders/1aTXftj77Sd5JoTF0Bw-2GRdUX9XEe4LQ?usp=drive_link" target="_blank">
                       Download now <i className="fa-solid fa-arrow-right"></i>
                     </a>
                   </div>
@@ -92,7 +92,7 @@ export default function HomeOnlineServices() {
                     best prices.
                   </p>
                   <div className="right-[50%] translate-x-1/2 absolute pt-5 text-red-700 group-hover:text-white group-hover:right-14 transition-all duration-300">
-                    <Link to="/tracking">
+                    <Link to="/qoutation">
                       Request now <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                   </div>
@@ -120,7 +120,7 @@ export default function HomeOnlineServices() {
                     container.
                   </p>
                   <div className="right-[50%] translate-x-1/2 absolute  text-red-700 group-hover:text-white group-hover:right-10 transition-all duration-300">
-                    <Link to="">
+                    <Link to="containerCalculator">
                       Start now <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                   </div>
@@ -175,7 +175,7 @@ export default function HomeOnlineServices() {
                     Read more about the shipping process and our services.
                   </p>
                   <div className="right-[50%] translate-x-1/2 absolute pt-5 text-red-700 group-hover:text-white group-hover:right-16 transition-all duration-300">
-                    <Link to="#">
+                    <Link to="pressRelease">
                       Read more <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                   </div>

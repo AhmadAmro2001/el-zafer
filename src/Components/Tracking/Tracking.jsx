@@ -122,7 +122,7 @@ export default function Tracking() {
   }
   return (
     <>
-      <h1 className="text-3xl font-bold text-left mb-8">Start Tracking</h1>
+      <h1 className="text-3xl font-bold text-left mb-8 text-red-700">Start Tracking</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {trackingArray.map((item, index) => (
           <div
@@ -517,46 +517,50 @@ export default function Tracking() {
       )}
       {result && selectedTracking?.title === "LCL" && selectedLclContainerStatus && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-    <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-md relative shadow-lg">
-      {/* Close button */}
-      <button
-        onClick={() => {setResult(null); setSelectedLclContainerStatus(false)}}
-        className="absolute top-2 right-4 text-xl font-bold text-gray-700"
-      >
-        &times;
-      </button>
+  <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-3xl relative shadow-lg">
+    {/* Close button */}
+    <button
+      onClick={() => { setResult(null); setSelectedLclContainerStatus(false); }}
+      className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+    >
+      &times;
+    </button>
 
+    {/* Status Progress */}
+    <div className="bg-gray-100 p-6 rounded-xl">
+      <div className="flex flex-col relative">
+        <div className="grid grid-cols-1">
+          <h1 className="font-semibold">B/L No: {result.result[0].HousBillNo}</h1>
 
-      {/* Status Progress */}
-      <div className="bg-gray-100 p-6 rounded-xl">
-        <div className="flex flex-col relative">
-          {/* Left Step - Arrival */}
-          <div className="flex justify-center items-center mb-3">
-            
-            <p className=" text-xl font-medium">Bill No:</p>
-            <p className="text-xl text-gray-500 ms-2">
-              {result.result[0].HousBillNo || "not available"}
-            </p>
+          {/* Table Header */}
+          <div className="flex mb-2">
+            <p className="flex-1 text-sm font-medium text-left">House Bill No:</p>
+            <p className="flex-1 text-sm font-medium text-center">No Of PCS:</p>
+            <p className="flex-1 text-sm font-medium text-right">DO Release:</p>
           </div>
-          <div className="flex justify-start items-center">
-            
-            <p className=" text-sm font-medium">No of Pcs:</p>
-            <p className="text-xs text-gray-500 ms-2">
-              {result.result[0].NOOfPcs || "not available"}
-            </p>
-          </div>
-          {/* Right Step - Delivery */}
-          <div className="flex justify-start items-center">
-            
-            <p className=" text-sm font-medium">DO Release:</p>
-            <p className="text-xs text-gray-500 ms-2">
-              {result.result[0].DORelease || "not available"}
-            </p>
-          </div>
+          <hr className="mb-2" />
+
+          {/* Table Rows */}
+          {/* Table Rows Wrapper with scroll */}
+<div className="overflow-y-auto max-h-64"> {/* max-h-64 ≈ 16rem height */}
+  {result.result.map((item, index) => (
+    <div key={index}>
+      <div className="flex  mb-2">
+        <p className="flex-1 text-xs ms-5 font-medium text-left">{item.HousBillNo}</p>
+        <p className="flex-1 text-xs font-medium text-center">{item.NOOfPcs}</p>
+        <p className="flex-1 text-xs me-5 font-medium text-right">{item.DORelease}</p>
+      </div>
+      <hr />
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </div>
   </div>
+</div>
+
       )}
       {result && selectedTracking?.title === "LCL" && selectedLclHblStatus && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">

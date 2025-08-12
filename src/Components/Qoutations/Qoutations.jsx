@@ -72,7 +72,7 @@ export default function Qoutations() {
     <>
       
       <div className="container mx-auto px-4 my-10 md:my-44 md:px-24">
-        <h1 className="text-3xl font-bold text-left md:my-12 my-6">
+        <h1 className="text-3xl text-red-700 font-bold text-left md:my-12 my-6">
           Request a Qoutation
         </h1>
         <div className="grid grid-cols-1  gap-6 text-white">

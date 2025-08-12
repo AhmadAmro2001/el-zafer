@@ -24,6 +24,8 @@ import AdminLogin from './Components/AdminLogin/AdminLogin';
 import AdminSignUp from './Components/AdminSignUp/AdminSignUp';
 import AdminPlatform from './Components/AdminPlatform/AdminPlatform';
 import Services from './Components/Services/Services';
+import PressRelease from './Components/PressRelease/PressRelease';
+import ContainerCalculator from './Components/ContainerCalculator/ContainerCalculator';
 function App() {
 let routes = createBrowserRouter([
   {path:'',element:<Layout/>,children:[
@@ -45,6 +47,8 @@ let routes = createBrowserRouter([
     {path:'adminLogin',element:<AdminLogin/>},
     {path:'adminSignUp',element:<AdminSignUp/>},
     {path:'admindashboard',element:<AdminPlatform/>},
+    {path:'pressRelease' , element:<PressRelease/>},
+    {path:'containerCalculator',element:<ContainerCalculator/> },
     {path:'*',element:<NotFound/>}
   ]}
 ])

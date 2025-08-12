@@ -21,6 +21,7 @@ export default function Home() {
   
   return (
     <>
+      <div className="relative">
       <div className=" md:me-14 overflow-hidden md:mt-32 mt-24 ">
       <Slider {...settings}>
         <div>
@@ -44,6 +45,16 @@ export default function Home() {
         
       </Slider>
       </div>
+      <div className="absolute inset-0 flex justify-center items-center z-10">
+        <h1 className="text-white text-4xl font-bold text-center max-w-[60%] "
+        style={{
+          textShadow: "4px 4px 12px rgba(0,0,0,0.9)"
+        }}>
+        SERVING SUPPLY CHAIN OVER FOUR DECADES    NEUTRAL CONSOLIDATOR     YOUR PARTNER OF PROVEN EFFICIENCY
+        </h1>
+      </div>
+      </div>
+      
       <HomeAboutUs/>
       <div id="services" className="scroll-mt-[120px]">
       <HomeHyperLinks/>
