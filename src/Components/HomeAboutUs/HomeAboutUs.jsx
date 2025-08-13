@@ -16,13 +16,13 @@ export default function HomeAboutUs() {
               <Link to='/about' className='text-red-600 font-bold '>Read More <i className="fa-solid fa-arrow-right"></i></Link>
             </div>
             <div className='w-full h-[360px] relative  mx-5 md:w-[40%]'>
-              <div className='w-[340px] h-[211px] absolute z-30 top-0 left-0 border rounded-md overflow-hidden '>
+              <div className='md:w-[340px] md:h-[211px] w-[280px] h-[180px] absolute z-30 top-0 left-0 border rounded-md overflow-hidden '>
               <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623008/homeAbout1_mxigqh.png" alt="" className='w-full h-full'/>
               </div>
-              <div className='w-[279px] h-[174px] absolute z-10 bottom-0 right-0 border rounded-md overflow-hidden'>
+              <div className='md:w-[279px] md:h-[174px] w-[250px] h-[160px] absolute z-10 bottom-0 right-0 border rounded-md overflow-hidden'>
               <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622992/homeAbout2_hwk3er.png" alt="" className='w-full h-full'/>
               </div>
-              <div className='w-[113.17px] h-[135px] absolute z-20 bottom-0 left-0  '>
+              <div className='md:w-[113.17px] md:h-[135px] w-[80px] h-[90px] absolute z-20 bottom-0 left-0  '>
               <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749623001/homeAbout3_s80awa.png" alt="" className='w-full h-full'/>
               </div>
             </div>

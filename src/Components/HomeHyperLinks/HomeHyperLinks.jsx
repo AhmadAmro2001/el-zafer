@@ -10,8 +10,8 @@ export default function HomeHyperLinks() {
           backgroundImage: `url(https://res.cloudinary.com/djvzbznry/image/upload/v1750866669/Back_tllth4.png)`,
         }}
       >
-        <h1 className='text-red-700 text-3xl font-bold  text-left px-32 pt-16'>Our Services</h1>
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 ">
+        <h1 className='text-red-700 text-3xl font-bold  text-left px-4 md:px-32 pt-6 md:pt-16'>Our Services</h1>
+        <div className="absolute top-10 left-1/2 transform -translate-x-1/2 ">
           <div className="flex items-center justify-center">
             <Link
               to="details"
@@ -151,7 +151,7 @@ export default function HomeHyperLinks() {
           </div>
         </div>
 
-        <div className="logo md:w-[650px] w-[200px] absolute -bottom-20 left-1/2 transform -translate-x-1/2">
+        <div className="logo md:w-[650px] w-[300px] absolute -bottom-10 md:-bottom-20 left-1/2 transform -translate-x-1/2">
           <img
             src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622979/el-zafer-logo_l6b5ly.png"
             alt=""
