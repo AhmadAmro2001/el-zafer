@@ -444,26 +444,27 @@ export default function Tracking() {
         <div className="flex justify-between items-center relative">
           {/* Left Step - Arrival */}
           <div className="flex flex-col items-center">
-            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].Arrived ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result[0].Arrived ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].DepartureDate ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].DepartureDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
-            <p className="mt-2 text-sm font-medium">Arrived</p>
+            <p className="mt-2 text-sm font-medium">Departure Date:</p>
             <p className="text-xs text-gray-500">
-              {result.result[0].Arrived || "—"}
+              {result.result[0].DepartureDate || "not delivered yet"}
             </p>
           </div>
+          
 
           {/* Dotted line */}
           <div className="absolute top-4 left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
 
           {/* Right Step - Delivery */}
           <div className="flex flex-col items-center">
-            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].Delivered ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result[0].Delivered ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].Arrived ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].Arrived ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
-            <p className="mt-2 text-sm font-medium">Delivered</p>
+            <p className="mt-2 text-sm font-medium">Arrival Date:</p>
             <p className="text-xs text-gray-500">
-              {result.result[0].Delivered || "not delivered yet"}
+              {result.result[0].Arrived || "—"}
             </p>
           </div>
         </div>
@@ -663,7 +664,7 @@ export default function Tracking() {
           <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
               {result.result[0].UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
-            <p className=" text-xs font-medium">Under Tracking:</p>
+            <p className=" text-xs font-medium">Under Trucking:</p>
             <p className="text-xs text-gray-500 ">
               {result.result[0].UnderTracking || "N/A"}
             </p>
@@ -724,7 +725,7 @@ export default function Tracking() {
           <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
               {result.result[0].UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
-            <p className=" text-xs font-medium">Under Tracking:</p>
+            <p className=" text-xs font-medium">Under Trucking:</p>
             <p className="text-xs text-gray-500 ">
               {result.result[0].UnderTracking || "N/A"}
             </p>
