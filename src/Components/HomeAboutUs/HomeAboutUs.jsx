@@ -12,7 +12,8 @@ export default function HomeAboutUs() {
             <div className='  w-full md:w-[55%] text-left pe-0 my-16 md:pe-12 '>
               <h1 className='text-red-700 text-3xl font-bold pb-2'>About us</h1>
               <h1 className='max-w-[90%] md:max-w-full text-gray-800'>Al Zafer Wings Cargo Services Co. is an international freight forwarding outfit headquartered in Jeddah,</h1>
-              <p className='max-w-[90%] md:max-w-full mb-5 text-gray-800'>which has represented excellence in the shipping, forwarding and logistics industry for almost four decades. We offer years of professional experience within the freight forwarding, logistics and commercial storage sectors.</p>
+              <p className='max-w-[90%] md:max-w-full mb- text-gray-800'>which has represented excellence in the shipping, forwarding and logistics industry for almost four decades. We offer years of professional experience within the freight forwarding, logistics and commercial storage sectors.</p>
+              <p className='max-w-[90%] md:max-w-full mb-5 text-gray-800'>Our Company strives to gain the respect and ongoing support of our customers by offering high quality and value added service while maintaining the highest ethical standards. Our Objective is to perform beyond the expectations of all our customers in everything we do.</p>
               <Link to='/about' className='text-red-600 font-bold '>Read More <i className="fa-solid fa-arrow-right"></i></Link>
             </div>
             <div className='w-full h-[360px] relative  mx-5 md:w-[40%]'>

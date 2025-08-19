@@ -660,15 +660,7 @@ export default function Tracking() {
           {/* dooted line */}
           <div className="absolute top-4 left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
           {/* Right Step - Delivery */}
-          <div className="flex flex-col items-center">
-          <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result[0].UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
-            </div>
-            <p className=" text-xs font-medium">Under Trucking:</p>
-            <p className="text-xs text-gray-500 ">
-              {result.result[0].UnderTracking || "N/A"}
-            </p>
-          </div>
+          
           <div className="flex flex-col items-center">
           <div className={` text-white rounded-full p-2 z-10 ${result.result[0].ClearanceDone ? "bg-blue-600" : "bg-gray-500"}`}>
               {result.result[0].ClearanceDone ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
@@ -676,6 +668,15 @@ export default function Tracking() {
             <p className=" text-xs font-medium">Clearance Done:</p>
             <p className="text-xs text-gray-500 ">
               {result.result[0].ClearanceDone || "N/A"}
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+          <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+            </div>
+            <p className=" text-xs font-medium">Under Trucking:</p>
+            <p className="text-xs text-gray-500 ">
+              {result.result[0].UnderTracking || "N/A"}
             </p>
           </div>
         </div>
@@ -721,15 +722,7 @@ export default function Tracking() {
           {/* dooted line */}
           <div className="absolute top-4 left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
           {/* Right Step - Delivery */}
-          <div className="flex flex-col items-center">
-          <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result[0].UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
-            </div>
-            <p className=" text-xs font-medium">Under Trucking:</p>
-            <p className="text-xs text-gray-500 ">
-              {result.result[0].UnderTracking || "N/A"}
-            </p>
-          </div>
+          
           <div className="flex flex-col items-center">
           <div className={` text-white rounded-full p-2 z-10 ${result.result[0].ClearanceDone ? "bg-blue-600" : "bg-gray-500"}`}>
               {result.result[0].ClearanceDone ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
@@ -737,6 +730,15 @@ export default function Tracking() {
             <p className=" text-xs font-medium">Clearance Done:</p>
             <p className="text-xs text-gray-500 ">
               {result.result[0].ClearanceDone || "N/A"}
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+          <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+            </div>
+            <p className=" text-xs font-medium">Under Trucking:</p>
+            <p className="text-xs text-gray-500 ">
+              {result.result[0].UnderTracking || "N/A"}
             </p>
           </div>
         </div>
