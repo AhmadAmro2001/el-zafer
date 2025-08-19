@@ -25,7 +25,7 @@ export default function AboutUsSlider() {
           <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1751801506/Mishal_Photo_copy_rg4kjf.jpg" className=' w-full h-full rounded-xl object-cover ' alt="" />
           </div>
           <div className='caption mt-3'>
-            <h1 className='font-semibold text-2xl text-red-700'>Mishial M.Al-Zafer</h1>
+            <h1 className='font-semibold text-2xl text-red-700'>Mishial M. Al-Zafer</h1>
             <p className='text-gray-600'>Deputy Chairman</p>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function AboutUsSlider() {
            <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1752136969/Qatamesh_official_Photo_1.25x_-_Copy_vsgwh5.jpg" className=' w-full h-full rounded-xl object-cover ' alt="" />
           </div>
           <div className='caption mt-3'>
-            <h1 className='font-semibold text-2xl text-red-700'>Mahmoud S.Qatamesh</h1>
+            <h1 className='font-semibold text-2xl text-red-700'>Mahmoud S. Qatamesh</h1>
             <p className='text-gray-600'>Managing Director</p>
           </div>
         </div>
