@@ -7,14 +7,14 @@ export default function Services() {
   return <>
       
       {/* left */}
-      <div className='flex flex-col md:flex-row justify-between mt-32 mb-10 container mx-auto px-10 relative py-4 md:pt-14'>
+      <div className='flex flex-col md:flex-row justify-between mt-32 mb-10 container mx-auto px-8 relative py-4 md:pt-14'>
 
-      <div className='md:w-[523px] md:h-[437px] w-[150px] h-[150px] rounded-3xl overflow-hidden md:mt-24 mt-12 md:ms-16 ms-16 z-10'>
-        <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full object-cover' alt="" />
+      <div className='md:w-[40%] md:h-[437px] w-[150px] h-[150px]  overflow-hidden px-8 md:mt-22 mt-12 z-10'>
+        <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full rounded-3xl object-cover' alt="" />
       </div>
-      <div className='text-left md:w-1/2 w-full md:my-auto mt-4 '>
-        <h1 className='md:text-3xl text-[12px] font-bold mb-5'>LCL IMPORT /EXPORT CONSOLIDATION & DECONSOLIDATION</h1>
-        <p className='text-[#999999] mb-2 md:mb-5 md:text-[14px] text-[8px]'>We offer a comprehensive range of logistics solutions, while having our historical core-competence and main success being the leaders in the consolidation business.
+      <div className='text-left md:w-[60%] w-full md:my-auto mt-4 '>
+        <h1 className='md:text-2xl text-[12px] font-bold mb-5 text-red-700'>LCL IMPORT /EXPORT CONSOLIDATION & DECONSOLIDATION</h1>
+        <p className='text-[#999999] mb-2 md:mb-5 md:text-[16px] text-[8px]'>We offer a comprehensive range of logistics solutions, while having our historical core-competence and main success being the leaders in the consolidation business.
 
 We are proud to be the first company in Saudi Arabia to introduce LCL services concept via dedicated CFS rather than public port warehouses.
 

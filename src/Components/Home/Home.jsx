@@ -30,7 +30,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 flex justify-center items-center z-10">
               <h1
-                className="text-white  md:text-4xl font-bold text-center max-w-[60%] "
+                className="text-white  md:text-6xl font-bold text-center max-w-[60%] "
                 style={{
                   textShadow: "4px 4px 12px rgba(0,0,0,0.9)",
                 }}
@@ -47,7 +47,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 flex justify-center items-center z-10">
               <h1
-                className="text-white  md:text-4xl font-bold text-center max-w-[60%] "
+                className="text-white  md:text-6xl font-bold text-center max-w-[60%] "
                 style={{
                   textShadow: "4px 4px 12px rgba(0,0,0,0.9)",
                 }}
@@ -64,7 +64,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 flex justify-center items-center z-10">
               <h1
-                className="text-white  md:text-4xl font-bold text-center max-w-[60%] "
+                className="text-white  md:text-6xl font-bold text-center max-w-[60%] "
                 style={{
                   textShadow: "4px 4px 12px rgba(0,0,0,0.9)",
                 }}
@@ -81,7 +81,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 flex justify-center items-center z-10">
               <h1
-                className="text-white  md:text-4xl font-bold text-center max-w-[60%] "
+                className="text-white  md:text-6xl font-bold text-center max-w-[60%] "
                 style={{
                   textShadow: "4px 4px 12px rgba(0,0,0,0.9)",
                 }}
@@ -98,7 +98,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 flex justify-center items-center z-10">
               <h1
-                className="text-white  md:text-4xl font-bold text-center max-w-[60%] "
+                className="text-white  md:text-6xl font-bold text-center max-w-[60%] "
                 style={{
                   textShadow: "4px 4px 12px rgba(0,0,0,0.9)",
                 }}
@@ -115,7 +115,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 flex justify-center items-center z-10">
               <h1
-                className="text-white  md:text-4xl font-bold text-center max-w-[60%] "
+                className="text-white  md:text-6xl font-bold text-center max-w-[60%] "
                 style={{
                   textShadow: "4px 4px 12px rgba(0,0,0,0.9)",
                 }}

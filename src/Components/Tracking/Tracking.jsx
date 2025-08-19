@@ -417,7 +417,7 @@ export default function Tracking() {
             <div className={` text-white rounded-full p-2 z-10 ${result.result[0].DepartureDate ? "bg-blue-600" : "bg-gray-500"}`}>
               {result.result[0].DepartureDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
-            <p className="mt-2 text-sm font-medium">Delivered</p>
+            <p className="mt-2 text-sm font-medium">B/L Release</p>
             <p className="text-xs text-gray-500">
               {result.result[0].DepartureDate || "not delivered yet"}
             </p>
@@ -605,7 +605,7 @@ export default function Tracking() {
           
           <div className="flex justify-start items-center mt-4">
             
-            <p className=" text-sm font-medium">Clearance:</p>
+            <p className=" text-sm font-medium">Cargo Release:</p>
             <p className="text-xs text-gray-500 ms-2">
               {result.result[0].Clearance || "not available"}
             </p>
