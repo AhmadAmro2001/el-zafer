@@ -535,9 +535,12 @@ export default function Tracking() {
 
           {/* Table Header */}
           <div className="flex mb-2">
-            <p className="flex-1 text-sm font-medium text-left">House Bill No:</p>
+            <p className="flex-1 text-sm font-medium text-center">House Bill No:</p>
             <p className="flex-1 text-sm font-medium text-center">No Of PCS:</p>
-            <p className="flex-1 text-sm font-medium text-right">DO Release:</p>
+            <p className="flex-1 text-sm font-medium text-center">Arrived:</p>
+            <p className="flex-1 text-sm font-medium text-center">Stored:</p>
+            <p className="flex-1 text-sm font-medium text-center">DO Release:</p>
+            <p className="flex-1 text-sm font-medium text-center">Cargo Release:</p>
           </div>
           <hr className="mb-2" />
 
@@ -547,9 +550,12 @@ export default function Tracking() {
   {result.result.map((item, index) => (
     <div key={index}>
       <div className="flex  mb-2">
-        <p className="flex-1 text-xs ms-5 font-medium text-left">{item.HousBillNo}</p>
+        <p className="flex-1 text-xs font-medium text-center">{item.HousBillNo}</p>
         <p className="flex-1 text-xs font-medium text-center">{item.NOOfPcs}</p>
-        <p className="flex-1 text-xs me-5 font-medium text-right">{item.DORelease}</p>
+        <p className="flex-1 text-xs font-medium text-center">{item.Arrived}</p>
+        <p className="flex-1 text-xs font-medium text-center">{item.Stored}</p>
+        <p className="flex-1 text-xs font-medium text-center">{item.DORelease}</p>
+        <p className="flex-1 text-xs font-medium text-center">{item.CargoRelease}</p>
       </div>
       <hr />
     </div>
