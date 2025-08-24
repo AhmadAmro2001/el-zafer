@@ -8,13 +8,13 @@ export default function UsefulInfoRight({data}) {
         <div className='text-left md:pe-32 my-auto'>
           
           <h2 className='text-2xl mb-2 text-[#0C71B9]'>{data.title}</h2>
-          <p className='text-[#999999]  mb-2'>{data.description}</p>
+          <p className='mb-2 text-[#999999]'>{data.description}</p>
           <Link
-          to="usefulInfoDetails"
+          to={data.link}
           state={{
             title: data.title,
             photo: data.photo,
-            detail: data.detail
+          
           }}
           className='text-[#0C71B9] mb-3 md:mb-0'>
             Read More <i className="fa-solid fa-arrow-right"></i>

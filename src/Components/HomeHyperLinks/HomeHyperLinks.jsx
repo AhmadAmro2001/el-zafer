@@ -137,7 +137,7 @@ export default function HomeHyperLinks() {
             to="details"
             state={{
               title:"Marine Surveyor",
-              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1755564605/WhatsApp_Image_2025-08-18_at_10.36.41_d3a1884f_tbyfbx.jpg",
+              photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1755973488/ChatGPT_Image_Aug_23_2025_09_23_43_PM_bfwslf.png",
               desc: "We have separate division for cargo survey and loss adjustment with highly specialized and skilled staff consists of Captain, Engineers, Marine Surveyors, Non Marine Surveyors etc.",
 
              }}

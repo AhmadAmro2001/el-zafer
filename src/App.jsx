@@ -26,6 +26,11 @@ import AdminPlatform from './Components/AdminPlatform/AdminPlatform';
 import Services from './Components/Services/Services';
 import PressRelease from './Components/PressRelease/PressRelease';
 import ContainerCalculator from './Components/ContainerCalculator/ContainerCalculator';
+import Abbreviation from './Components/Abbreviation/Abbreviation';
+import AirContainersDims from './Components/AirContainersDims/AirContainersDims';
+import FamousIncterm from './Components/FamousIncterm/FamousIncterm';
+import GlossaryOfTradeTerms from './Components/GlossaryOfTradeTerms/GlossaryOfTradeTerms';
+import MetricBasics from './Components/MetricBasics/MetricBasics';
 function App() {
 let routes = createBrowserRouter([
   {path:'',element:<Layout/>,children:[
@@ -37,7 +42,11 @@ let routes = createBrowserRouter([
     {path:'activities',element:<Activities/>},
     {path:'activities/activityDetails',element:<ActivitiesDetails/>},
     {path:'usefulInfo',element:<UsefulInfo/>},
-    {path:'usefulInfo/usefulInfoDetails',element:<UsefulInfoDetails/>},
+    {path:'usefulInfo/abbreviation',element:<Abbreviation/>},
+    {path:'usefulInfo/airContainersDims',element:<AirContainersDims/>},
+    {path:'usefulInfo/famousIncoterm',element:<FamousIncterm/>},
+    {path:'usefulInfo/glossaryOfTradeTerms',element:<GlossaryOfTradeTerms/>},
+    {path:'usefulInfo/metricBasics',element:<MetricBasics/>},
     {path:'contact',element:<Contact/>},
     {path:'privacy',element:<PrivacyAndPolicy/>},
     {path:'terms',element:<TermsAndConditions/>},
@@ -54,9 +63,9 @@ let routes = createBrowserRouter([
 ])
   return (
     <>
-    <UserTokenContextProvider>
+    
       <RouterProvider router={routes}></RouterProvider>
-    </UserTokenContextProvider>
+    
     </>
   )
 }
