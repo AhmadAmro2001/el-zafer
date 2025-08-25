@@ -515,7 +515,7 @@ export default function Tracking() {
     </div>
   </div>
       )}
-      {result && selectedTracking?.title === "Air Frieght" && (
+      {result && selectedTracking?.title === "Air Frieght" && (result?.result[0]?.destination === "JEDDAH" || result?.result[0]?.destination === "DAMMAM" || result?.result[0]?.destination === "RIYADH" ? (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
     <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
       {/* Close button */}
@@ -546,19 +546,62 @@ export default function Tracking() {
 
           {/* Right Step - Delivery */}
           <div className="flex flex-col items-center">
-            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].cleared ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result[0].cleared ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].BLReleaseDate ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].BLReleaseDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
-            <p className="mt-2 text-sm font-medium">Cleared</p>
+            <p className="mt-2 text-sm font-medium">B/L Release Date</p>
             <p className="text-xs text-gray-500">
-              {result.result[0].cleared || "not cleared yet"}
+              {result.result[0].BLReleaseDate || "not released yet"}
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-      )}
+      ) : (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+          <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            {/* Close button */}
+            <button
+              onClick={() => setResult(null)}
+              className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+            >
+              &times;
+            </button>
+      
+      
+            {/* Status Progress */}
+            <div className="bg-gray-100 p-6 rounded-xl">
+              <div className="flex justify-between items-center relative">
+                {/* Left Step - Arrival */}
+                <div className="flex flex-col items-center">
+                  <div className={` text-white rounded-full p-2 z-10 ${result.result[0].DepartureDate ? "bg-blue-600" : "bg-gray-500"}`}>
+                    {result.result[0].DepartureDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+                  </div>
+                  <p className="mt-2 text-sm font-medium">Departure Date</p>
+                  <p className="text-xs text-gray-500">
+                    {result.result[0].DepartureDate || "not departed yet"}
+                  </p>
+                </div>
+      
+                {/* Dotted line */}
+                <div className="absolute top-4 left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
+      
+                {/* Right Step - Delivery */}
+                <div className="flex flex-col items-center">
+                  <div className={` text-white rounded-full p-2 z-10 ${result.result[0].ArrivalDate ? "bg-blue-600" : "bg-gray-500"}`}>
+                    {result.result[0].ArrivalDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+                  </div>
+                  <p className="mt-2 text-sm font-medium">Arrival Date</p>
+                  <p className="text-xs text-gray-500">
+                    {result.result[0].ArrivalDate || "not arrived yet"}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            ) ) }
       {result && selectedTracking?.title === "LCL" && selectedLclContainerStatus && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
   <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-3xl relative shadow-lg">

@@ -5,6 +5,7 @@ export default function Qoutations() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedQoutation, setSelectedQoutation] = useState(null);
   const [selectedService, setSelectedService] = useState("");
+  const [selectedServices, setSelectedServices] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
 
@@ -37,14 +38,14 @@ export default function Qoutations() {
 
     const fullData = {
       ...formData,
-      requiredService:selectedService,
+      requiredService:selectedServices,
       quoteType: selectedQoutation?.title,
     };
 
     try {
       await axios.post(url, fullData);
       setFormData({});
-      setSelectedService("");
+      setSelectedServices([]);
       setIsSubmitted(true);
     } catch (error) {
       console.error("Error sending quote:", error);
@@ -307,26 +308,30 @@ export default function Qoutations() {
                         Required Services:
                       </label>
                       <div className="flex md:flex-row flex-col gap-2 items-center">
-                        {["Clearance", "Transportation", "Freight"].map(
-                          (service) => (
-                            <label
-                              className="inline-flex items-center"
-                              key={service}
-                            >
-                              <input
-                                type="radio"
-                                name="requiredService"
-                                value={service}
-                                checked={selectedService === service}
-                                onChange={(e) =>
-                                  setSelectedService(e.target.value)
-                                }
-                                className="form-radio text-blue-600"
-                              />
-                              <span className="ml-2">{service}</span>
-                            </label>
-                          )
-                        )}
+                      {["Clearance", "Transportation", "Saber"].map((service) => (
+  <label className="inline-flex items-center" key={service}>
+    <input
+      type="checkbox"
+      value={service}
+      checked={selectedServices.includes(service)}
+      onChange={(e) => {
+        if (e.target.checked) {
+          // add this service
+          setSelectedServices([...selectedServices, service]);
+        } else {
+          // remove this service
+          setSelectedServices(
+            selectedServices.filter((s) => s !== service)
+          );
+        }
+        console.log(selectedServices);
+      }}
+      className="form-checkbox text-blue-600"
+    />
+    <span className="ml-2">{service}</span>
+  </label>
+))}
+
                       </div>
                     </div>
                   </>

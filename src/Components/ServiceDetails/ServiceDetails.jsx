@@ -11,29 +11,29 @@ export default function ServiceDetails() {
 
   const process = [
     {
-      title: "BOOKING",
+      title: "Booking",
       description:
-        "THE SHIPPER BOOKS THE  LCL SERVICE WITH THE  FREIGHT FORWARDER,  PROVIDING DETAILS  ABOUT THE CARGO,  DESTINATION, AND  REQUIRED DELIVERY",
+        "The shipper books the LCL service with the freight forwarder, providing details about the cargo, destination, and required delivery",
     },
     {
-      title: "CONSOLIDATION",
+      title: "Consolidation",
       description:
-        "MULTIPLE SHIPMENTS FROM DIFFERENT SHIPPERS ARE COLLECTED AND CONSOLIDATED INTO A SINGLE CONTAINER AT THE ORIGIN WAREHOUSE",
+        "Multiple shipments from different shippers are collected and consolidated into a single container at the origin warehouse",
     },
     {
-      title: "SHIPPING",
+      title: "Shipping",
       description:
-        " THE CONSOLIDATED CONTAINER IS SHIPPED VIA SEA TO THE DESTINATION PORT",
+        "The consolidated container is shipped via sea to the destination port",
     },
     {
-      title: "DECONSOLIDATION",
+      title: "Deconsolidation",
       description:
-        "AT THE DESTINATION PORT, THE CONTAINER IS OPENED, AND INDIVIDUAL SHIPMENTS ARE SEPARATED FOR FURTHER DELIVERY",
+        "At the destination port, the container is opened, and individual shipments are separated for further delivery",
     },
     {
-      title: "DELIVERY",
+      title: "Delivery",
       description:
-        " THE SEPARATED SHIPMENTS ARE DELIVERED TO THEIR FINAL DESTINATIONS.",
+        "The separated shipments are delivered to their final destinations.",
     },
   ];
 
@@ -55,9 +55,9 @@ export default function ServiceDetails() {
             {title}
           </h1>
           <p className=" mb-2 md:mb-5 md:text-[20px] text-[8px]">
-            LCL (LESS-THAN-CONTAINER LOAD) IS A SHIPPING TERM WHICH ALLOWS
-            MULTIPLE SHIPPERS TO SHARE SPACE IN ONE CONTAINER, OPTIMIZING COST
-            AND EFFICIENCY.
+            LCL (Less-Than-Container Load) is a shipping term which allows
+            multiple shippers to share space in one container, optimizing cost
+            and efficiency.
           </p>
         </div>
       </div>
@@ -65,14 +65,14 @@ export default function ServiceDetails() {
       <div className="flex flex-col md:flex-row md:justify-between container mx-auto px-14 md:px-16">
         <div className="text-left">
           <h2 className="md:text-2xl text-[12px] font-semibold mb-5 text-red-700">
-            ADVANTAGES OF LCL?
+            Advantages of LCL?
           </h2>
           <ul className=" md:text-[20px] text-[8px] list-disc ms-6">
-            <li>COST EFFECTIVE</li>
-            <li>IDEAL FOR DIVERSE CARGO TYPES</li>
-            <li>PERFECT FOR SMALL TO MEDIUM SIZED SHIPMENTS</li>
-            <li>ENHANCED INVENTORY MANAGEMENT</li>
-            <li>ECONOMICAL FOR SMALLER BUSINESSEs</li>
+            <li>Cost effective</li>
+            <li>Ideal for diverse cargo types</li>
+            <li>Perfect for small to medium sized shipments</li>
+            <li>Enhanced inventory management</li>
+            <li>Economical for smaller businesses</li>
           </ul>
         </div>
         <div className="md:w-[544px] md:h-[286px] w-[250px] h-[150px] ">
@@ -95,7 +95,7 @@ export default function ServiceDetails() {
       {/* process part */}
       <div className="container mx-auto px-10 md:px-32 py-16 bg-[#0C71B9]">
         <h2 className="text-white md:text-3xl text-[16px] font-semibold md:mb-5 mb-2 text-center">
-          LCL PROCESS
+          LCL process
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {/* item start */}
@@ -117,18 +117,18 @@ export default function ServiceDetails() {
       {/* warehouse */}
       <div className="container mx-auto px-10 md:px-24 py-16">
         <h1 className="md:text-3xl text-[12px] font-bold mb-5 text-left text-red-700">
-          CFS WAREHOUSES IN BONDED & RE-EXPORT ZONE
+          CFS warehouses in bonded & re-export zone
         </h1>
         <div className="flex flex-col md:flex-row justify-between py-5 md:py-10">
           <div className="text-left my-auto">
             <h1 className="md:text-2xl text-[12px] font-bold mb-5 text-left text-red-700">
-              LCL DE-CONSOLIDATION
+              LCL de-consolidation
             </h1>
             <ul className=" md:text-[20px] text-[8px] list-disc ms-6">
-              <li> 6 WAREHOUSES IN JEDDAH & DAMMAM SEAPORTS</li>
-              <li> STORAGE: SAFE & SECURE, SHORT-TERM & LONG-TERM</li>
-              <li>SERVICES: PACKING, LABELING, SEPARATE WAREHOUSE FOR DGR GOODS</li>
-              <li> SPEEDY SERVICE WITH COMPETITIVE CHARGE</li>
+              <li> 6 warehouses in JEDDAH & DAMMAM seaports</li>
+              <li> storage: safe & secure, short-term & long-term</li>
+              <li>services: packing, labeling, separate warehouse for DGR goods</li>
+              <li> speedy service with competitive charge</li>
             </ul>
           </div>
           <div className="md:w-[256px] md:h-[256px] w-[150px] h-[150px] mt-8 md:mt-0 rounded-full overflow-hidden mx-auto">
@@ -147,18 +147,18 @@ export default function ServiceDetails() {
           </div>
           <div className="w-2/3 text-left my-auto">
             <h1 className="md:text-2xl text-[12px] font-bold mb-5 text-left text-red-700">
-               RIYADH DRY PORT OPERATIONS
+              Riyadh dry port operations
             </h1>
             <ul className=" md:text-[20px] text-[8px] mb-4 list-disc ms-6">
-              <li> IMPORT LCL CONSOLES HANDLED BY PORT & CUSTOMS AUTHORITY</li>
-              <li> ATTRACTIVE INCENTIVES FOR CONSOLIDATION PARTNERS & CUSTOMERS</li>
+              <li> import LCL consoles handled by port & customs authority</li>
+              <li> attractive incentives for consolidation partners & customers</li>
             </ul>
             <h1 className="md:text-2xl text-[12px] font-bold mb-5 text-left text-red-700">
-               WAREHOUSE OUTSIDE THE PORT
+              Warehouse outside the port
             </h1>
             <ul className=" md:text-[20px] text-[8px] list-disc ms-6">
-              <li>  OFFERED THROUGH JEDDAH, RIYADH, AND DAMMAM.</li>
-              <li>  PARTNERING WITH TOP CONSOLIDATORS FROM EUROPE, FAR EAST, INDIAN SUBCONTINENT, AND USA</li>
+              <li>  offered through JEDDAH, RIYADH, AND DAMMAM.</li>
+              <li>  partnering with top consolidators from EUROPE, FAR EAST, INDIAN SUBCONTINENT, AND USA</li>
             </ul>
           </div>
           
@@ -167,14 +167,14 @@ export default function ServiceDetails() {
       {/* lcl coparation */}
       <div className='container mx-auto relative px-4 md:px-36 bg-[#095890]'>
         <div className='flex flex-col justify-center items-center md:py-24 py-16  text-white'>
-           <h1 className=" text-[16px] md:text-3xl mb-4 font-bold">LCL COOPERATION</h1>
-           <p className="text-[10px] md:text-[16px]">WE ARE EAGER TO COLLABORATE WITH YOUR ESTEEMED COMPANY ON IMPORT CONSOLES TO KSA AND BUILD A LONG-TERM PARTNERSHIP.
-          WE PRIORITIZE USING OUR OWN CONTAINERS AND AVOID CO-LOADING, EVEN AT SMALLER VOLUMES. WE ARE WILLING TO SHARE LOSSES TO MAINTAIN REGULAR SERVICE FOR CUSTOMERS ON BOTH SIDES. HAVING CONTROL OVER OUR OWN CFS, PROCESS AND COSTS, WE ARE ABLE TO SUPPORT YOUR PREPAID CARGOES WITH REBATE LEVELS PER CBM AND PER SHIPMENT THAT ARE FAR HIGHER THAN ANY OTHER LOCAL COMPETITORS.
-          WE HANDLE NOMINATION CARGO FROM VARIOUS ORIGINS AND CAN FOCUS ON FILLING YOUR 
-          CONTAINERS WITH HUB CARGO.
-          WE ALSO HAVE OUR OWN EXPORT CONSOLE THAT WE MOVE VIA NORTH-SEA OR GULF SUBJECT 
-          TO CARGOES MAJOR DESTINATIONS AND COSTS, AND WE CAN AS WELL COOPERATE WITH YOU TO PROVIDE THIS SERVICE FROM JEBEL ALI TO US AND OUR CUSTOMERS. WE ARE EAGER TO UNDERSTAND YOUR SPECIFIC NEEDS AND DISCUSS HOW OUR SERVICES CAN 
-          ALIGN WITH YOUR BUSINESS OBJECTIVES</p>
+           <h1 className=" text-[16px] md:text-3xl mb-4 font-bold">LCL Cooperation</h1>
+           <p className="text-[10px] md:text-[16px]">We are eager to collaborate with your esteemed company on import consoles to KSA and build a long-term partnership.
+          We prioritize using our own containers and avoid co-loading, even at smaller volumes. We are willing to share losses to maintain regular service for customers on both sides. Having control over our own CFS, process and costs, we are able to support your prepaid cargoes with rebate levels per CBM and per shipment that are far higher than any other local competitors.
+          We handle nomination cargo from various origins and can focus on filling your 
+          containers with hub cargo.
+          We also have our own export console that we move via NORTH-SEA or gulf subject 
+          to cargoes major destinations and costs, and we can also cooperate with you to provide this service from JEBEL ALI to US and our customers. We are eager to understand your specific needs and discuss how our services can 
+          align with your business objectives</p>
         </div>
         <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[495px] w-[200px] md:h-[495px] h-[200px] opacity-15 border rounded-full '>
         </div>
