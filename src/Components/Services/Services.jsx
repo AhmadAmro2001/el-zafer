@@ -13,8 +13,8 @@ export default function Services() {
         <img src="https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png" className='w-full h-full rounded-3xl object-cover' alt="" />
       </div>
       <div className='text-left md:w-[60%] w-full md:my-auto mt-4 '>
-        <h1 className='md:text-2xl text-[12px] font-bold mb-5 text-red-700'>LCL IMPORT /EXPORT CONSOLIDATION & DECONSOLIDATION</h1>
-        <p className='text-[#999999] mb-2 md:mb-5 md:text-[16px] text-[8px]'>We offer a comprehensive range of logistics solutions, while having our historical core-competence and main success being the leaders in the consolidation business.
+        <h1 className='md:text-2xl text-[12px] font-bold mb-5 text-red-700'>LCL Import / Export Consolidation & De-Consolidation</h1>
+        <p className=' mb-2 md:mb-5 md:text-[16px] text-[8px]'>We offer a comprehensive range of logistics solutions, while having our historical core-competence and main success being the leaders in the consolidation business.
 
 We are proud to be the first company in Saudi Arabia to introduce LCL services concept via dedicated CFS rather than public port warehouses.
 
@@ -46,7 +46,7 @@ Additionally, we are open to collaborate with overseas partners also on our own 
         <Link
           to="serviceDetails"
           state={{
-            title: "LCL IMPORT /EXPORT CONSOLIDATION & DECONSOLIDATION",
+            title: "LCL Import / Export Consolidation & De-Consolidation",
             photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1749985397/services1_yrb2mi.png",
           }}
           className='text-[#0C71B9] font-semibold text-[10px]  md:text-[20px]'

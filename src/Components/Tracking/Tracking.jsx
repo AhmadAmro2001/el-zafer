@@ -383,50 +383,7 @@ export default function Tracking() {
         </div>
       )}
       {/* success message */}
-      {result && selectedTracking?.title === "Tracking full container" && (result?.result[0]?.PortOfLoading === "JEDDAH" ? (
-  <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-    <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
-      {/* Close button */}
-      <button
-        onClick={() => setResult(null)}
-        className="absolute top-2 right-4 text-xl font-bold text-gray-700"
-      >
-        &times;
-      </button>
-
-
-      {/* Status Progress */}
-      <div className="bg-gray-100 p-6 rounded-xl">
-        <div className="flex justify-between items-center relative">
-          {/* Left Step - Arrival */}
-          <div className="flex flex-col items-center">
-            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].ArrivalDate ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result[0].ArrivalDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
-            </div>
-            <p className="mt-2 text-sm font-medium">Arrived</p>
-            <p className="text-xs text-gray-500">
-              {result.result[0].ArrivalDate || "not arrived yet"}
-            </p>
-          </div>
-
-          {/* Dotted line */}
-          <div className="absolute top-4 left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
-
-          {/* Right Step - Delivery */}
-          <div className="flex flex-col items-center">
-            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].DepartureDate ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result[0].DepartureDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
-            </div>
-            <p className="mt-2 text-sm font-medium">B/L Release</p>
-            <p className="text-xs text-gray-500">
-              {result.result[0].DepartureDate || "not delivered yet"}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-      ):(
+      {result && selectedTracking?.title === "Tracking full container" && (result?.result[0]?.PortOfLoading === "JEDDAH" || result?.result[0]?.PortOfLoading === "DAMMAM" || result?.result[0]?.PortOfLoading === "RIYADH"  ?(
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
         <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
           {/* Close button */}
@@ -469,7 +426,50 @@ export default function Tracking() {
           </div>
         </div>
       </div>
-      ))}
+      ) :(
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+          <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            {/* Close button */}
+            <button
+              onClick={() => setResult(null)}
+              className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+            >
+              &times;
+            </button>
+      
+      
+            {/* Status Progress */}
+            <div className="bg-gray-100 p-6 rounded-xl">
+              <div className="flex justify-between items-center relative">
+                {/* Left Step - Arrival */}
+                <div className="flex flex-col items-center">
+                  <div className={` text-white rounded-full p-2 z-10 ${result.result[0].ArrivalDate ? "bg-blue-600" : "bg-gray-500"}`}>
+                    {result.result[0].ArrivalDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+                  </div>
+                  <p className="mt-2 text-sm font-medium">Arrived</p>
+                  <p className="text-xs text-gray-500">
+                    {result.result[0].ArrivalDate || "not arrived yet"}
+                  </p>
+                </div>
+      
+                {/* Dotted line */}
+                <div className="absolute top-4 left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
+      
+                {/* Right Step - Delivery */}
+                <div className="flex flex-col items-center">
+                  <div className={` text-white rounded-full p-2 z-10 ${result.result[0].DepartureDate ? "bg-blue-600" : "bg-gray-500"}`}>
+                    {result.result[0].DepartureDate ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+                  </div>
+                  <p className="mt-2 text-sm font-medium">B/L Release</p>
+                  <p className="text-xs text-gray-500">
+                    {result.result[0].DepartureDate || "not delivered yet"}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            ))}
       {result && selectedTracking?.title === "Personal Effects" && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
     <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">

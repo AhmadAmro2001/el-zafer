@@ -54,7 +54,7 @@ export default function ServiceDetails() {
           <h1 className="md:text-4xl text-[12px] font-bold mb-5 text-red-700">
             {title}
           </h1>
-          <p className="text-[#999999] mb-2 md:mb-5 md:text-[20px] text-[8px]">
+          <p className=" mb-2 md:mb-5 md:text-[20px] text-[8px]">
             LCL (LESS-THAN-CONTAINER LOAD) IS A SHIPPING TERM WHICH ALLOWS
             MULTIPLE SHIPPERS TO SHARE SPACE IN ONE CONTAINER, OPTIMIZING COST
             AND EFFICIENCY.
@@ -62,12 +62,12 @@ export default function ServiceDetails() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row md:justify-between container mx-auto px-14 md:px-32">
+      <div className="flex flex-col md:flex-row md:justify-between container mx-auto px-14 md:px-16">
         <div className="text-left">
           <h2 className="md:text-2xl text-[12px] font-semibold mb-5 text-red-700">
             ADVANTAGES OF LCL?
           </h2>
-          <ul className="text-[#999999] md:text-[20px] text-[8px] list-disc ms-6">
+          <ul className=" md:text-[20px] text-[8px] list-disc ms-6">
             <li>COST EFFECTIVE</li>
             <li>IDEAL FOR DIVERSE CARGO TYPES</li>
             <li>PERFECT FOR SMALL TO MEDIUM SIZED SHIPMENTS</li>
@@ -124,7 +124,7 @@ export default function ServiceDetails() {
             <h1 className="md:text-2xl text-[12px] font-bold mb-5 text-left text-red-700">
               LCL DE-CONSOLIDATION
             </h1>
-            <ul className="text-[#999999] md:text-[20px] text-[8px] list-disc ms-6">
+            <ul className=" md:text-[20px] text-[8px] list-disc ms-6">
               <li> 6 WAREHOUSES IN JEDDAH & DAMMAM SEAPORTS</li>
               <li> STORAGE: SAFE & SECURE, SHORT-TERM & LONG-TERM</li>
               <li>SERVICES: PACKING, LABELING, SEPARATE WAREHOUSE FOR DGR GOODS</li>
@@ -149,14 +149,14 @@ export default function ServiceDetails() {
             <h1 className="md:text-2xl text-[12px] font-bold mb-5 text-left text-red-700">
                RIYADH DRY PORT OPERATIONS
             </h1>
-            <ul className="text-[#999999] md:text-[20px] text-[8px] mb-4 list-disc ms-6">
+            <ul className=" md:text-[20px] text-[8px] mb-4 list-disc ms-6">
               <li> IMPORT LCL CONSOLES HANDLED BY PORT & CUSTOMS AUTHORITY</li>
               <li> ATTRACTIVE INCENTIVES FOR CONSOLIDATION PARTNERS & CUSTOMERS</li>
             </ul>
             <h1 className="md:text-2xl text-[12px] font-bold mb-5 text-left text-red-700">
                WAREHOUSE OUTSIDE THE PORT
             </h1>
-            <ul className="text-[#999999] md:text-[20px] text-[8px] list-disc ms-6">
+            <ul className=" md:text-[20px] text-[8px] list-disc ms-6">
               <li>  OFFERED THROUGH JEDDAH, RIYADH, AND DAMMAM.</li>
               <li>  PARTNERING WITH TOP CONSOLIDATORS FROM EUROPE, FAR EAST, INDIAN SUBCONTINENT, AND USA</li>
             </ul>

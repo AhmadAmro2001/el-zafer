@@ -7,8 +7,8 @@ export default function UsefulInfoRight({data}) {
       <div className='flex flex-col  md:flex-row justify-between container mx-auto md:px-16 px-4 relative py-14'>
         <div className='text-left md:pe-32 my-auto'>
           
-          <h2 className='text-2xl mb-2 text-[#0C71B9]'>{data.title}</h2>
-          <p className='mb-2 text-[#999999]'>{data.description}</p>
+          <h2 className='text-2xl mb-2 text-red-700'>{data.title}</h2>
+          <p className='mb-2 '>{data.description}</p>
           <Link
           to={data.link}
           state={{

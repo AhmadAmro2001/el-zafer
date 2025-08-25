@@ -14,8 +14,8 @@ export default function UsefulInfoleft({data}) {
         </div>
         <div className='text-left md:ps-32 my-auto'>
           
-          <h2 className='text-2xl mb-2 text-[#0C71B9]'>{data.title}</h2>
-          <p className='mb-2 text-[#999999]'>{data.description}</p>
+          <h2 className='text-2xl mb-2 text-red-700'>{data.title}</h2>
+          <p className='mb-2 '>{data.description}</p>
           <Link 
           to={data.link}
           state={{
