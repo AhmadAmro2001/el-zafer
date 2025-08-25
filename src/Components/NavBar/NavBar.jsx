@@ -4,19 +4,16 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [adminCounter, setAdminCounter] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
-    if(adminCounter === 4){
-      navigate("/admin");
-    }
-  }, [adminCounter]);
+    
+  }, []);
   return (
     <>
       <nav className="bg-white  fixed top-0 z-50 left-0 right-0">
         <div className="max-w-screen-2xl pr-7 md:pr-24 mx-auto  py-1 flex justify-between items-center">
           {/* Logo */}
-          <div className="flex " onClick={() => setAdminCounter(adminCounter + 1)}>
+          <div className="flex " >
             <img
               src="https://res.cloudinary.com/djvzbznry/image/upload/v1749622979/el-zafer-logo_l6b5ly.png"
               alt="El Zafer Logo"

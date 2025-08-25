@@ -469,7 +469,7 @@ export default function Tracking() {
             </div>
           </div>
         </div>
-            ))}
+      ))}
       {result && selectedTracking?.title === "Personal Effects" && (
   <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
     <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">

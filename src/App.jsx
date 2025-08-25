@@ -18,11 +18,6 @@ import PrivacyAndPolicy from './Components/PrivacyAndPolicy/PrivacyAndPolicy';
 import TrackingAndQoutaions from './Components/TrackingAndQoutaions/TrackingAndQoutaions';
 import HomeDetails from './Components/HomeDetails/HomeDetails';
 import Qoutations from './Components/Qoutations/Qoutations';
-import AdminDashboard from './Components/AdminDashboard/AdminDashboard';
-import UserTokenContextProvider from './Context/UserTokenContext';
-import AdminLogin from './Components/AdminLogin/AdminLogin';
-import AdminSignUp from './Components/AdminSignUp/AdminSignUp';
-import AdminPlatform from './Components/AdminPlatform/AdminPlatform';
 import Services from './Components/Services/Services';
 import PressRelease from './Components/PressRelease/PressRelease';
 import ContainerCalculator from './Components/ContainerCalculator/ContainerCalculator';
@@ -56,10 +51,6 @@ let routes = createBrowserRouter([
     {path:'terms',element:<TermsAndConditions/>},
     {path:'tracking',element:<TrackingAndQoutaions/>},
     {path:'qoutation',element:<Qoutations/>},
-    {path:'admin',element:<AdminDashboard/>},
-    {path:'adminLogin',element:<AdminLogin/>},
-    {path:'adminSignUp',element:<AdminSignUp/>},
-    {path:'admindashboard',element:<AdminPlatform/>},
     {path:'pressRelease' , element:<PressRelease/>},
     {path:'containerCalculator',element:<ContainerCalculator/> },
     {path:'*',element:<NotFound/>}
