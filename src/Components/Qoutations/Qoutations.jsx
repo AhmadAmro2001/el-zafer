@@ -4,7 +4,8 @@ import axios from "axios";
 export default function Qoutations() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedQoutation, setSelectedQoutation] = useState(null);
-  const [selectedService, setSelectedService] = useState("");
+
+  const [emailTo, setEmailTo] = useState("");
   const [selectedServices, setSelectedServices] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
@@ -24,6 +25,7 @@ export default function Qoutations() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    setEmailTo(value);
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -32,20 +34,26 @@ export default function Qoutations() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(false);
+    
+    
 
     const url = getApiUrl();
     if (!url) return alert("No API endpoint found");
 
     const fullData = {
       ...formData,
-      requiredService:selectedServices,
+      requiredService: selectedServices,
       quoteType: selectedQoutation?.title,
+      emailTo
     };
 
     try {
+      // console.log("Payload:", fullData);
+      // console.log("emailTo received:", emailOption);
       await axios.post(url, fullData);
       setFormData({});
       setSelectedServices([]);
+      setEmailTo("");
       setIsSubmitted(true);
     } catch (error) {
       console.error("Error sending quote:", error);
@@ -71,7 +79,6 @@ export default function Qoutations() {
   }
   return (
     <>
-      
       <div className="container mx-auto px-4 my-10 md:my-44 md:px-24">
         <h1 className="text-3xl text-red-700 font-bold text-left md:my-12 my-6">
           Request a Qoutation
@@ -115,7 +122,7 @@ export default function Qoutations() {
               >
                 {selectedQoutation?.title ===
                   "Get a Quote For Import Shipment" && (
-                  <>
+                  <div>
                     <label htmlFor="portOfLoading" className="font-semibold">
                       Port of loading
                     </label>
@@ -186,7 +193,37 @@ export default function Qoutations() {
                       value={formData.emailOrPhone || ""}
                       onChange={handleInputChange}
                     />
-                  </>
+                    {/* radio button */}
+                    <div className="flex justify-around mt-3">
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="option1" // give unique id
+                          name="optionsEmail"
+                          value="option1"
+                          checked={emailTo === "option1"}
+                          onChange={handleInputChange}
+                        />
+                        <label htmlFor="option1" className="font-semibold ml-2">
+                          FCL or Air freight
+                        </label>
+                      </div>
+
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="option2" // give unique id
+                          name="optionsEmail"
+                          value="option2"
+                          checked={emailTo === "option2"}
+                          onChange={handleInputChange}
+                        />
+                        <label htmlFor="option2" className="font-semibold ml-2">
+                          LCL
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 )}
                 {selectedQoutation?.title ===
                   "Get a Quote For Export Shipment" && (
@@ -261,6 +298,35 @@ export default function Qoutations() {
                       value={formData.emailOrPhone || ""}
                       onChange={handleInputChange}
                     />
+                    <div className="flex justify-around mt-3">
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="option3" // give unique id
+                          name="optionsEmailExport"
+                          value="option1"
+                          checked={emailTo === "option1"}
+                          onChange={handleInputChange}
+                        />
+                        <label htmlFor="option1" className="font-semibold ml-2">
+                          FCL or LCL
+                        </label>
+                      </div>
+
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="option4" // give unique id
+                          name="optionsEmailExport"
+                          value="option2"
+                          checked={emailTo === "option2"}
+                          onChange={handleInputChange}
+                        />
+                        <label htmlFor="option2" className="font-semibold ml-2">
+                          Air Freight
+                        </label>
+                      </div>
+                    </div>
                   </>
                 )}
                 {selectedQoutation?.title ===
@@ -304,34 +370,46 @@ export default function Qoutations() {
                       onChange={handleInputChange}
                     />
                     <div className="mb-4">
-                      <label htmlFor="requiredService" className="block font-semibold mb-2">
+                      <label
+                        htmlFor="requiredService"
+                        className="block font-semibold mb-2"
+                      >
                         Required Services:
                       </label>
                       <div className="flex md:flex-row flex-col gap-2 items-center">
-                      {["Clearance", "Transportation", "Saber"].map((service) => (
-  <label className="inline-flex items-center" key={service}>
-    <input
-      type="checkbox"
-      value={service}
-      checked={selectedServices.includes(service)}
-      onChange={(e) => {
-        if (e.target.checked) {
-          // add this service
-          setSelectedServices([...selectedServices, service]);
-        } else {
-          // remove this service
-          setSelectedServices(
-            selectedServices.filter((s) => s !== service)
-          );
-        }
-        console.log(selectedServices);
-      }}
-      className="form-checkbox text-blue-600"
-    />
-    <span className="ml-2">{service}</span>
-  </label>
-))}
-
+                        {["Clearance", "Transportation", "Saber"].map(
+                          (service) => (
+                            <label
+                              className="inline-flex items-center"
+                              key={service}
+                            >
+                              <input
+                                type="checkbox"
+                                value={service}
+                                checked={selectedServices.includes(service)}
+                                onChange={(e) => {
+                                  if (e.target.checked) {
+                                    // add this service
+                                    setSelectedServices([
+                                      ...selectedServices,
+                                      service,
+                                    ]);
+                                  } else {
+                                    // remove this service
+                                    setSelectedServices(
+                                      selectedServices.filter(
+                                        (s) => s !== service
+                                      )
+                                    );
+                                  }
+                                  console.log(selectedServices);
+                                }}
+                                className="form-checkbox text-blue-600"
+                              />
+                              <span className="ml-2">{service}</span>
+                            </label>
+                          )
+                        )}
                       </div>
                     </div>
                   </>
