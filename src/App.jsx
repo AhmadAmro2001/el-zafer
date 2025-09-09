@@ -28,6 +28,7 @@ import GlossaryOfTradeTerms from './Components/GlossaryOfTradeTerms/GlossaryOfTr
 import MetricBasics from './Components/MetricBasics/MetricBasics';
 import MetricToUs from './Components/MetricToUs/MetricToUs';
 import OceanContDims from './Components/OceanContDims/OceanContDims';
+import ShippingSchedule from './Components/ShippingSchedule/ShippingSchedule';
 function App() {
 let routes = createBrowserRouter([
   {path:'',element:<Layout/>,children:[
@@ -46,6 +47,7 @@ let routes = createBrowserRouter([
     {path:'usefulInfo/metricBasics',element:<MetricBasics/>},
     {path:'usefulInfo/metricToUs',element:<MetricToUs/>},
     {path:'usefulInfo/oceanContainersDims',element:<OceanContDims/>},
+    {path:'usefulInfo/shippingSchedule',element:<ShippingSchedule/>},
     {path:'contact',element:<Contact/>},
     {path:'privacy',element:<PrivacyAndPolicy/>},
     {path:'terms',element:<TermsAndConditions/>},

@@ -14,7 +14,7 @@ export default function UsefulInfo() {
       {
         title:"Air containers dims",
         description:"This section outlines standard air container dimensions used in cargo transport. It details the displacement, maximum gross weight, and external dimensions for different unit load devices (ULDs) such as Main Deck Pallet, LD-7, P9A Lower Deck Pallet, and LD-11, along with illustrations for each.",
-        photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1749623075/home3_qnlblh.png",
+        photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750304173/activities7_nv280l.jpg",
         link:"airContainersDims"
       },
       {
@@ -47,21 +47,14 @@ export default function UsefulInfo() {
       {
         title:"Ocean containers dims",
         description:"This section provides detailed dimensions and capacities of standard ocean containers. It includes specifications for Standard 20’, Standard 40’/High Cube 40’, and Open Top containers. Each entry lists internal measurements, door sizes, capacity, tare weight, and maximum cargo weight, helping shippers select the right container type for their freight.",
-        photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750304173/activities7_nv280l.jpg",
+        photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1751183633/Cargo_Storage_afuao9.jpg",
         link:"oceanContainersDims"
       },
       {
         title:"Shipping schedule",
         description:"This section provides a shipping schedule, listing the days and times when cargo is loaded and unloaded at ports. It includes information about the ports of call, vessel schedules, and cargo handling procedures, helping shippers plan their shipments and track their cargo movements.",
-        photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750304203/activities6_rib58i.jpg",
+        photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1752679557/Container_ship_2048_1152_rdax_65_vir4rd.jpg",
         link:"shippingSchedule"
-        
-      },
-      {
-        title:"Track & trace",
-        description:"This section provides a tracking system for cargo shipments, allowing shippers to monitor the status of their cargo in real-time. It includes information about the current location, estimated time of arrival, and any delays or issues, helping shippers keep track of their cargo movements and make informed decisions about their shipments.",
-        photo:"https://res.cloudinary.com/djvzbznry/image/upload/v1750304346/activities5_b3bgx9.jpg",
-        link:"trackAndTrace"
         
       }
     ]
@@ -77,7 +70,7 @@ export default function UsefulInfo() {
       <UsefulInfoRight data={data[5]}/>
       <UsefulInfoleft data={data[6]}/>
       <UsefulInfoRight data={data[7]}/>
-      <UsefulInfoleft data={data[8]}/>
+      
       
       
       
