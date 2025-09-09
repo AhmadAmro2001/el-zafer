@@ -34,8 +34,6 @@ export default function Qoutations() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(false);
-    
-    
 
     const url = getApiUrl();
     if (!url) return alert("No API endpoint found");
@@ -44,7 +42,7 @@ export default function Qoutations() {
       ...formData,
       requiredService: selectedServices,
       quoteType: selectedQoutation?.title,
-      emailTo
+      emailTo,
     };
 
     try {
@@ -198,28 +196,52 @@ export default function Qoutations() {
                       <div className="flex items-center">
                         <input
                           type="radio"
-                          id="option1" // give unique id
-                          name="optionsEmail"
-                          value="option1"
-                          checked={emailTo === "option1"}
+                          id="import-fcl"
+                          name="emailTo" // goes to req.body.emailTo
+                          value="import_fcl" // clear, unique
+                          checked={emailTo === "import_fcl"}
                           onChange={handleInputChange}
+                          required
                         />
-                        <label htmlFor="option1" className="font-semibold ml-2">
-                          FCL or Air freight
+                        <label
+                          htmlFor="import-fcl"
+                          className="font-semibold ml-2"
+                        >
+                          FCL
                         </label>
                       </div>
 
                       <div className="flex items-center">
                         <input
                           type="radio"
-                          id="option2" // give unique id
-                          name="optionsEmail"
-                          value="option2"
-                          checked={emailTo === "option2"}
+                          id="import-lcl"
+                          name="emailTo"
+                          value="import_lcl"
+                          checked={emailTo === "import_lcl"}
                           onChange={handleInputChange}
                         />
-                        <label htmlFor="option2" className="font-semibold ml-2">
+                        <label
+                          htmlFor="import-lcl"
+                          className="font-semibold ml-2"
+                        >
                           LCL
+                        </label>
+                      </div>
+
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="import-air"
+                          name="emailTo"
+                          value="import_air"
+                          checked={emailTo === "import_air"}
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          htmlFor="import-air"
+                          className="font-semibold ml-2"
+                        >
+                          Air Freight
                         </label>
                       </div>
                     </div>
@@ -302,27 +324,51 @@ export default function Qoutations() {
                       <div className="flex items-center">
                         <input
                           type="radio"
-                          id="option3" // give unique id
-                          name="optionsEmailExport"
-                          value="option1"
-                          checked={emailTo === "option1"}
+                          id="export-fcl"
+                          name="emailTo" // <-- put this field into req.body.emailTo
+                          value="export_fcl" // <-- unique values
+                          checked={emailTo === "export_fcl"}
                           onChange={handleInputChange}
+                          required
                         />
-                        <label htmlFor="option1" className="font-semibold ml-2">
-                          FCL or LCL
+                        <label
+                          htmlFor="export-fcl"
+                          className="font-semibold ml-2"
+                        >
+                          FCL
                         </label>
                       </div>
 
                       <div className="flex items-center">
                         <input
                           type="radio"
-                          id="option4" // give unique id
-                          name="optionsEmailExport"
-                          value="option2"
-                          checked={emailTo === "option2"}
+                          id="export-lcl"
+                          name="emailTo"
+                          value="export_lcl"
+                          checked={emailTo === "export_lcl"}
                           onChange={handleInputChange}
                         />
-                        <label htmlFor="option2" className="font-semibold ml-2">
+                        <label
+                          htmlFor="export-lcl"
+                          className="font-semibold ml-2"
+                        >
+                          LCL
+                        </label>
+                      </div>
+
+                      <div className="flex items-center">
+                        <input
+                          type="radio"
+                          id="export-air"
+                          name="emailTo"
+                          value="export_air"
+                          checked={emailTo === "export_air"}
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          htmlFor="export-air"
+                          className="font-semibold ml-2"
+                        >
                           Air Freight
                         </label>
                       </div>
