@@ -6,6 +6,8 @@ import { FaAndroid } from "react-icons/fa";
 import axios from "axios";
 export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
+  const [messageSuccess, setMessageSuccess] = useState(false);
+  const [errorModalOpen, setErrorModalOpen] = useState(false);
   const offices = [
     {
       title: "Jeddah Branch",
@@ -77,9 +79,11 @@ export default function Contact() {
         message: "",
       });
       setIsLoading(false);
+      setMessageSuccess(true);
     } catch (error) {
       console.log("error sending message", error);
       setIsLoading(false);
+      setErrorModalOpen(true);
     }
   };
   return (
@@ -236,7 +240,9 @@ export default function Contact() {
       </div>
 
       <div className="container mx-auto text-left px-4 md:px-36 md:mt-20 mt-24">
-        <h1 className="text-2xl font-semibold ">Get our app for faster access</h1>
+        <h1 className="text-2xl font-semibold ">
+          Get our app for faster access
+        </h1>
         <a
           href="https://play.google.com/store/apps/details?id=com.ist.alzaferwingscargosystems" // Replace with your app link
           target="_blank"
@@ -247,6 +253,49 @@ export default function Contact() {
           <span>Get it on Google Play</span>
         </a>
       </div>
+      {messageSuccess && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+          <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            <button
+              onClick={() => setMessageSuccess(false)}
+              className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+            >
+              &times;
+            </button>
+            <div className="flex justify-center mb-4">
+                <div className="bg-green-500 rounded-full p-4">
+                  <i className="fa-solid fa-check text-white text-2xl"></i>
+                </div>
+              </div>
+            <p className="text-center text-lg font-semibold mb-4">
+              Message sent successfully!
+            </p>
+          </div>
+        </div>
+      )}
+      {errorModalOpen && 
+        (<div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+        <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+          <button
+            onClick={() => setErrorModalOpen(false)}
+            className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+          >
+            &times;
+          </button>
+          <div className="flex justify-center mb-4">
+              <div className="bg-red-500 rounded-full p-4">
+                <i className="fa-solid fa-check text-white text-2xl"></i>
+              </div>
+            </div>
+          <p className="text-center text-lg font-semibold mb-4">
+            error in sending message
+          </p>
+          <p className="text-center text-lg font-semibold mb-4">
+            please enter all the required fields
+          </p>
+        </div>
+      </div>)
+      }
     </>
   );
 }

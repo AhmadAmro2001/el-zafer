@@ -4,11 +4,12 @@ import axios from "axios";
 export default function Qoutations() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedQoutation, setSelectedQoutation] = useState(null);
-
+  const [errorModalOpen, setErrorModalOpen] = useState(false);
   const [emailTo, setEmailTo] = useState("");
   const [selectedServices, setSelectedServices] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const getApiUrl = () => {
     switch (selectedQoutation?.title) {
@@ -48,14 +49,19 @@ export default function Qoutations() {
     try {
       // console.log("Payload:", fullData);
       // console.log("emailTo received:", emailOption);
+      setIsLoading(true);
       await axios.post(url, fullData);
       setFormData({});
       setSelectedServices([]);
       setEmailTo("");
       setIsSubmitted(true);
+      setIsLoading(false);
+      setIsModalOpen(false);
     } catch (error) {
       console.error("Error sending quote:", error);
-      alert("Failed to send quote.");
+      setErrorModalOpen(true);
+      setIsModalOpen(false);
+      setIsLoading(false);
     }
   };
 
@@ -114,8 +120,7 @@ export default function Qoutations() {
                 onSubmit={(e) => {
                   e.preventDefault();
                   handleSubmit(e);
-                  setIsSubmitted(true);
-                  setIsModalOpen(false);
+                  
                 }}
               >
                 {selectedQoutation?.title ===
@@ -466,7 +471,11 @@ export default function Qoutations() {
                     type="submit"
                     className="bg-blue-600  text-white px-10 py-2 mt-5 rounded hover:bg-blue-700"
                   >
-                    Submit
+                    {isLoading ? (
+                    <i className="fa-solid fa-spinner animate-spin"></i>
+                  ) : (
+                    "Submit"
+                  )}
                   </button>
                 </div>
               </form>
@@ -498,6 +507,27 @@ export default function Qoutations() {
             </div>
           </div>
         )}
+        {errorModalOpen && (<div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+        <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+          <button
+            onClick={() => setErrorModalOpen(false)}
+            className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+          >
+            &times;
+          </button>
+          <div className="flex justify-center mb-4">
+              <div className="bg-red-500 rounded-full p-4">
+                <i className="fa-solid fa-x text-white text-2xl"></i>
+              </div>
+            </div>
+          <p className="text-center text-lg font-semibold mb-4">
+            error in sending Quote
+          </p>
+          <p className="text-center text-lg font-semibold mb-4">
+            please enter all the required fields
+          </p>
+        </div>
+      </div>)}
       </div>
     </>
   );
