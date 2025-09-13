@@ -284,7 +284,7 @@ export default function Contact() {
           </button>
           <div className="flex justify-center mb-4">
               <div className="bg-red-500 rounded-full p-4">
-                <i className="fa-solid fa-check text-white text-2xl"></i>
+                <i className="fa-solid fa-x text-white text-2xl"></i>
               </div>
             </div>
           <p className="text-center text-lg font-semibold mb-4">
