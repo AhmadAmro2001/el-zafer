@@ -731,21 +731,21 @@ export default function Tracking() {
         <div className="flex justify-between items-center relative">
           {/* Left Step - Arrival */}
           <div className="flex flex-col items-center ">
-            <div className={` text-white rounded-full p-2 z-10 ${result.result.ContainerUnderClearance ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result.ContainerUnderClearance ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].ContainerUnderClearance ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].ContainerUnderClearance ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
             <p className=" text-xs font-medium">Under Clearance:</p>
             <p className="text-xs text-gray-500 ">
-              {result.result.ContainerUnderClearance || "N/A"}
+              {result.result[0].ContainerUnderClearance || "N/A"}
             </p>
           </div>
           <div className="flex flex-col items-center ">
-            <div className={` text-white rounded-full p-2 z-10 ${result.result.AtThePort ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result.AtThePort ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+            <div className={` text-white rounded-full p-2 z-10 ${result.result[0].AtThePort ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].AtThePort ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
             <p className=" text-xs font-medium">At The Port:</p>
             <p className="text-xs text-gray-500 ">
-              {result.result.AtThePort || "N/A"}
+              {result.result[0].AtThePort || "N/A"}
             </p>
           </div>
           {/* dooted line */}
@@ -753,21 +753,21 @@ export default function Tracking() {
           {/* Right Step - Delivery */}
           
           <div className="flex flex-col items-center">
-          <div className={` text-white rounded-full p-2 z-10 ${result.result.ClearanceDone ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result.ClearanceDone ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+          <div className={` text-white rounded-full p-2 z-10 ${result.result[0].ClearanceDone ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].ClearanceDone ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
             <p className=" text-xs font-medium">Clearance Done:</p>
             <p className="text-xs text-gray-500 ">
-              {result.result.ClearanceDone || "N/A"}
+              {result.result[0].ClearanceDone || "N/A"}
             </p>
           </div>
           <div className="flex flex-col items-center">
-          <div className={` text-white rounded-full p-2 z-10 ${result.result.UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
-              {result.result.UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
+          <div className={` text-white rounded-full p-2 z-10 ${result.result[0].UnderTracking ? "bg-blue-600" : "bg-gray-500"}`}>
+              {result.result[0].UnderTracking ? <i className="fa-solid fa-check"></i> : <i className="fa-solid fa-x"></i>}
             </div>
             <p className=" text-xs font-medium">Under Trucking:</p>
             <p className="text-xs text-gray-500 ">
-              {result.result.UnderTracking || "N/A"}
+              {result.result[0].UnderTracking || "N/A"}
             </p>
           </div>
         </div>
