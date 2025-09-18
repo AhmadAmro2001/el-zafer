@@ -118,9 +118,9 @@ export default function NavBar() {
             </li>
             <li>
               <NavLink
-                to="https://tiktok.com"
+                to=""
                 className="block p-0"
-                target="_blank"
+                // target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className="flex justify-center w-10 h-10 items-center my-2 md:my-0 border border-red-700 main-gradient text-white rounded-full">
