@@ -47,8 +47,8 @@ export default function Qoutations() {
     };
 
     try {
-      // console.log("Payload:", fullData);
-      // console.log("emailTo received:", emailOption);
+      console.log("Payload:", fullData);
+      console.log("emailTo received:", emailTo);
       setIsLoading(true);
       await axios.post(url, fullData);
       setFormData({});
@@ -118,7 +118,6 @@ export default function Qoutations() {
               <form
                 className="space-y-2 text-left"
                 onSubmit={(e) => {
-                  e.preventDefault();
                   handleSubmit(e);
                   
                 }}
@@ -469,6 +468,7 @@ export default function Qoutations() {
                 <div className="flex justify-center ">
                   <button
                     type="submit"
+                    
                     className="bg-blue-600  text-white px-10 py-2 mt-5 rounded hover:bg-blue-700"
                   >
                     {isLoading ? (

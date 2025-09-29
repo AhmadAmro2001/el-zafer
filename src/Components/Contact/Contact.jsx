@@ -18,7 +18,6 @@ export default function Contact() {
       tollFree: "Toll free: 800-12-8888-1",
       email: [
         "qatamesh@alzafercargo.com",
-        "logistics@alzafercargo.com",
         "shipping3@alzafercargo.com",
         "marketing3@alzafercargo.com",
       ],
@@ -33,6 +32,7 @@ export default function Contact() {
         "operations-dam@alzafercargo.com",
         "shipping3@alzafercargo.com",
         "qatamesh@alzafercargo.com",
+        "logistics@alzafercargo.com"
       ],
     },
     {
