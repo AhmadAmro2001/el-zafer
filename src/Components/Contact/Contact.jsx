@@ -42,7 +42,13 @@ export default function Contact() {
         "AL ZAFER WINGS CARGO SERVICES CO. RIYADH P.O BOX NO: 6048 SAUDI ARABIA",
       tel: "96614788849",
       fax: "96614781188",
-      email: ["nagm@alzafergroup.com", "qatamesh@alzafercargo.com"],
+      email: [
+        "Al-zafer.Ruh@alzafercargo.com",
+        "logistics@alzafercargo.com",
+        "shipping3@alzafercargo.com",
+        "qatamesh@alzafercargo.com"
+        
+      ],
     },
   ];
   const [formData, setFormData] = useState({
