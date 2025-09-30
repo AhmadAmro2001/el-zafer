@@ -17,9 +17,10 @@ export default function Contact() {
       fax: "+966-12-6611043",
       tollFree: "Toll free: 800-12-8888-1",
       email: [
-        "qatamesh@alzafercargo.com",
+        
         "shipping3@alzafercargo.com",
         "marketing3@alzafercargo.com",
+        "qatamesh@alzafercargo.com"
       ],
     },
     {
@@ -31,8 +32,8 @@ export default function Contact() {
         "marketing-dam@alzafercargo.com",
         "operations-dam@alzafercargo.com",
         "shipping3@alzafercargo.com",
-        "qatamesh@alzafercargo.com",
-        "logistics@alzafercargo.com"
+        "logistics@alzafercargo.com",
+        "qatamesh@alzafercargo.com"
       ],
     },
     {
