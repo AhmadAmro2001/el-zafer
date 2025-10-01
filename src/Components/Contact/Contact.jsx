@@ -12,7 +12,7 @@ export default function Contact() {
     {
       title: "Jeddah Branch",
       location:
-        "Jeddah - head Office Building Np. 3202, Al Fayum Street, Al Hamra District, Unit No.1, Jeddah 23212 - 7539, Short Address JCHB3202, Kingdom of saudi Arabia",
+        "Jeddah - Head Office Building Np. 3202, Al Fayum Street, Al Hamra District, Unit No.1, Jeddah 23212 - 7539, Short Address JCHB3202, Kingdom of Saudi Arabia",
       tel: "+966-12-6646888",
       fax: "+966-12-6611043",
       tollFree: "Toll free: 800-12-8888-1",
@@ -26,7 +26,7 @@ export default function Contact() {
     {
       title: "Dammam Branch",
       location:
-        "AL ZAFER WINGS CARGO SERVICES CO. MOUSA BIN AL NASEER STRRT, TUBBAYSHI DIST. Opp: ARRAWDAW HOSPITAL. P.O. BOX 3971, DAMMAM 31481 KINGDOM OD SAUDI ARABIA",
+        "Al-Zafer Wings Cargo Services Co. Mossa Bin Al Naseer Street, Tubbayshi District Opp: Arrawdaw Hospital. P.O. Box 3971, Dammam 31481 Kingdom of Saudi Arabia",
       tel: "+966138279085/ 138279081",
       email: [
         "marketing-dam@alzafercargo.com",
@@ -39,7 +39,7 @@ export default function Contact() {
     {
       title: "Riyadh Branch",
       location:
-        "AL ZAFER WINGS CARGO SERVICES CO. RIYADH P.O BOX NO: 6048 SAUDI ARABIA",
+        "Al-Zafer Wings Cargo Services Co. Riyadh P.O Box No: 6048 Kingdom of Saudi Arabia",
       tel: "96614788849",
       fax: "96614781188",
       email: [
