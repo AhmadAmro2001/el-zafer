@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./Contact.module.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { FaAndroid } from "react-icons/fa";
+import { FaAndroid,FaApple  } from "react-icons/fa";
 import axios from "axios";
 export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
@@ -250,6 +250,7 @@ export default function Contact() {
         <h1 className="text-2xl font-semibold ">
           Get our app for faster access
         </h1>
+        <div className="flex gap-4">
         <a
           href="https://play.google.com/store/apps/details?id=com.ist.alzaferwingscargosystems" // Replace with your app link
           target="_blank"
@@ -259,6 +260,16 @@ export default function Contact() {
           <FaAndroid className="text-2xl" />
           <span>Get it on Google Play</span>
         </a>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.ist.alzaferwingscargosystems" // Replace with your app link
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-3 bg-[#0C71B9] my-10 text-white font-medium rounded-lg shadow-lg transition-all duration-200"
+        >
+          <FaApple  className="text-2xl" />
+          <span>Get it on Apple Store</span>
+        </a>
+        </div>
       </div>
       {messageSuccess && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
