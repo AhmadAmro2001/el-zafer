@@ -617,7 +617,7 @@ export default function Tracking() {
     <div className="bg-gray-100 p-6 rounded-xl">
       <div className="flex flex-col relative">
         <div className="grid grid-cols-1">
-          <h1 className="font-semibold">B/L No: {result.result[0].HousBillNo}</h1>
+          {/* <h1 className="font-semibold">B/L No: {result.result[0].HousBillNo}</h1> */}
 
           {/* Table Header */}
           <div className="flex mb-2">
