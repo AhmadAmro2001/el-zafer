@@ -383,7 +383,7 @@ export default function Tracking() {
         </div>
       )}
       {/* success message */}
-      {result && selectedTracking?.title === "Tracking full container" && (result?.result[0]?.PortOfLoading === "JEDDAH" || result?.result[0]?.PortOfLoading === "DAMMAM" || result?.result[0]?.PortOfLoading === "RIYADH"  ?(
+      {result && selectedTracking?.title === "Tracking full container" && (result?.exportImport === 'export' ? (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
         <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
           {/* Close button */}

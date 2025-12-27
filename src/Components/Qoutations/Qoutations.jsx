@@ -11,6 +11,10 @@ export default function Qoutations() {
   const [formData, setFormData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
+  const showShipperAddress = (formData.termsAndCondition || "")
+    .toLowerCase()
+    .includes("ex work");
+
   const getApiUrl = () => {
     switch (selectedQoutation?.title) {
       case "Get a Quote For Import Shipment":
@@ -119,7 +123,6 @@ export default function Qoutations() {
                 className="space-y-2 text-left"
                 onSubmit={(e) => {
                   handleSubmit(e);
-                  
                 }}
               >
                 {selectedQoutation?.title ===
@@ -147,6 +150,7 @@ export default function Qoutations() {
                       value={formData.portOfDischarge || ""}
                       onChange={handleInputChange}
                     />
+                    {/* adjusted part */}
                     <label
                       htmlFor="termsAndCondition"
                       className="font-semibold"
@@ -161,6 +165,27 @@ export default function Qoutations() {
                       value={formData.termsAndCondition || ""}
                       onChange={handleInputChange}
                     />
+
+                    {showShipperAddress && (
+                      <>
+                        <label
+                          htmlFor="shipperAddress"
+                          className="font-semibold"
+                        >
+                          Shipper Address:
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="Enter shipper address"
+                          className="border w-full p-2 rounded"
+                          name="shipperAddress"
+                          value={formData.shipperAddress || ""}
+                          onChange={handleInputChange}
+                        />
+                      </>
+                    )}
+
+                    {/* adjusted part */}
                     <label htmlFor="numberOfPcs" className="font-semibold">
                       No Of Pcs / Containers:
                     </label>
@@ -468,14 +493,13 @@ export default function Qoutations() {
                 <div className="flex justify-center ">
                   <button
                     type="submit"
-                    
                     className="bg-blue-600  text-white px-10 py-2 mt-5 rounded hover:bg-blue-700"
                   >
                     {isLoading ? (
-                    <i className="fa-solid fa-spinner animate-spin"></i>
-                  ) : (
-                    "Submit"
-                  )}
+                      <i className="fa-solid fa-spinner animate-spin"></i>
+                    ) : (
+                      "Submit"
+                    )}
                   </button>
                 </div>
               </form>
@@ -507,27 +531,29 @@ export default function Qoutations() {
             </div>
           </div>
         )}
-        {errorModalOpen && (<div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-        <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
-          <button
-            onClick={() => setErrorModalOpen(false)}
-            className="absolute top-2 right-4 text-xl font-bold text-gray-700"
-          >
-            &times;
-          </button>
-          <div className="flex justify-center mb-4">
-              <div className="bg-red-500 rounded-full p-4">
-                <i className="fa-solid fa-x text-white text-2xl"></i>
+        {errorModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+            <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+              <button
+                onClick={() => setErrorModalOpen(false)}
+                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+              >
+                &times;
+              </button>
+              <div className="flex justify-center mb-4">
+                <div className="bg-red-500 rounded-full p-4">
+                  <i className="fa-solid fa-x text-white text-2xl"></i>
+                </div>
               </div>
+              <p className="text-center text-lg font-semibold mb-4">
+                error in sending Quote
+              </p>
+              <p className="text-center text-lg font-semibold mb-4">
+                please enter all the required fields
+              </p>
             </div>
-          <p className="text-center text-lg font-semibold mb-4">
-            error in sending Quote
-          </p>
-          <p className="text-center text-lg font-semibold mb-4">
-            please enter all the required fields
-          </p>
-        </div>
-      </div>)}
+          </div>
+        )}
       </div>
     </>
   );
