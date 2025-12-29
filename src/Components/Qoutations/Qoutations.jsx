@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./Qoutations.module.css";
 import axios from "axios";
+import PhoneInput from "react-phone-input-2";
 export default function Qoutations() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedQoutation, setSelectedQoutation] = useState(null);
@@ -34,6 +35,12 @@ export default function Qoutations() {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+    }));
+  };
+  const handlePhoneChange = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
     }));
   };
   const handleSubmit = async (e) => {
@@ -109,7 +116,7 @@ export default function Qoutations() {
         </div>
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-16 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            <div className="bg-white p-8 rounded-xl w-[90%] max-w-md relative shadow-lg">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="absolute top-2 right-4 text-xl font-bold text-gray-700"
@@ -210,15 +217,32 @@ export default function Qoutations() {
                     />
                     <label htmlFor="emailOrPhone" className="font-semibold">
                       {" "}
-                      Email or Phone Number:
+                      Email:
                     </label>
                     <input
                       type="text"
-                      placeholder="Email or Phone Number"
+                      placeholder="Email "
                       className="border w-full p-2 rounded"
                       name="emailOrPhone"
                       value={formData.emailOrPhone || ""}
                       onChange={handleInputChange}
+                    />
+                    <label htmlFor="phone" className="font-semibold">
+                      {" "}
+                      Phone Number:
+                    </label>
+                    <PhoneInput
+                      country={"sa"}
+                      placeholder="Enter your phone number"
+                      inputProps={{
+                        name: "phone",
+                        required: true,
+                      }}
+                      containerStyle={{ width: "100%" }}
+                      inputStyle={{ width: "100%" }}
+                      buttonStyle={{ width: "45px" }}
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
                     />
                     {/* radio button */}
                     <div className="flex justify-around mt-3">
@@ -339,15 +363,32 @@ export default function Qoutations() {
                     />
                     <label htmlFor="emailOrPhone" className="font-semibold">
                       {" "}
-                      Email or Phone Number:
+                      Email:
                     </label>
                     <input
                       type="text"
-                      placeholder="Email or Phone Number"
+                      placeholder="Email"
                       className="border w-full p-2 rounded"
                       name="emailOrPhone"
                       value={formData.emailOrPhone || ""}
                       onChange={handleInputChange}
+                    />
+                    <label htmlFor="emailOrPhone" className="font-semibold">
+                      {" "}
+                      Phone Number:
+                    </label>
+                    <PhoneInput
+                      country={"sa"}
+                      placeholder="Enter your phone number"
+                      inputProps={{
+                        name: "phone",
+                        required: true,
+                      }}
+                      containerStyle={{ width: "100%" }}
+                      inputStyle={{ width: "100%" }}
+                      buttonStyle={{ width: "45px" }}
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
                     />
                     <div className="flex justify-around mt-3">
                       <div className="flex items-center">
@@ -434,15 +475,32 @@ export default function Qoutations() {
                     />
                     <label htmlFor="emailOrPhone" className="font-semibold">
                       {" "}
-                      Email or Phone Number:
+                      Email :
                     </label>
                     <input
                       type="text"
-                      placeholder="Email or Phone Number"
+                      placeholder="Email"
                       className="border w-full p-2 rounded"
                       name="emailOrPhone"
                       value={formData.emailOrPhone || ""}
                       onChange={handleInputChange}
+                    />
+                    <label htmlFor="emailOrPhone" className="font-semibold">
+                      {" "}
+                      Phone Number:
+                    </label>
+                    <PhoneInput
+                      country={"sa"}
+                      placeholder="Enter your phone number"
+                      inputProps={{
+                        name: "phone",
+                        required: true,
+                      }}
+                      containerStyle={{ width: "100%" }}
+                      inputStyle={{ width: "100%" }}
+                      buttonStyle={{ width: "45px" }}
+                      value={formData.phone}
+                      onChange={handlePhoneChange}
                     />
                     <div className="mb-4">
                       <label
