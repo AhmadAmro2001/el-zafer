@@ -982,7 +982,7 @@ export default function Tracking() {
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    AWB Number : 
+                    B/L Number : 
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.HousBillNo.replace(/[\/\s-]/g, "")}
@@ -1097,7 +1097,7 @@ export default function Tracking() {
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    AWB Number : 
+                    Container Number : 
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.ContainerNumber.replace(/[\/\s-]/g, "")}
@@ -1222,7 +1222,7 @@ export default function Tracking() {
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    AWB Number : 
+                    B/L Number : 
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.BillNo.replace(/[\/\s-]/g, "")}
