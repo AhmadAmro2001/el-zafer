@@ -6,57 +6,22 @@ import { FaAndroid,FaApple  } from "react-icons/fa";
 import axios from "axios";
 export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
+  const [isloadingOff, setIsLoadingOff] = useState(false);
   const [messageSuccess, setMessageSuccess] = useState(false);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
-  const offices = [
-    {
-      title: "Jeddah Branch",
-      location:
-        "Jeddah - Head Office Building Np. 3202, Al Fayum Street, Al Hamra District, Unit No.1, Jeddah 23212 - 7539, Short Address JCHB3202, Kingdom of Saudi Arabia",
-      tel: "+966-12-6646888",
-      fax: "+966-12-6611043",
-      tollFree: "Toll free: 800-12-8888-1",
-      email: [
-        
-        "shipping3@alzafercargo.com",
-        "marketing3@alzafercargo.com",
-        "qatamesh@alzafercargo.com"
-      ],
-    },
-    {
-      title: "Dammam Branch",
-      location:
-        "Al-Zafer Wings Cargo Services Co. Mossa Bin Al Naseer Street, Tubbayshi District Opp: Arrawdaw Hospital. P.O. Box 3971, Dammam 31481 Kingdom of Saudi Arabia",
-      tel: "+966138279085/ 138279081",
-      email: [
-        "marketing-dam@alzafercargo.com",
-        "operations-dam@alzafercargo.com",
-        "shipping3@alzafercargo.com",
-        "logistics@alzafercargo.com",
-        "qatamesh@alzafercargo.com"
-      ],
-    },
-    {
-      title: "Riyadh Branch",
-      location:
-        "Al-Zafer Wings Cargo Services Co. Riyadh P.O Box No: 6048 Kingdom of Saudi Arabia",
-      tel: "96614788849",
-      fax: "96614781188",
-      email: [
-        "Al-zafer.Ruh@alzafercargo.com",
-        "logistics@alzafercargo.com",
-        "shipping3@alzafercargo.com",
-        "qatamesh@alzafercargo.com"
-        
-      ],
-    },
-  ];
+  const [jeddahOff , setJeddahOff] = useState([]);
+  const [dammamOff , setDammamOff] = useState([]);
+  const [riyadhOff , setRiyadhOff] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phoneNumber: "",
     message: "",
   });
+
+  useEffect(() => {
+    getEmails();
+  },[])
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -93,6 +58,24 @@ export default function Contact() {
       setErrorModalOpen(true);
     }
   };
+
+
+  async function getEmails(){
+    await axios.get('https://el-zafer-backend.onrender.com/admin/get-emails')
+    .then((res) => {
+      let { data } = res;
+
+      setJeddahOff(data.jeddahEmails);
+      setDammamOff(data.dammamEmails);
+      setRiyadhOff(data.riyadhEmails);
+    })
+    .catch(err => console.log(err))
+    
+  }
+
+  
+
+
   return (
     <>
       {/* <div className='container mx-auto relative px-4 md:px-36 md:mt-20 mt-24 text-white bg-[#095890]'>
@@ -120,44 +103,66 @@ export default function Contact() {
       {/* offices */}
       <div className="container mx-auto px-16 md:mt-60 mt-28">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
-          {offices.map((office, index) => (
-            <div key={index} className="group">
+          <div  className="group">
               <div className="text-left px-8 h-[450px] py-6 bg-[#0C71B9] rounded-2xl">
                 <h1 className="text-white mb-4 text-2xl font-semibold">
-                  {office.title}
+                  Jeddah Branch
                 </h1>
                 <div className="flex items-center gap-4 mx-5 my-3">
                   <i className="fa-solid fa-location-dot text-white text-2xl"></i>
-                  <p className="text-white text-sm">{office.location}</p>
+                  <p className="text-white text-sm">Jeddah - Head Office Building Np. 3202, Al Fayum Street, Al Hamra District, Unit No.1, Jeddah 23212 - 7539, Short Address JCHB3202, Kingdom of Saudi Arabia</p>
                 </div>
-                <div className="flex items-center gap-4 mx-5 my-3">
-                  <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
-                  <p className="text-white text-sm">Tel: {office.tel}</p>
-                </div>
-                {office.tollFree && (
-                  <div className="flex items-center gap-4 mx-5 my-3">
-                    <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
-                    <p className="text-white text-sm">{office.tollFree}</p>
+                { 
+                  jeddahOff.map((item ,index) => (
+                  <div key={index}  className="flex items-center gap-4 mx-5 my-3">
+                    {item.type === "phone" ? <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i> :<i className="fa-solid fa-envelope text-white text-2xl"></i>}
+                    <p className="text-white text-sm">{item.email}</p>
                   </div>
-                )}
-                {office.fax && (
-                  <div className="flex items-center gap-4 mx-5 my-3">
-                    <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i>
-                    <p className="text-white text-sm">Fax: {office.fax}</p>
-                  </div>
-                )}
-                {office.email.map((email, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-4 mx-5 my-3"
-                  >
-                    <i className="fa-solid fa-envelope text-white text-2xl"></i>
-                    <p className="text-white text-sm">{email}</p>
-                  </div>
-                ))}
+                ))
+                 }
+                
               </div>
             </div>
-          ))}
+          <div  className="group">
+              <div className="text-left px-8 h-[450px] py-6 bg-[#0C71B9] rounded-2xl">
+                <h1 className="text-white mb-4 text-2xl font-semibold">
+                  Dammam Branch
+                </h1>
+                <div className="flex items-center gap-4 mx-5 my-3">
+                  <i className="fa-solid fa-location-dot text-white text-2xl"></i>
+                  <p className="text-white text-sm">Al-Zafer Wings Cargo Services Co. Mossa Bin Al Naseer Street, Tubbayshi District Opp: Arrawdaw Hospital. P.O. Box 3971, Dammam 31481 Kingdom of Saudi Arabia</p>
+                </div>
+                { 
+                  dammamOff.map((item ,index) => (
+                  <div key={index}  className="flex items-center gap-4 mx-5 my-3">
+                    {item.type === "phone" ? <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i> :<i className="fa-solid fa-envelope text-white text-2xl"></i>}
+                    <p className="text-white text-sm">{item.email}</p>
+                  </div>
+                ))
+                 }
+                
+              </div>
+            </div>
+          <div  className="group">
+              <div className="text-left px-8 h-[450px] py-6 bg-[#0C71B9] rounded-2xl">
+                <h1 className="text-white mb-4 text-2xl font-semibold">
+                  Riyadh Branch
+                </h1>
+                <div className="flex items-center gap-4 mx-5 my-3">
+                  <i className="fa-solid fa-location-dot text-white text-2xl"></i>
+                  <p className="text-white text-sm">Al-Zafer Wings Cargo Services Co. Riyadh P.O Box No: 6048 Kingdom of Saudi Arabia</p>
+                </div>
+                { 
+                  riyadhOff.map((item ,index) => (
+                  <div key={index}  className="flex items-center gap-4 mx-5 my-3">
+                    {item.type === "phone" ? <i className="fa-solid fa-mobile-screen-button text-white text-2xl"></i> :<i className="fa-solid fa-envelope text-white text-2xl"></i>}
+                    <p className="text-white text-sm">{item.email}</p>
+                  </div>
+                ))
+                 }
+                
+              </div>
+            </div>
         </div>
       </div>
       {/* map and contact form*/}
