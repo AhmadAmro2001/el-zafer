@@ -154,7 +154,7 @@ export default function Tracking() {
               &times;
             </button>
             <h2 className="text-xl font-bold mb-4">
-              Track {selectedTracking?.title}
+              {selectedTracking?.title}
             </h2>
             <form className="space-y-2 text-left">
               {selectedTracking?.title === "Tracking full container" && (
@@ -465,10 +465,10 @@ export default function Tracking() {
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    Container Number : 
+                    HB/L Number : 
                   </h1>
                   <h1 className="text-black  text-left">
-                    {formData.ContainerNumber.replace(/[\/\s-]/g, "")}
+                    {formData.BillNumber.replace(/[\/\s-]/g, "")}
                   </h1>
                 </div>
                 <div className="w-48 ">
@@ -630,7 +630,7 @@ export default function Tracking() {
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    B/L Number : 
+                    HB/L Number : 
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.HousBillNo.replace(/[\/\s-]/g, "")}
@@ -982,7 +982,7 @@ export default function Tracking() {
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    B/L Number : 
+                    HB/L Number : 
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.HousBillNo.replace(/[\/\s-]/g, "")}
@@ -1221,9 +1221,11 @@ export default function Tracking() {
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
-                  <h1 className="text-black font-bold text-left">
-                    B/L Number : 
-                  </h1>
+                  {result.result.VesselEnName ? <h1 className="text-black font-bold text-left">
+                    HB/L Number : 
+                  </h1> : <h1 className="text-black font-bold text-left">
+                    AWB Number : 
+                  </h1>}
                   <h1 className="text-black  text-left">
                     {formData.BillNo.replace(/[\/\s-]/g, "")}
                   </h1>
