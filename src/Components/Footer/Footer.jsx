@@ -14,7 +14,7 @@ export default function Footer() {
       window.removeEventListener("resize", checkZoom);
     };
   }, []);
-  console.log(zoomLevel);
+  // console.log(zoomLevel);
   
   return (
     <>
