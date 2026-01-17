@@ -3,16 +3,7 @@ import style from "./PressRelease.module.css";
 import Slider from "react-slick";
 import axios from "axios";
 export default function PressRelease() {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: false,
-  };
+  
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -36,6 +27,19 @@ export default function PressRelease() {
 
     //  console.log(posts);
   }
+
+  const urlsCount = posts?.images?.URLS?.length || 0;
+  var settings = {
+    dots: true,
+    infinite: urlsCount > 1,
+    slidesToShow: 1,
+    speed: 500,
+    // slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+  };
 
   return (
     <>
@@ -69,7 +73,7 @@ export default function PressRelease() {
             {posts.map((item, index) => {
               return (
                 <>
-                  <div className="flex justify-between items-center mb-10">
+                  <div key={index} className="flex justify-between items-center mb-10">
                     <div className="w-[45%]">
                       <h1 className="text-red-700 text-3xl font-bold pb-5 text-left">
                         {item.title}
@@ -80,7 +84,7 @@ export default function PressRelease() {
                     </div>
                     <div className=" w-[50%] ">
                       <Slider {...settings}>
-                        {item.images.URLS.map((item, index) => <div className="aspect-video w-full overflow-hidden rounded-2xl">
+                        {item?.images?.URLS?.length > 0 &&item.images.URLS.map((item, index) => <div key={index} className="aspect-video w-full overflow-hidden rounded-2xl">
                           <img src={item.secure_url} alt="" className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"/>
                         </div>)}
                       </Slider>
