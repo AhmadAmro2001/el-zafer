@@ -74,7 +74,7 @@ export default function PressRelease() {
               return (
                 <>
                   <div key={index} className="flex justify-between items-center mb-10">
-                    <div className="w-[45%]">
+                    <div className={item?.images?.URLS?.length > 0 ? "w-[40%]" : "w-full "}>
                       <h1 className="text-red-700 text-3xl font-bold pb-5 text-left">
                         {item.title}
                       </h1>
