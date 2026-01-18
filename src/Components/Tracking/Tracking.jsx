@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./Tracking.module.css";
 import axios from "axios";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 export default function Tracking() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTracking, setSelectedTracking] = useState(null);
@@ -23,6 +25,7 @@ export default function Tracking() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
+  const printRef = useRef(null);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -91,6 +94,87 @@ export default function Tracking() {
       />
     </>
   );
+
+  const handleDownloadPdf = async (type) => {
+    const element = printRef.current;
+    if (!element) return;
+
+    const hidden = element.querySelectorAll(".no-pdf");
+    hidden.forEach((el) => (el.style.display = "none"));  
+
+    const tableEl = element.querySelector(".table-scroll");
+    const oldMaxH = tableEl?.style.maxHeight;
+    const oldOverflow = tableEl?.style.overflowY;
+
+    if (tableEl) {
+      tableEl.style.maxHeight = "none";
+      tableEl.style.overflowY = "visible";
+    }
+
+    // Higher quality + handle external images
+    const canvas = await html2canvas(element, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: "#ffffff",
+    });
+
+    hidden.forEach((el) => (el.style.display = ""));
+    if (tableEl) {
+      tableEl.style.maxHeight = oldMaxH || "";
+      tableEl.style.overflowY = oldOverflow || "";
+    }
+    hidden.forEach((el) => (el.style.display = ""));
+
+    const imgData = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF("p", "mm", "a4"); // use mm so sizing is easier
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    // Keep aspect ratio
+    const imgWidth = pdfWidth;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    // If content fits in one page
+    if (imgHeight <= pdfHeight) {
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+    } else {
+      // Multi-page (if your report becomes long later)
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pdfHeight;
+
+      while (heightLeft > 0) {
+        position -= pdfHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pdfHeight;
+      }
+    }
+    if (type === "trackingfullcontainer") {
+      pdf.save(`H/BL:${formData.BillNumber.replace(/[\/\s-]/g, "")}.pdf`);
+    }
+    if(type === "trackingPersonalEffect"){
+      pdf.save(`H/BL:${formData.HousBillNo.replace(/[\/\s-]/g, "")}.pdf`);
+    }
+    if(type === "trackingAirFrieght"){
+      pdf.save(`AWB:${formData.AWBNo.replace(/[\/\s-]/g, "")}.pdf`);
+    }
+    if(type === "trackingLclContainer"){
+      pdf.save(`Container:${formData.ContainerNumber.replace(/[\/\s-]/g, "")}.pdf`);
+    }
+    if(type === "trackingLclHbl"){
+      pdf.save(`H/BL:${formData.HousBillNo.replace(/[\/\s-]/g, "")}.pdf`);
+    }
+    if(type === "trackingClearanceBlNo"){
+      pdf.save(`${result.result.VesselEnName ? "H/BL":"AWB"}:${formData.BillNo.replace(/[\/\s-]/g, "")}.pdf`);
+    }
+    if(type === "trackingClearanceContainerNo"){
+      pdf.save(`Container:${formData.ContainerNumber.replace(/[\/\s-]/g, "")}.pdf`);
+    }
+  };
 
   const trackingArray = [
     {
@@ -163,17 +247,17 @@ export default function Tracking() {
                   {renderInput(
                     "ContainerNumber",
                     "Container No:",
-                    "Container No"
+                    "Container No",
                   )}
                   {renderInput(
                     "PortOfLoading",
                     "Port Of Loading:",
-                    "Port Of Loading"
+                    "Port Of Loading",
                   )}
                   {renderInput(
                     "PortOfDischarge",
                     "Port Of Discharge:",
-                    "Port Of Discharge"
+                    "Port Of Discharge",
                   )}
                 </>
               )}
@@ -279,12 +363,12 @@ export default function Tracking() {
                 {renderInput(
                   "ContainerNumber",
                   "Container No:",
-                  "Container No"
+                  "Container No",
                 )}
                 {renderInput(
                   "PortOfDischarge",
                   "Port Of Discharge:",
-                  "Port Of Discharge"
+                  "Port Of Discharge",
                 )}
                 <div className="flex justify-center ">
                   <button
@@ -365,12 +449,12 @@ export default function Tracking() {
                 {renderInput(
                   "ContainerNumber",
                   "Container No:",
-                  "Container No"
+                  "Container No",
                 )}
                 {renderInput(
                   "PortOfDischarge",
                   "Port Of Discharge:",
-                  "Port Of Discharge"
+                  "Port Of Discharge",
                 )}
                 {renderInput("VesselEnName", "Vessel Name:", "Vessel Name")}
                 <div className="flex justify-center ">
@@ -413,7 +497,7 @@ export default function Tracking() {
                 {renderInput(
                   "PortOfDischarge",
                   "Port Of Discharge:",
-                  "Port Of Discharge"
+                  "Port Of Discharge",
                 )}
                 {renderInput("VesselEnName", "Vessel Name:", "Vessel Name")}
                 <div className="flex justify-center ">
@@ -458,14 +542,17 @@ export default function Tracking() {
         selectedTracking?.title === "Tracking full container" &&
         (result?.exportImport === "export" ? (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            <div
+              ref={printRef}
+              className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg"
+            >
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    HB/L Number : 
+                    H/BL Number :
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.BillNumber.replace(/[\/\s-]/g, "")}
@@ -482,7 +569,7 @@ export default function Tracking() {
               {/* Close button */}
               <button
                 onClick={() => setResult(null)}
-                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+                className="absolute top-2 right-4 text-xl font-bold text-gray-700 no-pdf"
               >
                 &times;
               </button>
@@ -493,7 +580,7 @@ export default function Tracking() {
                   {/* Left Step - Arrival */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].DepartureDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -512,12 +599,12 @@ export default function Tracking() {
                   </div>
 
                   {/* Dotted line */}
-                  <div className="absolute top-4 left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                  <div className="absolute no-pdf top-4 left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
 
                   {/* Right Step - Delivery */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={` text-white rounded-full no-pdf p-2 z-10 ${
                         result.result[0].ArrivalDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -536,21 +623,32 @@ export default function Tracking() {
                   </div>
                 </div>
               </div>
+
+              <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingfullcontainer");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
             </div>
           </div>
         ) : (
-          <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+          <div  className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+            <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    Container Number : 
+                    H/BL Number :
                   </h1>
                   <h1 className="text-black  text-left">
-                    {formData.ContainerNumber.replace(/[\/\s-]/g, "")}
+                    {formData.BillNumber.replace(/[\/\s-]/g, "")}
                   </h1>
                 </div>
                 <div className="w-48 ">
@@ -564,7 +662,7 @@ export default function Tracking() {
               {/* Close button */}
               <button
                 onClick={() => setResult(null)}
-                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+                className="absolute top-2 right-4 text-xl font-bold no-pdf text-gray-700"
               >
                 &times;
               </button>
@@ -575,7 +673,7 @@ export default function Tracking() {
                   {/* Left Step - Arrival */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].ArrivalDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -594,12 +692,12 @@ export default function Tracking() {
                   </div>
 
                   {/* Dotted line */}
-                  <div className="absolute top-4 left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                  <div className="absolute top-4 no-pdf left-[18%] right-[18%] border-t-2 border-dotted border-blue-400 z-0"></div>
 
                   {/* Right Step - Delivery */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].DepartureDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -618,36 +716,46 @@ export default function Tracking() {
                   </div>
                 </div>
               </div>
+              <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingfullcontainer");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
             </div>
           </div>
         ))}
       {result && selectedTracking?.title === "Personal Effects" && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-          <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+          <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
             <div className="flex  justify-between mb-5">
-                <div>
-                  <h1 className="text-black font-bold text-left mb-2">
-                    Status Report :
-                  </h1>
-                  <h1 className="text-black font-bold text-left">
-                    HB/L Number : 
-                  </h1>
-                  <h1 className="text-black  text-left">
-                    {formData.HousBillNo.replace(/[\/\s-]/g, "")}
-                  </h1>
-                </div>
-                <div className="w-48 ">
-                  <img
-                    className="w-full "
-                    src="https://res.cloudinary.com/djvzbznry/image/upload/v1767658761/Al-zafer_Full_Logo_kz2l7t.png"
-                    alt="Al-zafer Logo"
-                  />
-                </div>
+              <div>
+                <h1 className="text-black font-bold text-left mb-2">
+                  Status Report :
+                </h1>
+                <h1 className="text-black font-bold text-left">
+                  H/BL Number :
+                </h1>
+                <h1 className="text-black  text-left">
+                  {formData.HousBillNo.replace(/[\/\s-]/g, "")}
+                </h1>
               </div>
+              <div className="w-48 ">
+                <img
+                  className="w-full "
+                  src="https://res.cloudinary.com/djvzbznry/image/upload/v1767658761/Al-zafer_Full_Logo_kz2l7t.png"
+                  alt="Al-zafer Logo"
+                />
+              </div>
+            </div>
             {/* Close button */}
             <button
               onClick={() => setResult(null)}
-              className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+              className="absolute top-2 right-4 text-xl font-bold no-pdf text-gray-700"
             >
               &times;
             </button>
@@ -658,7 +766,7 @@ export default function Tracking() {
                 {/* Left Step - Arrival */}
                 <div className="flex flex-col items-center">
                   <div
-                    className={` text-white rounded-full p-2 z-10 ${
+                    className={` text-white rounded-full no-pdf p-2 z-10 ${
                       result.result[0].DepartureDate
                         ? "bg-blue-600"
                         : "bg-gray-500"
@@ -677,12 +785,12 @@ export default function Tracking() {
                 </div>
 
                 {/* Dotted line */}
-                <div className="absolute top-4 left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                <div className="absolute top-4 no-pdf left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
 
                 {/* Right Step - Delivery */}
                 <div className="flex flex-col items-center">
                   <div
-                    className={` text-white rounded-full p-2 z-10 ${
+                    className={`no-pdf text-white rounded-full p-2 z-10 ${
                       result.result[0].Arrived ? "bg-blue-600" : "bg-gray-500"
                     }`}
                   >
@@ -699,6 +807,16 @@ export default function Tracking() {
                 </div>
               </div>
             </div>
+            <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingPersonalEffect");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
           </div>
         </div>
       )}
@@ -708,14 +826,14 @@ export default function Tracking() {
         result?.result[0]?.destination === "DAMMAM" ||
         result?.result[0]?.destination === "RIYADH" ? (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    AWB Number : 
+                    AWB Number :
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.AWBNo.replace(/[\/\s-]/g, "")}
@@ -732,7 +850,7 @@ export default function Tracking() {
               {/* Close button */}
               <button
                 onClick={() => setResult(null)}
-                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+                className="absolute top-2 right-4 text-xl no-pdf font-bold text-gray-700"
               >
                 &times;
               </button>
@@ -743,7 +861,7 @@ export default function Tracking() {
                   {/* Left Step - Arrival */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].ArrivalDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -762,12 +880,12 @@ export default function Tracking() {
                   </div>
 
                   {/* Dotted line */}
-                  <div className="absolute top-4 left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                  <div className="absolute top-4 no-pdf left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
 
                   {/* Right Step - Delivery */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].BLReleaseDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -786,18 +904,28 @@ export default function Tracking() {
                   </div>
                 </div>
               </div>
+              <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingAirFrieght");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
             </div>
           </div>
         ) : (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    AWB Number : 
+                    AWB Number :
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.AWBNo.replace(/[\/\s-]/g, "")}
@@ -814,7 +942,7 @@ export default function Tracking() {
               {/* Close button */}
               <button
                 onClick={() => setResult(null)}
-                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+                className="absolute no-pdf top-2 right-4 text-xl font-bold text-gray-700"
               >
                 &times;
               </button>
@@ -825,7 +953,7 @@ export default function Tracking() {
                   {/* Left Step - Arrival */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].DepartureDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -844,12 +972,12 @@ export default function Tracking() {
                   </div>
 
                   {/* Dotted line */}
-                  <div className="absolute top-4 left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                  <div className="absolute no-pdf top-4 left-[20%] right-[15%] border-t-2 border-dotted border-blue-400 z-0"></div>
 
                   {/* Right Step - Delivery */}
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].ArrivalDate
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -868,6 +996,16 @@ export default function Tracking() {
                   </div>
                 </div>
               </div>
+              <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingAirFrieght");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
             </div>
           </div>
         ))}
@@ -875,14 +1013,14 @@ export default function Tracking() {
         selectedTracking?.title === "LCL" &&
         selectedLclContainerStatus && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-3xl relative shadow-lg">
+            <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-5xl  relative shadow-lg">
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    Container Number : 
+                    Container Number :
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.ContainerNumber.replace(/[\/\s-]/g, "")}
@@ -902,7 +1040,7 @@ export default function Tracking() {
                   setResult(null);
                   setSelectedLclContainerStatus(false);
                 }}
-                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+                className="absolute no-pdf top-2 right-4 text-xl font-bold text-gray-700"
               >
                 &times;
               </button>
@@ -938,7 +1076,7 @@ export default function Tracking() {
 
                     {/* Table Rows */}
                     {/* Table Rows Wrapper with scroll */}
-                    <div className="overflow-y-auto max-h-64">
+                    <div className="overflow-y-auto max-h-64 table-scroll">
                       {" "}
                       {/* max-h-64 ≈ 16rem height */}
                       {result.result.map((item, index) => (
@@ -970,39 +1108,49 @@ export default function Tracking() {
                   </div>
                 </div>
               </div>
+              <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingLclContainer");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
             </div>
           </div>
         )}
       {result && selectedTracking?.title === "LCL" && selectedLclHblStatus && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-          <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
+          <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
             <div className="flex  justify-between mb-5">
-                <div>
-                  <h1 className="text-black font-bold text-left mb-2">
-                    Status Report :
-                  </h1>
-                  <h1 className="text-black font-bold text-left">
-                    HB/L Number : 
-                  </h1>
-                  <h1 className="text-black  text-left">
-                    {formData.HousBillNo.replace(/[\/\s-]/g, "")}
-                  </h1>
-                </div>
-                <div className="w-48 ">
-                  <img
-                    className="w-full "
-                    src="https://res.cloudinary.com/djvzbznry/image/upload/v1767658761/Al-zafer_Full_Logo_kz2l7t.png"
-                    alt="Al-zafer Logo"
-                  />
-                </div>
+              <div>
+                <h1 className="text-black font-bold text-left mb-2">
+                  Status Report :
+                </h1>
+                <h1 className="text-black font-bold text-left">
+                  H/BL Number :
+                </h1>
+                <h1 className="text-black  text-left">
+                  {formData.HousBillNo.replace(/[\/\s-]/g, "")}
+                </h1>
               </div>
+              <div className="w-48 ">
+                <img
+                  className="w-full "
+                  src="https://res.cloudinary.com/djvzbznry/image/upload/v1767658761/Al-zafer_Full_Logo_kz2l7t.png"
+                  alt="Al-zafer Logo"
+                />
+              </div>
+            </div>
             {/* Close button */}
             <button
               onClick={() => {
                 setResult(null);
                 setSelectedLclHblStatus(false);
               }}
-              className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+              className="absolute top-2 no-pdf right-4 text-xl font-bold text-gray-700"
             >
               &times;
             </button>
@@ -1013,7 +1161,7 @@ export default function Tracking() {
                 {/* Left Step - Arrival */}
                 <div className="flex flex-col items-center ">
                   <div
-                    className={` text-white rounded-full p-2 z-10 ${
+                    className={`no-pdf text-white rounded-full p-2 z-10 ${
                       result.result[0].Arrived ? "bg-blue-600" : "bg-gray-500"
                     }`}
                   >
@@ -1030,7 +1178,7 @@ export default function Tracking() {
                 </div>
                 <div className="flex flex-col items-center ">
                   <div
-                    className={` text-white rounded-full p-2 z-10 ${
+                    className={` no-pdf text-white rounded-full p-2 z-10 ${
                       result.result[0].Stored ? "bg-blue-600" : "bg-gray-500"
                     }`}
                   >
@@ -1045,11 +1193,11 @@ export default function Tracking() {
                     {result.result[0].Stored || "not stored yet"}
                   </p>
                 </div>
-                <div className="absolute top-4 left-[13%] right-[13%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                <div className="absolute top-4 no-pdf left-[13%] right-[13%] border-t-2 border-dotted border-blue-400 z-0"></div>
                 {/* Right Step - Delivery */}
                 <div className="flex flex-col items-center">
                   <div
-                    className={` text-white rounded-full p-2 z-10 ${
+                    className={`no-pdf text-white rounded-full p-2 z-10 ${
                       result.result[0].DORelease ? "bg-blue-600" : "bg-gray-500"
                     }`}
                   >
@@ -1066,7 +1214,7 @@ export default function Tracking() {
                 </div>
                 <div className="flex flex-col items-center">
                   <div
-                    className={` text-white rounded-full p-2 z-10 ${
+                    className={`no-pdf text-white rounded-full p-2 z-10 ${
                       result.result[0].Clearance ? "bg-blue-600" : "bg-gray-500"
                     }`}
                   >
@@ -1083,6 +1231,16 @@ export default function Tracking() {
                 </div>
               </div>
             </div>
+            <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingLclHbl");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
           </div>
         </div>
       )}
@@ -1090,14 +1248,14 @@ export default function Tracking() {
         selectedTracking?.title === "Clearance and Trucking" &&
         selectedClearanceContainerStatus && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
+            <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
                   <h1 className="text-black font-bold text-left">
-                    Container Number : 
+                    Container Number :
                   </h1>
                   <h1 className="text-black  text-left">
                     {formData.ContainerNumber.replace(/[\/\s-]/g, "")}
@@ -1117,7 +1275,7 @@ export default function Tracking() {
                   setResult(null);
                   setSelectedClearanceContainerStatus(false);
                 }}
-                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+                className="absolute top-2 no-pdf right-4 text-xl font-bold text-gray-700"
               >
                 &times;
               </button>
@@ -1128,7 +1286,7 @@ export default function Tracking() {
                   {/* Left Step - Arrival */}
                   <div className="flex flex-col items-center ">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].ContainerUnderClearance
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -1147,7 +1305,7 @@ export default function Tracking() {
                   </div>
                   <div className="flex flex-col items-center ">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].AtThePort
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -1165,12 +1323,12 @@ export default function Tracking() {
                     </p>
                   </div>
                   {/* dooted line */}
-                  <div className="absolute top-4 left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                  <div className="absolute top-4 no-pdf left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
                   {/* Right Step - Delivery */}
 
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].ClearanceDone
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -1189,7 +1347,7 @@ export default function Tracking() {
                   </div>
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result[0].UnderTracking
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -1208,6 +1366,16 @@ export default function Tracking() {
                   </div>
                 </div>
               </div>
+              <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingClearanceContainerNo");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -1215,17 +1383,21 @@ export default function Tracking() {
         selectedTracking?.title === "Clearance and Trucking" &&
         selectedClearanceBlNoStatus && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
+            <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
                     Status Report :
                   </h1>
-                  {result.result.VesselEnName ? <h1 className="text-black font-bold text-left">
-                    HB/L Number : 
-                  </h1> : <h1 className="text-black font-bold text-left">
-                    AWB Number : 
-                  </h1>}
+                  {result.result.VesselEnName ? (
+                    <h1 className="text-black font-bold text-left">
+                      H/BL Number :
+                    </h1>
+                  ) : (
+                    <h1 className="text-black font-bold text-left">
+                      AWB Number :
+                    </h1>
+                  )}
                   <h1 className="text-black  text-left">
                     {formData.BillNo.replace(/[\/\s-]/g, "")}
                   </h1>
@@ -1244,7 +1416,7 @@ export default function Tracking() {
                   setResult(null);
                   setSelectedClearanceBlNoStatus(false);
                 }}
-                className="absolute top-2 right-4 text-xl font-bold text-gray-700"
+                className="absolute top-2 no-pdf right-4 text-xl font-bold text-gray-700"
               >
                 &times;
               </button>
@@ -1255,7 +1427,7 @@ export default function Tracking() {
                   {/* Left Step - Arrival */}
                   <div className="flex flex-col items-center ">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result.ContainerUnderClearance
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -1274,7 +1446,7 @@ export default function Tracking() {
                   </div>
                   <div className="flex flex-col items-center ">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result.AtThePort ? "bg-blue-600" : "bg-gray-500"
                       }`}
                     >
@@ -1290,12 +1462,12 @@ export default function Tracking() {
                     </p>
                   </div>
                   {/* dooted line */}
-                  <div className="absolute top-4 left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
+                  <div className="absolute no-pdf top-4 left-[16%] right-[16%] border-t-2 border-dotted border-blue-400 z-0"></div>
                   {/* Right Step - Delivery */}
 
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result.ClearanceDone
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -1314,7 +1486,7 @@ export default function Tracking() {
                   </div>
                   <div className="flex flex-col items-center">
                     <div
-                      className={` text-white rounded-full p-2 z-10 ${
+                      className={`no-pdf text-white rounded-full p-2 z-10 ${
                         result.result.UnderTracking
                           ? "bg-blue-600"
                           : "bg-gray-500"
@@ -1332,6 +1504,16 @@ export default function Tracking() {
                     </p>
                   </div>
                 </div>
+              </div>
+              <div className="text-right">
+                <button
+                  onClick={() => {
+                    handleDownloadPdf("trackingClearanceBlNo");
+                  }}
+                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                >
+                  Download PDF
+                </button>
               </div>
             </div>
           </div>

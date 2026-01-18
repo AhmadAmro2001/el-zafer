@@ -73,7 +73,7 @@ export default function PressRelease() {
             {posts.map((item, index) => {
               return (
                 <>
-                  <div key={index} className="flex justify-between items-center mb-10">
+                  <div key={index} className="flex justify-around   items-center mb-10">
                     <div className={item?.images?.URLS?.length > 0 ? "w-[40%]" : "w-full "}>
                       <h1 className="text-red-700 text-3xl font-bold pb-5 text-left">
                         {item.title}
@@ -82,10 +82,10 @@ export default function PressRelease() {
                         {item.content}
                       </p>
                     </div>
-                    <div className=" w-[50%] ">
+                    <div className=" w-[55%]  ">
                       <Slider {...settings}>
-                        {item?.images?.URLS?.length > 0 &&item.images.URLS.map((item, index) => <div key={index} className="aspect-video w-full overflow-hidden rounded-2xl">
-                          <img src={item.secure_url} alt="" className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"/>
+                        {item?.images?.URLS?.length > 0 &&item.images.URLS.map((item, index) => <div key={index} className="aspect-video w-full   ">
+                          <img src={item.secure_url} alt="" className="h-full mx-auto object-contain rounded-3xl overflow-hidden  "/>
                         </div>)}
                       </Slider>
                     </div>
