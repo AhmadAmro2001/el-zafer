@@ -119,8 +119,8 @@ export default function PressRelease() {
                 speed: 500,
                 autoplay: hasMany,
                 autoplaySpeed: 4000,
-                pauseOnHover: hasMany,
-                pauseOnFocus: hasMany,
+                pauseOnHover: false,
+                pauseOnFocus: false,
               };
 
               return (
