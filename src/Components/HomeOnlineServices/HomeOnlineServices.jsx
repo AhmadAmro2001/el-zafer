@@ -36,7 +36,7 @@ export default function HomeOnlineServices() {
                     file.
                   </p>
                   <div className="right-[50%] translate-x-1/2 absolute pt-5 text-red-700 group-hover:text-white group-hover:right-16 transition-all duration-300">
-                    <a href="https://drive.google.com/drive/folders/1aTXftj77Sd5JoTF0Bw-2GRdUX9XEe4LQ?usp=drive_link" target="_blank">
+                    <a href="https://drive.google.com/drive/folders/1IMYii9WykLHiFW4cauojprXQ_7xCqCas?usp=sharing" target="_blank">
                       Download now <i className="fa-solid fa-arrow-right"></i>
                     </a>
                   </div>
