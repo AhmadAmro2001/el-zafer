@@ -26,7 +26,7 @@ export default function Tracking() {
   const [error, setError] = useState(null);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
   const printRef = useRef(null);
-
+  const [isPdfLoading, setIsPdfLoading] = useState(false);
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -95,86 +95,140 @@ export default function Tracking() {
     </>
   );
 
-  const handleDownloadPdf = async (type) => {
-    const element = printRef.current;
-    if (!element) return;
+  async function downloadPdf({ endpoint, query, fileName }) {
+    setIsPdfLoading(true);
+    const qs = new URLSearchParams(query).toString();
+    const url = `https://el-zafer-backend.onrender.com${endpoint}?${qs}`;
 
-    const hidden = element.querySelectorAll(".no-pdf");
-    hidden.forEach((el) => (el.style.display = "none"));  
+    const res = await fetch(url);
 
-    const tableEl = element.querySelector(".table-scroll");
-    const oldMaxH = tableEl?.style.maxHeight;
-    const oldOverflow = tableEl?.style.overflowY;
-
-    if (tableEl) {
-      tableEl.style.maxHeight = "none";
-      tableEl.style.overflowY = "visible";
+    if (!res.ok) {
+      let msg = "Failed to download PDF";
+      try {
+        msg = (await res.json())?.message || msg;
+      } catch {}
+      throw new Error(msg);
     }
 
-    // Higher quality + handle external images
-    const canvas = await html2canvas(element, {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: "#ffffff",
-    });
+    const blob = await res.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
 
-    hidden.forEach((el) => (el.style.display = ""));
-    if (tableEl) {
-      tableEl.style.maxHeight = oldMaxH || "";
-      tableEl.style.overflowY = oldOverflow || "";
-    }
-    hidden.forEach((el) => (el.style.display = ""));
+    const a = document.createElement("a");
+    a.href = blobUrl;
+    a.download = (fileName || "report.pdf")
+      .replaceAll("/", "-")
+      .replaceAll(" ", "_");
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
-    const imgData = canvas.toDataURL("image/png");
+    window.URL.revokeObjectURL(blobUrl);
 
-    const pdf = new jsPDF("p", "mm", "a4"); // use mm so sizing is easier
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = pdf.internal.pageSize.getHeight();
+    setIsPdfLoading(false);
+  }
 
-    // Keep aspect ratio
-    const imgWidth = pdfWidth;
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+  const PDF_CONFIG = {
+    fullContainer: {
+      endpoint: "/tracking/full-container/pdf",
+      getQuery: (v) => ({
+        BillNumber: v.BillNumber,
+        ContainerNumber: v.ContainerNumber,
+        PortOfLoading: v.PortOfLoading,
+        PortOfDischarge: v.PortOfDischarge,
+      }),
+      fileName: (v) => `FullContainer_${v.BillNumber}_${v.ContainerNumber}.pdf`,
+    },
 
-    // If content fits in one page
-    if (imgHeight <= pdfHeight) {
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-    } else {
-      // Multi-page (if your report becomes long later)
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-      heightLeft -= pdfHeight;
-
-      while (heightLeft > 0) {
-        position -= pdfHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pdfHeight;
-      }
-    }
-    if (type === "trackingfullcontainer") {
-      pdf.save(`H/BL:${formData.BillNumber.replace(/[\/\s-]/g, "")}.pdf`);
-    }
-    if(type === "trackingPersonalEffect"){
-      pdf.save(`H/BL:${formData.HousBillNo.replace(/[\/\s-]/g, "")}.pdf`);
-    }
-    if(type === "trackingAirFrieght"){
-      pdf.save(`AWB:${formData.AWBNo.replace(/[\/\s-]/g, "")}.pdf`);
-    }
-    if(type === "trackingLclContainer"){
-      pdf.save(`Container:${formData.ContainerNumber.replace(/[\/\s-]/g, "")}.pdf`);
-    }
-    if(type === "trackingLclHbl"){
-      pdf.save(`H/BL:${formData.HousBillNo.replace(/[\/\s-]/g, "")}.pdf`);
-    }
-    if(type === "trackingClearanceBlNo"){
-      pdf.save(`${result.result.VesselEnName ? "H/BL":"AWB"}:${formData.BillNo.replace(/[\/\s-]/g, "")}.pdf`);
-    }
-    if(type === "trackingClearanceContainerNo"){
-      pdf.save(`Container:${formData.ContainerNumber.replace(/[\/\s-]/g, "")}.pdf`);
-    }
+    // add the other 6 types same idea...
   };
+
+  // note it will be deleted
+  // const handleDownloadPdf = async (type) => {
+  //   const element = printRef.current;
+  //   if (!element) return;
+
+  //   const hidden = element.querySelectorAll(".no-pdf");
+  //   hidden.forEach((el) => (el.style.display = "none"));
+
+  //   const tableEl = element.querySelector(".table-scroll");
+  //   const oldMaxH = tableEl?.style.maxHeight;
+  //   const oldOverflow = tableEl?.style.overflowY;
+
+  //   if (tableEl) {
+  //     tableEl.style.maxHeight = "none";
+  //     tableEl.style.overflowY = "visible";
+  //   }
+
+  //   // Higher quality + handle external images
+  //   const canvas = await html2canvas(element, {
+  //     scale: 2,
+  //     useCORS: true,
+  //     backgroundColor: "#ffffff",
+  //   });
+
+  //   hidden.forEach((el) => (el.style.display = ""));
+  //   if (tableEl) {
+  //     tableEl.style.maxHeight = oldMaxH || "";
+  //     tableEl.style.overflowY = oldOverflow || "";
+  //   }
+  //   hidden.forEach((el) => (el.style.display = ""));
+
+  //   const imgData = canvas.toDataURL("image/png");
+
+  //   const pdf = new jsPDF("p", "mm", "a4"); // use mm so sizing is easier
+  //   const pdfWidth = pdf.internal.pageSize.getWidth();
+  //   const pdfHeight = pdf.internal.pageSize.getHeight();
+
+  //   // Keep aspect ratio
+  //   const imgWidth = pdfWidth;
+  //   const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  //   // If content fits in one page
+  //   if (imgHeight <= pdfHeight) {
+  //     pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+  //   } else {
+  //     // Multi-page (if your report becomes long later)
+  //     let heightLeft = imgHeight;
+  //     let position = 0;
+
+  //     pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+  //     heightLeft -= pdfHeight;
+
+  //     while (heightLeft > 0) {
+  //       position -= pdfHeight;
+  //       pdf.addPage();
+  //       pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+  //       heightLeft -= pdfHeight;
+  //     }
+  //   }
+  //   if (type === "trackingfullcontainer") {
+  //     pdf.save(`H/BL:${formData.BillNumber.replace(/[\/\s-]/g, "")}.pdf`);
+  //   }
+  //   if (type === "trackingPersonalEffect") {
+  //     pdf.save(`H/BL:${formData.HousBillNo.replace(/[\/\s-]/g, "")}.pdf`);
+  //   }
+  //   if (type === "trackingAirFrieght") {
+  //     pdf.save(`AWB:${formData.AWBNo.replace(/[\/\s-]/g, "")}.pdf`);
+  //   }
+  //   if (type === "trackingLclContainer") {
+  //     pdf.save(
+  //       `Container:${formData.ContainerNumber.replace(/[\/\s-]/g, "")}.pdf`,
+  //     );
+  //   }
+  //   if (type === "trackingLclHbl") {
+  //     pdf.save(`H/BL:${formData.HousBillNo.replace(/[\/\s-]/g, "")}.pdf`);
+  //   }
+  //   if (type === "trackingClearanceBlNo") {
+  //     pdf.save(
+  //       `${result.result.VesselEnName ? "H/BL" : "AWB"}:${formData.BillNo.replace(/[\/\s-]/g, "")}.pdf`,
+  //     );
+  //   }
+  //   if (type === "trackingClearanceContainerNo") {
+  //     pdf.save(
+  //       `Container:${formData.ContainerNumber.replace(/[\/\s-]/g, "")}.pdf`,
+  //     );
+  //   }
+  // };
 
   const trackingArray = [
     {
@@ -626,19 +680,31 @@ export default function Tracking() {
 
               <div className="text-right">
                 <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingfullcontainer");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                  onClick={() =>
+                    downloadPdf({
+                      endpoint: "/track-shipment/track-full-container/pdf",
+                      query: {
+                        BillNumber: formData.BillNumber,
+                        ContainerNumber: formData.ContainerNumber,
+                        PortOfLoading: formData.PortOfLoading,
+                        PortOfDischarge: formData.PortOfDischarge,
+                      },
+                      fileName: `FullContainer_${formData.BillNumber}_${formData.ContainerNumber}.pdf`,
+                    })
+                  }
+                  className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
                 >
-                  Download PDF
+                  {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
                 </button>
               </div>
             </div>
           </div>
         ) : (
-          <div  className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+          <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
+            <div
+              ref={printRef}
+              className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg"
+            >
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
@@ -718,12 +784,21 @@ export default function Tracking() {
               </div>
               <div className="text-right">
                 <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingfullcontainer");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                  onClick={() =>
+                    downloadPdf({
+                      endpoint: "/track-shipment/track-full-container/pdf",
+                      query: {
+                        BillNumber: formData.BillNumber,
+                        ContainerNumber: formData.ContainerNumber,
+                        PortOfLoading: formData.PortOfLoading,
+                        PortOfDischarge: formData.PortOfDischarge,
+                      },
+                      fileName: `FullContainer_${formData.BillNumber}_${formData.ContainerNumber}.pdf`,
+                    })
+                  }
+                  className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
                 >
-                  Download PDF
+                  {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
                 </button>
               </div>
             </div>
@@ -731,7 +806,10 @@ export default function Tracking() {
         ))}
       {result && selectedTracking?.title === "Personal Effects" && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-          <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+          <div
+            ref={printRef}
+            className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg"
+          >
             <div className="flex  justify-between mb-5">
               <div>
                 <h1 className="text-black font-bold text-left mb-2">
@@ -808,15 +886,24 @@ export default function Tracking() {
               </div>
             </div>
             <div className="text-right">
-                <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingPersonalEffect");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
-                >
-                  Download PDF
-                </button>
-              </div>
+              <button
+                onClick={() =>
+                  downloadPdf({
+                    endpoint: "/track-shipment/track-personal-effect/pdf",
+                    query: {
+                      HousBillNo: formData.HousBillNo,
+                      NOOfPcs: formData.NOOfPcs,
+                      TotalWeight: formData.TotalWeight,
+                      Destination: formData.Destination,
+                    },
+                    fileName: `PersonalEffect_${formData.HousBillNo}_${formData.Destination}.pdf`,
+                  })
+                }
+                className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
+              >
+                {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -826,7 +913,10 @@ export default function Tracking() {
         result?.result[0]?.destination === "DAMMAM" ||
         result?.result[0]?.destination === "RIYADH" ? (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            <div
+              ref={printRef}
+              className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg"
+            >
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
@@ -906,19 +996,31 @@ export default function Tracking() {
               </div>
               <div className="text-right">
                 <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingAirFrieght");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                  onClick={() =>
+                    downloadPdf({
+                      endpoint: "/track-shipment/track-air-flight/pdf",
+                      query: {
+                        AWBNo: formData.AWBNo,
+                        Destination: formData.Destination,
+                        NOOfPcs: formData.NOOfPcs,
+                        TotalWeight: formData.TotalWeight,
+                      },
+                      fileName: `AIR_${formData.AWBNo}_${formData.Destination}.pdf`,
+                    })
+                  }
+                  className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
                 >
-                  Download PDF
+                  {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
                 </button>
               </div>
             </div>
           </div>
         ) : (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div ref={printRef} className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg">
+            <div
+              ref={printRef}
+              className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg"
+            >
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
@@ -998,12 +1100,21 @@ export default function Tracking() {
               </div>
               <div className="text-right">
                 <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingAirFrieght");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                  onClick={() =>
+                    downloadPdf({
+                      endpoint: "/track-shipment/track-air-flight/pdf",
+                      query: {
+                        AWBNo: formData.AWBNo,
+                        Destination: formData.Destination,
+                        NOOfPcs: formData.NOOfPcs,
+                        TotalWeight: formData.TotalWeight,
+                      },
+                      fileName: `AIR_${formData.AWBNo}_${formData.Destination}.pdf`,
+                    })
+                  }
+                  className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
                 >
-                  Download PDF
+                  {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
                 </button>
               </div>
             </div>
@@ -1013,7 +1124,10 @@ export default function Tracking() {
         selectedTracking?.title === "LCL" &&
         selectedLclContainerStatus && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-5xl  relative shadow-lg">
+            <div
+              ref={printRef}
+              className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-5xl  relative shadow-lg"
+            >
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
@@ -1110,12 +1224,19 @@ export default function Tracking() {
               </div>
               <div className="text-right">
                 <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingLclContainer");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                  onClick={() =>
+                    downloadPdf({
+                      endpoint: "/track-shipment/track-lcl-container/pdf",
+                      query: {
+                        ContainerNumber: formData.ContainerNumber,
+                        PortOfDischarge: formData.PortOfDischarge,
+                      },
+                      fileName: `LCL_${formData.ContainerNumber}_${formData.PortOfDischarge}.pdf`,
+                    })
+                  }
+                  className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
                 >
-                  Download PDF
+                  {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
                 </button>
               </div>
             </div>
@@ -1123,7 +1244,10 @@ export default function Tracking() {
         )}
       {result && selectedTracking?.title === "LCL" && selectedLclHblStatus && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-          <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
+          <div
+            ref={printRef}
+            className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg"
+          >
             <div className="flex  justify-between mb-5">
               <div>
                 <h1 className="text-black font-bold text-left mb-2">
@@ -1232,15 +1356,24 @@ export default function Tracking() {
               </div>
             </div>
             <div className="text-right">
-                <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingLclHbl");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
-                >
-                  Download PDF
-                </button>
-              </div>
+              <button
+                onClick={() =>
+                  downloadPdf({
+                    endpoint: "/track-shipment/track-lcl-housebillno/pdf",
+                    query: {
+                      HousBillNo: formData.HousBillNo,
+                      NOOfPcs: formData.NOOfPcs,
+                      TotalWeight: formData.TotalWeight,
+                      Destination: formData.Destination,
+                    },
+                    fileName: `LCL_${formData.HousBillNo}_${formData.Destination}.pdf`,
+                  })
+                }
+                className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
+              >
+                {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -1248,7 +1381,10 @@ export default function Tracking() {
         selectedTracking?.title === "Clearance and Trucking" &&
         selectedClearanceContainerStatus && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
+            <div
+              ref={printRef}
+              className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg"
+            >
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
@@ -1368,12 +1504,20 @@ export default function Tracking() {
               </div>
               <div className="text-right">
                 <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingClearanceContainerNo");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                  onClick={() =>
+                    downloadPdf({
+                      endpoint: "/track-shipment/track-clearance-containerno/pdf",
+                      query: {
+                        ContainerNumber: formData.ContainerNumber,
+                        PortOfDischarge: formData.PortOfDischarge,
+                        VesselEnName: formData.VesselEnName,
+                      },
+                      fileName: `Clearance_${formData.ContainerNumber}_${formData.PortOfDischarge}.pdf`,
+                    })
+                  }
+                  className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
                 >
-                  Download PDF
+                  {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
                 </button>
               </div>
             </div>
@@ -1383,7 +1527,10 @@ export default function Tracking() {
         selectedTracking?.title === "Clearance and Trucking" &&
         selectedClearanceBlNoStatus && (
           <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-            <div ref={printRef} className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg">
+            <div
+              ref={printRef}
+              className="bg-white p-8 md:p-16 rounded-xl w-[90%] max-w-xl relative shadow-lg"
+            >
               <div className="flex  justify-between mb-5">
                 <div>
                   <h1 className="text-black font-bold text-left mb-2">
@@ -1507,12 +1654,19 @@ export default function Tracking() {
               </div>
               <div className="text-right">
                 <button
-                  onClick={() => {
-                    handleDownloadPdf("trackingClearanceBlNo");
-                  }}
-                  className="bg-red-600 px-4 py-2 mt-4 no-pdf text-white rounded"
+                  onClick={() =>
+                    downloadPdf({
+                      endpoint: "/track-shipment/track-clearance-billno/pdf",
+                      query: {
+                        BillNo: formData.BillNo,
+                        PortOfDischarge: formData.PortOfDischarge,
+                      },
+                      fileName: `Clearance_${formData.BillNo}_${formData.PortOfDischarge}.pdf`,
+                    })
+                  }
+                  className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
                 >
-                  Download PDF
+                  {isPdfLoading ? <i className="fa-solid fa-spinner animate-spin"></i> : "Download PDF"}
                 </button>
               </div>
             </div>
