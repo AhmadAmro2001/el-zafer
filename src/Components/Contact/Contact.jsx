@@ -266,7 +266,7 @@ export default function Contact() {
           <span>Get it on Google Play</span>
         </a>
         <a
-          href="https://play.google.com/store/apps/details?id=com.ist.alzaferwingscargosystems" // Replace with your app link
+          href="https://apps.apple.com/eg/app/al-zafer-wings-cargo-services/id6749794460" // Replace with your app link
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-3 bg-[#0C71B9] my-10 text-white font-medium rounded-lg shadow-lg transition-all duration-200"
