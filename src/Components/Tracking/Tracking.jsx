@@ -807,10 +807,16 @@ export default function Tracking() {
       {result && selectedTracking?.title === "Personal Effects" && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
           <div
-            ref={printRef}
+            
             className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg"
           >
+            {result.message === 'Closest match found (h/bl no might be mistyped)' && (
+                <>
+                <h1 className="mb-5 text-red-600">{result.message} : <span className="font-bold">{result.result[0].HousBillNo}</span></h1>
+                </>
+              )}
             <div className="flex  justify-between mb-5">
+              
               <div>
                 <h1 className="text-black font-bold text-left mb-2">
                   Status Report :
@@ -819,7 +825,7 @@ export default function Tracking() {
                   H/BL Number :
                 </h1>
                 <h1 className="text-black  text-left">
-                  {formData.HousBillNo.replace(/[\/\s-]/g, "")}
+                  {result.result[0].HousBillNo}
                 </h1>
               </div>
               <div className="w-48 ">
@@ -891,7 +897,7 @@ export default function Tracking() {
                   downloadPdf({
                     endpoint: "/track-shipment/track-personal-effect/pdf",
                     query: {
-                      HousBillNo: formData.HousBillNo,
+                      HousBillNo: result.result[0].HousBillNo,
                       NOOfPcs: formData.NOOfPcs,
                       TotalWeight: formData.TotalWeight,
                       Destination: formData.Destination,
