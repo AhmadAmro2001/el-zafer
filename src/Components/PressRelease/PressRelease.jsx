@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./PressRelease.module.css";
 import Slider from "react-slick";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export default function PressRelease() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -100,6 +101,16 @@ export default function PressRelease() {
             ourselves and actively participating in the local tournaments as Al
             Zafer Cargo Team.
           </p>
+          <h1 className="text-red-700 text-3xl font-bold pb-5 text-left">
+            Al-Zafer Shipping Services Expands Its Solutions in Partnership with
+            HTRI from Tunisia
+          </h1>
+          <p className="text-gray-800 text-xl text-left pb-10">
+            Al-Zafer Shipping Services announces new modernization steps within
+            its service system, launched in cooperation with HTRI from Tunisia.
+            The company confirms that this partnership will enhance customer
+            experience and provide more advanced logistics solutions. <span className="text-red-700 hover:text-red-500"><Link to={`https://misrtalateen.com/2026/02/23/%d8%a7%d9%84%d8%b8%d8%a7%d9%81%d8%b1-%d9%84%d8%ae%d8%af%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%b4%d8%ad%d9%86-%d9%81%d9%8a-%d8%aa%d8%b9%d8%a7%d9%88%d9%86-%d9%85%d8%b9-%d8%b4%d8%b1%d9%83%d8%a9-htri-%d8%ac/`} target="_blank"> Open for more <i className="fa-solid fa-arrow-right"></i></Link></span>
+          </p>
         </div>
 
         {loading ? (
@@ -141,7 +152,9 @@ export default function PressRelease() {
                   {/* Images */}
                   <div
                     className={
-                      !item.title && !item.content ? "w-[80%] mx-44 " : "w-[55%]"
+                      !item.title && !item.content
+                        ? "w-[80%] mx-44 "
+                        : "w-[55%]"
                     }
                   >
                     {urls.length > 0 ? (
