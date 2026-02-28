@@ -592,6 +592,7 @@ export default function Tracking() {
         </div>
       )}
       {/* success message */}
+      {/* update done */}
       {result &&
         selectedTracking?.title === "Tracking full container" &&
         (result?.exportImport === "export" ? (
@@ -609,7 +610,7 @@ export default function Tracking() {
                     H/BL Number :
                   </h1>
                   <h1 className="text-black  text-left">
-                    {formData.BillNumber.replace(/[\/\s-]/g, "")}
+                    {result.result[0].BillNumber.replace(/[\/\s-]/g, "")}
                   </h1>
                 </div>
                 <div className="w-48 ">
@@ -684,12 +685,12 @@ export default function Tracking() {
                     downloadPdf({
                       endpoint: "/track-shipment/track-full-container/pdf",
                       query: {
-                        BillNumber: formData.BillNumber,
+                        BillNumber: result.result[0].BillNumber,
                         ContainerNumber: formData.ContainerNumber,
                         PortOfLoading: formData.PortOfLoading,
                         PortOfDischarge: formData.PortOfDischarge,
                       },
-                      fileName: `FullContainer_${formData.BillNumber}_${formData.ContainerNumber}.pdf`,
+                      fileName: `FullContainer_${result.result[0].BillNumber}_${formData.ContainerNumber}.pdf`,
                     })
                   }
                   className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
@@ -714,7 +715,7 @@ export default function Tracking() {
                     H/BL Number :
                   </h1>
                   <h1 className="text-black  text-left">
-                    {formData.BillNumber.replace(/[\/\s-]/g, "")}
+                    {result.result[0].BillNumber.replace(/[\/\s-]/g, "")}
                   </h1>
                 </div>
                 <div className="w-48 ">
@@ -788,12 +789,12 @@ export default function Tracking() {
                     downloadPdf({
                       endpoint: "/track-shipment/track-full-container/pdf",
                       query: {
-                        BillNumber: formData.BillNumber,
+                        BillNumber: result.result[0].BillNumber,
                         ContainerNumber: formData.ContainerNumber,
                         PortOfLoading: formData.PortOfLoading,
                         PortOfDischarge: formData.PortOfDischarge,
                       },
-                      fileName: `FullContainer_${formData.BillNumber}_${formData.ContainerNumber}.pdf`,
+                      fileName: `FullContainer_${result.result[0].BillNumber}_${formData.ContainerNumber}.pdf`,
                     })
                   }
                   className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
@@ -804,17 +805,18 @@ export default function Tracking() {
             </div>
           </div>
         ))}
+        {/* update done */}
       {result && selectedTracking?.title === "Personal Effects" && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
           <div
             
             className="bg-white p-8 md:p-12 rounded-xl w-[90%] max-w-md relative shadow-lg"
           >
-            {result.message === 'Closest match found (h/bl no might be mistyped)' && (
+            {/* {result.message === 'Closest match found (h/bl no might be mistyped)' && (
                 <>
                 <h1 className="mb-5 text-red-600">{result.message} : <span className="font-bold">{result.result[0].HousBillNo}</span></h1>
                 </>
-              )}
+              )} */}
             <div className="flex  justify-between mb-5">
               
               <div>
@@ -913,6 +915,7 @@ export default function Tracking() {
           </div>
         </div>
       )}
+      {/* update done */}
       {result &&
         selectedTracking?.title === "Air Frieght" &&
         (result?.result[0]?.destination === "JEDDAH" ||
@@ -932,7 +935,7 @@ export default function Tracking() {
                     AWB Number :
                   </h1>
                   <h1 className="text-black  text-left">
-                    {formData.AWBNo.replace(/[\/\s-]/g, "")}
+                    {result.result[0].AWBNo.replace(/[\/\s-]/g, "")}
                   </h1>
                 </div>
                 <div className="w-48 ">
@@ -1006,12 +1009,12 @@ export default function Tracking() {
                     downloadPdf({
                       endpoint: "/track-shipment/track-air-flight/pdf",
                       query: {
-                        AWBNo: formData.AWBNo,
+                        AWBNo: result.result[0].AWBNo,
                         Destination: formData.Destination,
                         NOOfPcs: formData.NOOfPcs,
                         TotalWeight: formData.TotalWeight,
                       },
-                      fileName: `AIR_${formData.AWBNo}_${formData.Destination}.pdf`,
+                      fileName: `AIR_${result.result[0].AWBNo}_${formData.Destination}.pdf`,
                     })
                   }
                   className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
@@ -1036,7 +1039,7 @@ export default function Tracking() {
                     AWB Number :
                   </h1>
                   <h1 className="text-black  text-left">
-                    {formData.AWBNo.replace(/[\/\s-]/g, "")}
+                    {result.result[0].AWBNo.replace(/[\/\s-]/g, "")}
                   </h1>
                 </div>
                 <div className="w-48 ">
@@ -1110,12 +1113,12 @@ export default function Tracking() {
                     downloadPdf({
                       endpoint: "/track-shipment/track-air-flight/pdf",
                       query: {
-                        AWBNo: formData.AWBNo,
+                        AWBNo: result.result[0].AWBNo,
                         Destination: formData.Destination,
                         NOOfPcs: formData.NOOfPcs,
                         TotalWeight: formData.TotalWeight,
                       },
-                      fileName: `AIR_${formData.AWBNo}_${formData.Destination}.pdf`,
+                      fileName: `AIR_${result.result[0].AWBNo}_${formData.Destination}.pdf`,
                     })
                   }
                   className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
@@ -1126,6 +1129,7 @@ export default function Tracking() {
             </div>
           </div>
         ))}
+        {/* no update */}
       {result &&
         selectedTracking?.title === "LCL" &&
         selectedLclContainerStatus && (
@@ -1248,6 +1252,7 @@ export default function Tracking() {
             </div>
           </div>
         )}
+    {/* update done */}
       {result && selectedTracking?.title === "LCL" && selectedLclHblStatus && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
           <div
@@ -1263,7 +1268,7 @@ export default function Tracking() {
                   H/BL Number :
                 </h1>
                 <h1 className="text-black  text-left">
-                  {formData.HousBillNo.replace(/[\/\s-]/g, "")}
+                  {result.result[0].HousBillNo.replace(/[\/\s-]/g, "")}
                 </h1>
               </div>
               <div className="w-48 ">
@@ -1367,12 +1372,12 @@ export default function Tracking() {
                   downloadPdf({
                     endpoint: "/track-shipment/track-lcl-housebillno/pdf",
                     query: {
-                      HousBillNo: formData.HousBillNo,
+                      HousBillNo: result.result[0].HousBillNo,
                       NOOfPcs: formData.NOOfPcs,
                       TotalWeight: formData.TotalWeight,
                       Destination: formData.Destination,
                     },
-                    fileName: `LCL_${formData.HousBillNo}_${formData.Destination}.pdf`,
+                    fileName: `LCL_${result.result[0].HousBillNo}_${formData.Destination}.pdf`,
                   })
                 }
                 className="bg-red-600 w-[150px] py-2 mt-4 no-pdf text-white rounded"
@@ -1383,6 +1388,7 @@ export default function Tracking() {
           </div>
         </div>
       )}
+      {/* no update */}
       {result &&
         selectedTracking?.title === "Clearance and Trucking" &&
         selectedClearanceContainerStatus && (
@@ -1529,6 +1535,7 @@ export default function Tracking() {
             </div>
           </div>
         )}
+        {/* no update */}
       {result &&
         selectedTracking?.title === "Clearance and Trucking" &&
         selectedClearanceBlNoStatus && (
