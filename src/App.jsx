@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import "slick-carousel/slick/slick.css";
@@ -29,7 +29,25 @@ import MetricBasics from './Components/MetricBasics/MetricBasics';
 import MetricToUs from './Components/MetricToUs/MetricToUs';
 import OceanContDims from './Components/OceanContDims/OceanContDims';
 import ShippingSchedule from './Components/ShippingSchedule/ShippingSchedule';
+import axios from 'axios';
+
 function App() {
+
+  useEffect(() => {
+  const alreadyVisited = sessionStorage.getItem("visitLogged");
+
+  if (!alreadyVisited) {
+    sessionStorage.setItem("visitLogged", "true");
+
+    axios.post("https://el-zafer-backend.onrender.com/analytics/get-analytics")
+      .catch((err) => {
+        console.error("Failed to log visit:", err);
+        sessionStorage.removeItem("visitLogged");
+      });
+  }
+}, []);
+
+
 let routes = createBrowserRouter([
   {path:'',element:<Layout/>,children:[
     {index:true,element:<Home/>},

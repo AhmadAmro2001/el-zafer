@@ -5,8 +5,12 @@ import HomeAboutUs from "../HomeAboutUs/HomeAboutUs";
 import HomeOnlineServices from "../HomeOnlineServices/HomeOnlineServices";
 import HomeOurPartners from "../HomeOurPartners/HomeOurPartners";
 import HomeHyperLinks from "../HomeHyperLinks/HomeHyperLinks";
+import axios from "axios";
+
 
 export default function Home() {
+
+  
   var settings = {
     dots: false,
     infinite: true,
