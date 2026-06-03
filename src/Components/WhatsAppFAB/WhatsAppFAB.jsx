@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import style from './WhatsAppFab.module.css'
+
 import { FaWhatsapp } from "react-icons/fa";
 export default function WhatsAppFab() {
     const phoneNumber = "9660533368036"; 
