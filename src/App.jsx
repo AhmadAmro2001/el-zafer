@@ -30,6 +30,7 @@ import MetricToUs from './Components/MetricToUs/MetricToUs';
 import OceanContDims from './Components/OceanContDims/OceanContDims';
 import ShippingSchedule from './Components/ShippingSchedule/ShippingSchedule';
 import axios from 'axios';
+import WhatsAppFab from './Components/WhatsAppFAB/WhatsAppFAB';
 
 function App() {
 
@@ -80,7 +81,7 @@ let routes = createBrowserRouter([
     <>
     
       <RouterProvider router={routes}></RouterProvider>
-    
+      <WhatsAppFab/>
     </>
   )
 }
